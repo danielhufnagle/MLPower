@@ -1,1 +1,0 @@
-cmd_/home/mlpower/MLPower/src/test_module/test.ko := ld -r -EL  -maarch64elf -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/mlpower/MLPower/src/test_module/test.ko /home/mlpower/MLPower/src/test_module/test.o /home/mlpower/MLPower/src/test_module/test.mod.o;  true

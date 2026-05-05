@@ -1,1 +1,0 @@
-cmd_/home/mlpower/MLPower/src/test_module/Module.symvers := sed 's/\.ko$$/\.o/' /home/mlpower/MLPower/src/test_module/modules.order | scripts/mod/modpost -m   -o /home/mlpower/MLPower/src/test_module/Module.symvers -e -i Module.symvers   -T -
