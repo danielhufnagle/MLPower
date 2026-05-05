@@ -4,3 +4,4 @@
 *.order
 *.mod
 *.o
+*.mod.c
