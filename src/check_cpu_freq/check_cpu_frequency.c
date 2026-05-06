@@ -5,12 +5,11 @@
 #include <linux/kthread.h>
 #include <linux/delay.h>
 
-#define POLL_INTERVAL_MS 1000
+#define POLL_INTERVAL_MS 4
 
 static struct task_struct *freq_thread;
 
-static int freq_thread_fn(void *data)
-{
+static int freq_thread_fn(void *data) {
     while (!kthread_should_stop()) {
         unsigned int frequency = cpufreq_get(0);
         printk(KERN_INFO "Current frequency: %u kHz\n", frequency);
@@ -19,8 +18,7 @@ static int freq_thread_fn(void *data)
     return 0;
 }
 
-static int __init cpu_freq_init(void)
-{
+static int __init cpu_freq_init(void) {
     printk(KERN_INFO "cpu_freq: starting\n");
     freq_thread = kthread_run(freq_thread_fn, NULL, "cpu_freq_poller");
     if (IS_ERR(freq_thread)) {
@@ -30,8 +28,7 @@ static int __init cpu_freq_init(void)
     return 0;
 }
 
-static void __exit cpu_freq_exit(void)
-{
+static void __exit cpu_freq_exit(void) {
     kthread_stop(freq_thread);
     printk(KERN_INFO "cpu_freq: stopped\n");
 }
