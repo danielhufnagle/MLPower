@@ -5,6 +5,7 @@
 #include <linux/module.h>
 #include <linux/preempt.h>
 #include <linux/irqflags.h>
+#include <linux/delay.h>
 
 
 /*
@@ -12,120 +13,237 @@
 */
 
 
-// void init_pmu_counters();
-
-
-
-// Pick a slot index n (like 0).
-// Write event ID into PMEVTYPER0_EL0 (example: 0x03 for L1D refill).
-// Zero PMEVCNTR0_EL0 (optional but common before measuring).
-// Enable counting:
-// PMCR_EL0.E = 1 (global PMU enable)
-// PMCNTENSET_EL0.P0 = 1 (enable slot 0 specifically)
-// Run workload.
-// Read PMEVCNTR0_EL0 -> that value is the count for the selected event.
+/* choose a counter slot (usually start with n = 0). */
+/* program that slot with an event id (example: 0x03 for L1D refill). */
+/* reset the selected counter to zero before the test. */
+/* turn on global PMU counting with PMCR_EL0.E = 1. */
+/* enable your chosen slot in PMCNTENSET_EL0. */
+/* run the workload, then read PMEVCNTR0_EL0 to get the final count. */
 
 
 
 static inline void isb_barrier(void) { asm volatile("isb" ::: "memory"); }
 
 
+/* PMCR_EL0 bitmap (Performance Monitors Control Register). */
+/* [0] E  : enable all counters. */
+/* [1] P  : reset event counters (not PMCCNTR). */
+/* [2] C  : reset cycle counter PMCCNTR. */
+/* [3] D  : cycle counter divider control. */
+/* [4] X  : event export control. */
+/* [5] DP : cycle counter disable in prohibited/debug states. */
+/* [6] LC : long cycle counter enable (64-bit when implemented). */
+/* [7] LP : long event counter enable. */
+/* [15:11] N : number of implemented event counters minus 1 (read-only). */
+/* other bits are reserved or implementation-defined. */
 static inline u64 read_pmcr_el0(void) {
     u64 v;
 
-    /* read the 64 bit value of PMCR_EL0 registers*/
-    /* PMCR_EL0 is a global enableer for the pmu counters*/
+    /* read the full 64-bit PMCR_EL0 value. */
+    /* PMCR_EL0 controls global PMU behavior. */
     asm volatile("mrs %0, pmcr_el0" : "=r"(v));
     isb_barrier();
 
     return v;
 }
 
-/* write_pmcr_el0 register enables global pmu counting */
+/* PMCR_EL0 bitmap (write-relevant bits). */
+/* [0] E, [1] P, [2] C, [3] D, [4] X, [5] DP, [6] LC, [7] LP. */
+/* use read-modify-write so unrelated control bits are preserved. */
+/* helper to write PMCR_EL0 (global PMU control register). */
 static inline void write_pmcr_el0(u64 v) {
-    /* write 64 bit value into pmcr_el0 registers */
+    /* write a 64-bit value into PMCR_EL0. */
     asm volatile("msr pmcr_el0, %0" :: "r"(v));
     isb_barrier();
 }
 
-static void print_binary(u64 v)
-{
-    char buf[65];
-    int i;
+/* minimal helper removed: binary dump omitted in cleaned module */
 
-    for (i = 0; i < 64; i++)
-        buf[i] = (v & (1ULL << (63 - i))) ? '1' : '0';
-    buf[64] = '\0';
-
-    pr_info("pmcr_el0 (bin): %s\n", buf);
-}
-
-/* pmselr_el0 selects wjhich of the 32 slot to start counting a type (put later)*/
+/* PMSELR_EL0 bitmap (event counter selector). */
+/* [4:0] SEL : selected event counter slot for PMXEV* access. */
+/* [63:5] reserved. */
+/* PMSelr chooses which event counter slot we are talking to. */
 static inline void select_evt_counter(u32 n) {
     asm volatile("msr pmselr_el0, %0" :: "r"((u64)n));
     isb_barrier();
 }
 
-/* pmxevtyper_el0 sets what type the counter in "select_evt_counter" will count */
-static inline void write_pmxevtyper_el0(u64 v)
-{
+/* PMXEVTYPER_EL0 bitmap (selected counter event type/filter). */
+/* [15:0] event field (architected event id mask in kernel headers). */
+/* [31], [30], [27] are commonly used privilege-level filter bits. */
+/* PMXEVTYPER sets the event type for the currently selected slot. */
+static inline void write_pmxevtyper_el0(u64 v) {
     asm volatile("msr pmxevtyper_el0, %0" :: "r"(v));
     isb_barrier();
 }
 
-/* pmxevcntr_el0 sets the counter value of pmselr_el0 */
-static inline void write_pmxevcntr_el0(u64 v)
-{
+/* PMXEVCNTR_EL0 bitmap (selected event counter value register). */
+/* [31:0] low counter bits (architecturally required). */
+/* [63:32] high counter bits when long event counters are implemented. */
+/* PMXEVCNTR lets us set the selected counter value directly. */
+static inline void write_pmxevcntr_el0(u64 v) {
     asm volatile("msr pmxevcntr_el0, %0" :: "r"(v));
     isb_barrier();
 }
 
-/* reads the current count of selected event counter */
-static inline u64 read_pmxevcntr_el0(void)
-{
+/* PMXEVCNTR_EL0 bitmap (selected event counter value register). */
+/* [31:0] low counter bits (architecturally required). */
+/* [63:32] high counter bits when long event counters are implemented. */
+/* read back the current value of the selected event counter. */
+static inline u64 read_pmxevcntr_el0(void) {
     u64 v;
     asm volatile("mrs %0, pmxevcntr_el0" : "=r"(v));
     return v;
 }
 
-/* enable the counters bit mask */
-static inline void write_pmcntenset_el0(u64 v)
-{
+/* read PMCNTENSET_EL0 to see which counters are enabled */
+static inline u64 read_pmcntenset_el0(void) {
+    u64 v;
+    asm volatile("mrs %0, pmcntenset_el0" : "=r"(v));
+    isb_barrier();
+    return v;
+}
+
+/* read PMXEVTYPER_EL0 for the currently selected slot */
+static inline u64 read_pmxevtyper_el0(void) {
+    u64 v;
+    asm volatile("mrs %0, pmxevtyper_el0" : "=r"(v));
+    isb_barrier();
+    return v;
+}
+
+/* PMCNTENSET_EL0 bitmap (counter enable set). */
+/* [30:0] Pm : write 1 to enable event counter m. */
+/* [31]   C  : write 1 to enable PMCCNTR. */
+/* [63:32] reserved. */
+/* enable counters with a bitmask via PMCNTENSET. */
+static inline void write_pmcntenset_el0(u64 v) {
     asm volatile("msr pmcntenset_el0, %0" :: "r"(v));
     isb_barrier();
 }
 
-/* disable counter bitmaske */
-static inline void write_pmcntenclr_el0(u64 v)
-{
+/* PMCNTENCLR_EL0 bitmap (counter enable clear). */
+/* [30:0] Pm : write 1 to disable event counter m. */
+/* [31]   C  : write 1 to disable PMCCNTR. */
+/* [63:32] reserved. */
+/* disable counters with a bitmask via PMCNTENCLR. */
+static inline void write_pmcntenclr_el0(u64 v) {
     asm volatile("msr pmcntenclr_el0, %0" :: "r"(v));
     isb_barrier();
 }
 
-// void init_pmu_counters() {
+/* PMOVSCLR_EL0 bitmap (overflow status clear). */
+/* [30:0] Pm : write 1 to clear overflow for event counter m. */
+/* [31]   C  : write 1 to clear PMCCNTR overflow. */
+/* [63:32] reserved. */
+/* clear overflow flags in PMOVSCLR. */
+static inline void write_pmovsclr_el0(u64 v) {
+    asm volatile("msr pmovsclr_el0, %0" :: "r"(v));
+    isb_barrier();
+}
 
-//     return v;
-// }
+/* PMCCNTR_EL0 bitmap (cycle counter register). */
+/* [31:0] low cycle-count bits. */
+/* [63:32] high bits when long cycle counting is enabled/implemented. */
+/* reads the current cpu cycle counter. */
+static inline u64 read_pmccntr_el0(void) {
+    u64 v;
+    asm volatile("mrs %0, pmccntr_el0" : "=r"(v));
+    return v;
+}
 
 
+static void pmu_start_counter(u32 n, u32 event_id) {
+    u64 pmcr;
 
+    /* stop this counter while we reconfigure it. */
 
+    write_pmcntenclr_el0(1ULL << n);
+
+    /* select slot n, then set which event it should count. */
+
+    select_evt_counter(n);
+
+    /* event id lives in the low byte for the base event field. */
+
+    write_pmxevtyper_el0(event_id & 0xff);
+
+    /* reset the selected event counter. */
+
+    write_pmxevcntr_el0(0);
+
+    /* enable PMU globally and request counter resets. */
+
+    pmcr = read_pmcr_el0();
+
+    pmcr |= (1ULL << 0); /* E bit: global enable. */
+
+    pmcr |= (1ULL << 1); /* P bit: reset event counters. */
+
+    pmcr |= (1ULL << 2); /* C bit: reset cycle counter. */
+
+    write_pmcr_el0(pmcr);
+
+    /* clear overflow flags for this event slot and the cycle counter. */
+
+    write_pmovsclr_el0((1ULL << n) | (1ULL << 31));
+
+    /* enable this event slot and the cycle counter (bit 31). */
+
+    write_pmcntenset_el0((1ULL << n) | (1ULL << 31));
+}
+
+static void pmu_stop_counter(u32 n, u64 *evt, u64 *cyc) {
+    select_evt_counter(n);
+
+    *evt = read_pmxevcntr_el0();
+
+    *cyc = read_pmccntr_el0();
+    
+    write_pmcntenclr_el0((1ULL << n) | (1ULL << 31));
+}
 
 static int __init cache_miss_init(void) {
     pr_info("Module init\n");
 
+    /* diagnostic snapshot before programming */
     {
-        u64 v = read_pmcr_el0();
-        pr_info("read_pmcr_el0: %llu\n", (unsigned long long)v);
-        print_binary(v);
+        u64 v_pmcr = read_pmcr_el0();
+        u64 v_pmcnt = read_pmcntenset_el0();
+        select_evt_counter(0);
+        u64 v_pmxev = read_pmxevtyper_el0();
+        u64 v_evt = read_pmxevcntr_el0();
+        u64 v_cyc = read_pmccntr_el0();
+
+        pr_info("before: PMCR=%llu PMCNTENSET=0x%llx PMXEVTYPER=0x%llx evt=%llu cyc=%llu\n",
+                (unsigned long long)v_pmcr,
+                (unsigned long long)v_pmcnt,
+                (unsigned long long)v_pmxev,
+                (unsigned long long)v_evt,
+                (unsigned long long)v_cyc);
     }
 
-    pr_info("write_pmcr_el0(0b1)\n");
-    write_pmcr_el0(0b1);
+    /* start counting L1 data cache refill (event id 0x03) on slot 0 */
+    pmu_start_counter(0, 0x03);
+
+    /* sleep for sampling window (~5 seconds) then read and report counters */
+    msleep(5000);
+
+    /* diagnostic snapshot after sampling */
     {
-        u64 v2 = read_pmcr_el0();
-        pr_info("read_pmcr_el0: %llu\n", (unsigned long long)v2);
-        print_binary(v2);
+        u64 v_pmcr = read_pmcr_el0();
+        u64 v_pmcnt = read_pmcntenset_el0();
+        select_evt_counter(0);
+        u64 v_pmxev = read_pmxevtyper_el0();
+        u64 evt = read_pmxevcntr_el0();
+        u64 cyc = read_pmccntr_el0();
+
+        pr_info("after:  PMCR=%llu PMCNTENSET=0x%llx PMXEVTYPER=0x%llx evt=%llu cyc=%llu\n",
+                (unsigned long long)v_pmcr,
+                (unsigned long long)v_pmcnt,
+                (unsigned long long)v_pmxev,
+                (unsigned long long)evt,
+                (unsigned long long)cyc);
     }
 
     return 0;
