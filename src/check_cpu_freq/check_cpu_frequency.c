@@ -10,17 +10,16 @@
 static struct task_struct *freq_thread;
 
 static unsigned int read_freq_from_sysfs(void) {
-    // Try the standard cpufreq path first
-    // This works with legacy cpufreq drivers
-    struct file *filp = filp_open("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", O_RDONLY, 0);
-    
-    if (IS_ERR(filp)) {
-        return 0; // File doesn't exist
-    }
-    
+    struct file *filp;
     char buf[32];
     loff_t pos = 0;
     unsigned int freq = 0;
+    
+    filp = filp_open("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", O_RDONLY, 0);
+    
+    if (IS_ERR(filp)) {
+        return 0;
+    }
     
     kernel_read(filp, buf, sizeof(buf) - 1, &pos);
     buf[31] = '\0';
@@ -34,7 +33,8 @@ static unsigned int read_freq_from_sysfs(void) {
     return 0;
 }
 
-static int freq_thread_fn(void *data) {
+static int freq_thread_fn(void *data)
+{
     while (!kthread_should_stop()) {
         unsigned int frequency = read_freq_from_sysfs();
         printk(KERN_INFO "Current frequency: %u kHz\n", frequency);
@@ -43,7 +43,8 @@ static int freq_thread_fn(void *data) {
     return 0;
 }
 
-static int __init cpu_freq_init(void) {
+static int __init cpu_freq_init(void)
+{
     printk(KERN_INFO "cpu_freq: starting\n");
     freq_thread = kthread_run(freq_thread_fn, NULL, "cpu_freq_poller");
     if (IS_ERR(freq_thread)) {
@@ -53,7 +54,8 @@ static int __init cpu_freq_init(void) {
     return 0;
 }
 
-static void __exit cpu_freq_exit(void) {
+static void __exit cpu_freq_exit(void)
+{
     kthread_stop(freq_thread);
     printk(KERN_INFO "cpu_freq: stopped\n");
 }
