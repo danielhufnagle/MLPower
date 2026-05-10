@@ -17,8 +17,8 @@ Output: training_data.csv
 import pandas as pd
 import numpy as np
 
-PMU_PATH  = "pmu_data.csv"
-PMIC_PATH = "pmic_data.csv"
+PMU_PATH  = "pmu_data_combined.csv"
+PMIC_PATH = "pmic_data_combined.csv"
 OUT_PATH  = "training_data.csv"
 
 CORES  = list(range(6))
