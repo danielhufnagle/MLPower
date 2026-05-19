@@ -3,25 +3,8 @@
 #
 # Usage: sudo bash ./collect.sh
 #
-# Loads pmu_profiler kernel module, starts PMIC poller, runs benchmarks,
-# then stops everything cleanly. Produces two CSVs:
-#   pmu_data.csv   - PMU event deltas every ~16ms
-#   pmic_data.csv  - PMIC power + CPU frequency every ~10ms
+# Loads pmu_profiler kernel module, starts PMIC poller, runs benchmarks
 #
-# If a previous run exists, it is backed up to pmu_data_run<N>.csv before
-# being overwritten, so all runs are preserved for combined training.
-#
-# Workload coverage (10 benchmarks):
-#   1.  Compute-bound        — all cores pegged, high IPC, low stall
-#   2.  Memory bandwidth     — STREAM benchmark, saturates DRAM bus
-#   3.  Memory bandwidth     — numpy 4096x4096 matmul (too large for cache)
-#   4.  Memory latency       — random array access, pointer-chase pattern
-#   5.  Branch-heavy         — hammers branch predictor
-#   6.  Frontend-bound       — instruction cache pressure
-#   7.  Bursty               — alternating 3s load / 3s idle x10
-#   8.  Asymmetric           — one core hot, five idle
-#   9.  VM pressure          — page faults + TLB thrash
-#  10.  Mixed real-world     — compile kernel module
 
 set -e
 

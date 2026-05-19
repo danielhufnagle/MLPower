@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 """
-preprocess.py - Join PMU + PMIC data and engineer features for ML training.
+preprocess.py - Join PMU + PMIC data for ML training.
 
-Model inputs (87 total):
-  - Current frequency:         freq_khz_p0, freq_khz_p4            =  2
-  - Raw PMU deltas per core:   6 events + cycles x 6 cores         = 42
-  - Derived ratios per core:   6 ratios x 6 cores                  = 36
-  - PMIC via tegrastats daemon: util, emc, ram, temp, power         =  7
-
-Targets:
-  - label_freq_khz_p0, label_freq_khz_p4  (next-step governor decision)
+Extracted info:
+  - Current frequency:         freq_khz_p0, freq_khz_p4         
+  - Raw PMU deltas per core:   6 events + cycles x 6 coree
+  - PMIC via tegrastats: util, emc, ram, temp, power     
 
 Output: training_data.csv
 """
@@ -24,8 +20,6 @@ OUT_PATH  = "training_data.csv"
 CORES  = list(range(6))
 EVENTS = ["inst_retired", "stall_backend", "stall_frontend",
           "ll_cache_miss_rd", "br_mis_pred", "dtlb_walk"]
-
-# ── Load ──────────────────────────────────────────────────────────────────────
 
 pmu  = pd.read_csv(PMU_PATH)
 pmic = pd.read_csv(PMIC_PATH)
@@ -42,14 +36,14 @@ merged = pd.merge_asof(pmu, pmic, on="timestamp_ns", direction="nearest")
 
 print(f"After join:  {len(merged):,} rows")
 
-# ── Drop zero-cycle rows (core in deep WFI, PMU not counting) ─────────────────
+# ── Drop zero-cycle rows ─────────────────
 
 cycle_cols = [f"cycles_c{c}" for c in CORES]
 zero_mask  = (merged[cycle_cols] == 0).any(axis=1)
 merged     = merged[~zero_mask].reset_index(drop=True)
 print(f"After dropping zero-cycle rows: {len(merged):,} rows")
 
-# ── Per-core derived ratios (clean floats) ────────────────────────────────────
+# ── Per-core derived ratios ────────────────────────────────────
 
 for c in CORES:
     cyc  = merged[f"cycles_c{c}"].clip(lower=1).astype(float)
@@ -76,10 +70,8 @@ for c in CORES:
     merged[f"br_misrate_c{c}"]     = merged[f"br_misrate_c{c}"].clip(0, 1.0)
     merged[f"dtlb_rate_c{c}"]      = merged[f"dtlb_rate_c{c}"].clip(0, 1.0)
 
-# ── Snap targets to nearest valid DVFS step ───────────────────────────────────
-# cpufreq_get() returns transient values during frequency transitions.
-# Hardcode the actual DVFS table from the Jetson Orin Nano cpufreq driver
-# rather than inferring from data — avoids including transition artifacts.
+# ── Snap freq to nearest valid DVFS step ───────────────────────────────────
+# Sometimes transient is captured
 
 valid_freqs_p0 = [
      115200,  192000,  268800,  345600,  422400,  499200,
@@ -106,7 +98,7 @@ merged["label_freq_khz_p0"] = merged["label_freq_khz_p0"].apply(
 merged["label_freq_khz_p4"] = merged["label_freq_khz_p4"].apply(
     lambda x: snap_to_nearest(x, valid_freqs_p4))
 
-# ── Column layout ─────────────────────────────────────────────────────────────
+# ── Save data ─────────────────────────────────────────────────────────────
 
 meta         = ["timestamp_ns"]
 cur_freq     = ["freq_khz_p0", "freq_khz_p4"]
@@ -121,8 +113,6 @@ targets      = ["label_freq_khz_p0", "label_freq_khz_p4"]
 
 all_cols = meta + cur_freq + raw_pmu + ratios + pmic_inputs + targets
 merged   = merged[all_cols].dropna().reset_index(drop=True)
-
-# ── Save ──────────────────────────────────────────────────────────────────────
 
 merged.to_csv(OUT_PATH, index=False)
 

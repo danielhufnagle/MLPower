@@ -6,12 +6,6 @@ Writes pmic_data.csv with columns:
     timestamp_ns, freq_khz, cpu_util_avg_pct, emc_util_pct,
     cpu_temp_c, tj_temp_c, cpu_gpu_cv_power_mw, vdd_in_power_mw
 
-tegrastats is launched once and read line-by-line — no subprocess
-spawning overhead per sample. Provides richer signal than raw INA3221
-sysfs reads: per-core CPU utilization, EMC memory bandwidth utilization,
-all thermal zones, and direct power readings in mW.
-
-Stop with kill -2 <pid> or Ctrl+C.
 """
 
 import time
@@ -60,7 +54,7 @@ def parse_tegrastats(line):
     if m:
         result['tj_temp_c'] = float(m.group(1))
 
-    # VDD_CPU_GPU_CV 2641mW/avg — first value is current reading
+    # VDD_CPU_GPU_CV 2641mW/avg 
     m = re.search(r'VDD_CPU_GPU_CV (\d+)mW', line)
     if m:
         result['cpu_gpu_cv_power_mw'] = int(m.group(1))
@@ -77,7 +71,6 @@ def main():
     signal.signal(signal.SIGTERM, handle_signal)
 
     print(f"collect_pmic: writing to {OUTPUT_PATH}")
-    print("collect_pmic: stop with Ctrl+C or kill -2 <pid>")
 
     proc = subprocess.Popen(
         ['tegrastats', '--interval', '10'],
