@@ -9,6 +9,7 @@
 
 #include <linux/fs.h>
 #include <linux/uaccess.h>
+#include <linux/device.h>
 
 #include "pmic_driver.h"
 
@@ -274,19 +275,51 @@ struct i2c_driver pmic_register_struct = {
 
 
 /* module init */
-static int __init pmic_init(void)
-{
+static const char* name = "pmic_driver_novel";
+static struct class *pmic_class = NULL;
+static struct device* created_dev = NULL; 
+static int __init pmic_init(void) {
     int ret;
 
     /* without device tree: need i2c_get_adapter() and i2c_new_device() */
 
     ret = i2c_add_driver(&pmic_register_struct);
     if (ret != 0) {
-        pr_err("Failed to register I2C driver: %d\n", ret);
+        // pr_err("Failed to register I2C driver: %d\n", ret);
         return ret;
     }
 
     pr_info("I2C driver registered successfully\n");
+
+
+    /* registering this driver as a character device */
+    unsigned int major_num = register_chrdev(0, name, &file_ops);
+
+    
+
+    if (major_num <= 0) {
+        pr_err("Failed to register character device\n");
+        return -EFAULT;
+    }
+
+
+    /* create a new class that will be in the dev (similiar how there is ttyl or serial )*/
+    pmic_class = class_create(THIS_MODULE, name);
+    if (IS_ERR(pmic_class)) {
+        pr_err("Failed to create device class\n");
+        unregister_chrdev(major_num, name);
+        return PTR_ERR(pmic_class); 
+    }
+
+
+    created_dev = device_create( pmic_class, NULL, MKDEV(major_num, 0), NULL, name);
+
+
+    if (IS_ERR(created_dev)) {
+        pr_err("Failed to create device class\n");
+        unregister_chrdev(major_num, name);
+        return PTR_ERR(created_dev); 
+    }
     return 0;
 }
 
@@ -526,6 +559,21 @@ static void __exit pmic_exit(void)
     } else {
         pr_err("Failed to restore original config register\n");
     }
+
+
+    if (created_dev) {
+        device_destroy(pmic_class, MKDEV(major_num, 0));
+    }
+
+    if (pmic_class) {
+        class_destroy(pmic_class);
+    }
+
+    if (major_num > 0) {
+        unregister_chrdev(major_num, name);
+    }
+
+
 
     i2c_del_driver(&pmic_register_struct);
 }
