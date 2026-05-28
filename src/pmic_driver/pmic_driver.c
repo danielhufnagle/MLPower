@@ -189,6 +189,7 @@ static int __init pmic_init(void)
 
 int read_register_16(u8 reg_addr, u16 *reg_data)
 {
+    struct i2c_msg i2c_msg_read_reg[2];
     u8 read_buf[2];
 
     if (reg_data == NULL) {
@@ -196,42 +197,6 @@ int read_register_16(u8 reg_addr, u16 *reg_data)
         return -2; /* invalid argument */
     }
 
-    struct i2c_msg i2c_msg_read_reg[] = {
-        
-        {
-            .addr = pmic_ctx.client->addr,
-            .flags = (u16)0, //write
-            .len = sizeof(reg_addr),
-            .buf = &reg_addr
-
-        },
-
-        {
-            .addr = pmic_ctx.client->addr,
-            .flags = I2C_M_RD,
-            .len = sizeof(read_buf),
-            .buf = read_buf,
-        }
-
-    };
-
-    /* int i2c_transfer(struct i2c_adapter *adap, struct i2c_msg *msgs, int num); */
-    if (i2c_transfer(pmic_ctx.client->adapter, i2c_msg_read_reg, 2U) != 2) {
-        pr_err("i2c transfer error\n");
-        return -1;
-    }
-
-    /* Rebuild the 16-bit value. */
-    *reg_data = (read_buf[0] << 8U) | read_buf[1];
-
-    struct i2c_msg i2c_msg_read_reg[2];
-    return 0;
-
-}
-
-/*
- * Write a 16-bit register to INA3221
- * Returns: 0 on success, negative on error
     i2c_msg_read_reg[0].addr = pmic_ctx.client->addr;
     i2c_msg_read_reg[0].flags = (u16)0; /* write */
     i2c_msg_read_reg[0].len = sizeof(reg_addr);
@@ -241,6 +206,38 @@ int read_register_16(u8 reg_addr, u16 *reg_data)
     i2c_msg_read_reg[1].flags = I2C_M_RD;
     i2c_msg_read_reg[1].len = sizeof(read_buf);
     i2c_msg_read_reg[1].buf = read_buf;
+
+    /* int i2c_transfer(struct i2c_adapter *adap, struct i2c_msg *msgs, int num); */
+    if (i2c_transfer(pmic_ctx.client->adapter, i2c_msg_read_reg, 2U) != 2) {
+        pr_err("i2c transfer error\n");
+        return -1;
+    }
+
+    /* Rebuild the 16-bit value. */
+    *reg_data = (read_buf[0] << 8U) | read_buf[1];
+    return 0;
+
+}
+
+/*
+ * Write a 16-bit register to INA3221
+ * Returns: 0 on success, negative on error
+ */
+int write_register_16(u8 reg_addr, u16 reg_data)
+{
+    struct i2c_msg i2c_msg_write_reg;
+    u8 write_buf[3];
+
+    write_buf[0] = reg_addr;
+    write_buf[1] = (u8)(reg_data >> 8U);   /* MSB first */
+    write_buf[2] = (u8)(reg_data & 0xFFU); /* LSB */
+
+    i2c_msg_write_reg.addr = pmic_ctx.client->addr;
+    i2c_msg_write_reg.flags = (u16)0; /* write */
+    i2c_msg_write_reg.len = sizeof(write_buf);
+    i2c_msg_write_reg.buf = write_buf;
+
+    if (i2c_transfer(pmic_ctx.client->adapter, &i2c_msg_write_reg, 1U) != 1) {
         pr_err("i2c write transfer error\n");
         return -1;
     }
