@@ -278,6 +278,7 @@ struct i2c_driver pmic_register_struct = {
 static const char* name = "pmic_driver_novel";
 static struct class *pmic_class = NULL;
 static struct device* created_dev = NULL; 
+unsigned int major_num;
 static int __init pmic_init(void) {
     int ret;
 
@@ -293,7 +294,7 @@ static int __init pmic_init(void) {
 
 
     /* registering this driver as a character device */
-    unsigned int major_num = register_chrdev(0, name, &file_ops);
+    major_num = register_chrdev(0, name, &file_ops);
 
     
 

@@ -1,0 +1,97 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+loaded:  1,400,237 PMU rows  1,139,485 PMIC rows  690 segments
+  dropped 713 rows with PMU counter overflow (IPC > 6.0)
+cleaned: 1,399,524 PMU rows  1,139,485 PMIC rows
+
+-- clock alignment --
+
+-- segment filtering --
+inside segments: 1,068,239 rows  (phase1=773,340  phase2=294,899)
+
+-- ratio features --
+
+-- PMU-PMIC join --
+joined: 1,068,239 rows
+
+-- energy computation --
+  mean window Δt: 17.10 ms  std: 1.97 ms
+phase1=773,340  phase2=294,899
+
+-- scaling --
+
+-- K selection --
+  K=35 (pinned)
+
+-- K-means --
+K-means K=35 on 773,340 Phase 1 rows...
+  inertia=6348416.0
+F*(cluster) — efficiency-optimal frequency per regime:
+  cluster  0:  1344000 kHz  n=27,536  eff=     375.8  ipc=0.588  top=cpu_load_25
+  cluster  1:  1651200 kHz  n=34,290  eff=    2421.4  ipc=1.926  top=cpu_all
+  cluster  2:  1728000 kHz  n=11,893  eff=     231.8  ipc=0.541  top=branch
+  cluster  3:   499200 kHz  n=45,839  eff=     632.0  ipc=1.213  top=stream
+  cluster  4:  1651200 kHz  n=13,254  eff=     611.7  ipc=0.935  top=mem_latency_large
+  cluster  5:  1344000 kHz  n=14,200  eff=    1624.2  ipc=1.820  top=vm_pressure
+  cluster  6:  1420800 kHz  n=2,685  eff=    1249.2  ipc=1.441  top=vm_pressure
+  cluster  7:  1344000 kHz  n=1,836  eff=    1387.8  ipc=1.603  top=matmul
+  cluster  8:   576000 kHz  n=22,104  eff=     528.9  ipc=0.494  top=icache
+  cluster  9:  1651200 kHz  n=36,715  eff=     620.8  ipc=0.682  top=idle
+  cluster 10:  1574400 kHz  n=35,110  eff=    2527.8  ipc=2.269  top=cpu_all
+  cluster 11:  1651200 kHz  n=1,846  eff=    1552.3  ipc=1.728  top=matmul
+  cluster 12:  1651200 kHz  n=  946  eff=    1710.4  ipc=1.943  top=matmul
+  cluster 13:  1497600 kHz  n=15,013  eff=     227.0  ipc=0.597  top=branch
+  cluster 14:  1651200 kHz  n=3,400  eff=    1425.0  ipc=0.961  top=mem_latency_large
+  cluster 15:  1728000 kHz  n=8,560  eff=     212.9  ipc=0.546  top=branch
+  cluster 16:  1651200 kHz  n=53,168  eff=    2525.2  ipc=2.254  top=cpu_load_75
+  cluster 17:  1497600 kHz  n=10,662  eff=     490.0  ipc=0.613  top=icache
+  cluster 18:  1728000 kHz  n=1,345  eff=    1558.4  ipc=1.788  top=matmul
+  cluster 19:  1651200 kHz  n=1,662  eff=    1577.7  ipc=1.638  top=matmul
+  cluster 20:  1574400 kHz  n=85,365  eff=    1862.6  ipc=2.673  top=ml_inference
+  cluster 21:  1497600 kHz  n=38,755  eff=     116.6  ipc=0.619  top=malloc
+  cluster 22:  1190400 kHz  n=40,057  eff=     239.1  ipc=0.750  top=mem_latency_large
+  cluster 23:  1728000 kHz  n=12,588  eff=     543.8  ipc=0.557  top=icache
+  cluster 24:  1190400 kHz  n=40,263  eff=    1266.4  ipc=1.287  top=cpu_one
+  cluster 25:  1420800 kHz  n=49,858  eff=     419.2  ipc=0.745  top=idle
+  cluster 26:  1651200 kHz  n=3,914  eff=     228.5  ipc=0.606  top=branch
+  cluster 27:  1420800 kHz  n=4,121  eff=     887.6  ipc=0.950  top=mem_latency_large
+  cluster 28:  1574400 kHz  n=74,023  eff=     361.0  ipc=0.676  top=cpu_load_25
+  cluster 29:  1344000 kHz  n=31,938  eff=     409.0  ipc=0.908  top=mem_latency_large
+  cluster 30:  1036800 kHz  n=2,742  eff=     767.8  ipc=1.014  top=mem_latency_large
+  cluster 31:  1344000 kHz  n=2,056  eff=    1004.7  ipc=1.001  top=vm_pressure
+  cluster 32:  1651200 kHz  n=38,408  eff=    2485.5  ipc=2.261  top=cpu_all
+  cluster 33:  1574400 kHz  n=3,497  eff=     892.6  ipc=1.037  top=vm_pressure
+  cluster 34:  1574400 kHz  n=3,691  eff=    1229.6  ipc=1.116  top=vm_pressure
+
+-- labeling --
+  idle override: 104,333 rows (cpu_util < 5%) → 115,200 kHz
+label distribution:
+    115200 kHz  104,333  (9.8%)
+    499200 kHz   76,880  (7.2%)
+    576000 kHz   22,316  (2.1%)
+   1036800 kHz    3,457  (0.3%)
+   1190400 kHz   93,227  (8.7%)
+   1344000 kHz   85,401  (8.0%)
+   1420800 kHz   62,923  (5.9%)
+   1497600 kHz   69,871  (6.5%)
+   1574400 kHz  242,835  (22.7%)
+   1651200 kHz  247,961  (23.2%)
+   1728000 kHz   59,035  (5.5%)
+
+-- saving --
+training_data.csv: 1,068,239 rows × 87 features + label
+feature_cols.txt:  87 column names saved
+
+-- class distribution --
+  class  0    115200 kHz  104,333  (9.8%)
+  class  5    499200 kHz  76,880  (7.2%)
+  class  6    576000 kHz  22,316  (2.1%)
+  class 12   1036800 kHz   3,457  (0.3%)
+  class 14   1190400 kHz  93,227  (8.7%)
+  class 16   1344000 kHz  85,401  (8.0%)
+  class 17   1420800 kHz  62,923  (5.9%)
+  class 18   1497600 kHz  69,871  (6.5%)
+  class 19   1574400 kHz  242,835  (22.7%)
+  class 20   1651200 kHz  247,961  (23.2%)
+  class 21   1728000 kHz  59,035  (5.5%)
+  imbalance ratio: 72x

@@ -1,0 +1,1544 @@
+[collect] loading pmu_profiler
+[1514436.276519]   slot[3] = 0x37
+[1514436.276520]   slot[4] = 0x10
+[1514436.276521]   slot[5] = 0x34
+[collect] starting INA3221 watchdog
+[collect] starting PMIC poller
+collect_pmic: writing to /home/mlpower/MLPower/src/data_collection/pmic_data.csv
+[collect] PMIC smoke test passed — 50 rows in first 2s
+[collect] === PHASE 1: frequency sweep — 19 benchmarks × 22 freqs = 418 segments ===
+[collect] sweep 1/418: cpu_all @ 115200 kHz
+[collect]   [1] bench=cpu_all freq=115200kHz gov=userspace
+collect_pmic: 1402 rows written, 0 skipped
+[collect] sweep 2/418: cpu_all @ 192000 kHz
+[collect]   [2] bench=cpu_all freq=192000kHz gov=userspace
+[collect] sweep 3/418: cpu_all @ 268800 kHz
+collect_pmic: 2819 rows written, 0 skipped
+[collect]   [3] bench=cpu_all freq=268800kHz gov=userspace
+[collect] sweep 4/418: cpu_all @ 345600 kHz
+[collect]   [4] bench=cpu_all freq=345600kHz gov=userspace
+collect_pmic: 4270 rows written, 0 skipped
+[collect] sweep 5/418: cpu_all @ 422400 kHz
+[collect]   [5] bench=cpu_all freq=422400kHz gov=userspace
+collect_pmic: 5689 rows written, 0 skipped
+[collect] sweep 6/418: cpu_all @ 499200 kHz
+[collect]   [6] bench=cpu_all freq=499200kHz gov=userspace
+collect_pmic: 7134 rows written, 0 skipped
+[collect] sweep 7/418: cpu_all @ 576000 kHz
+[collect]   [7] bench=cpu_all freq=576000kHz gov=userspace
+collect_pmic: 8585 rows written, 0 skipped
+[collect] sweep 8/418: cpu_all @ 652800 kHz
+[collect]   [8] bench=cpu_all freq=652800kHz gov=userspace
+collect_pmic: 10034 rows written, 0 skipped
+[collect] sweep 9/418: cpu_all @ 729600 kHz
+[collect]   [9] bench=cpu_all freq=729600kHz gov=userspace
+collect_pmic: 11486 rows written, 0 skipped
+[collect] sweep 10/418: cpu_all @ 806400 kHz
+[collect]   [10] bench=cpu_all freq=806400kHz gov=userspace
+collect_pmic: 12943 rows written, 0 skipped
+[collect] sweep 11/418: cpu_all @ 883200 kHz
+[collect]   [11] bench=cpu_all freq=883200kHz gov=userspace
+collect_pmic: 14416 rows written, 0 skipped
+[collect] sweep 12/418: cpu_all @ 960000 kHz
+[collect]   [12] bench=cpu_all freq=960000kHz gov=userspace
+collect_pmic: 15898 rows written, 0 skipped
+[collect] sweep 13/418: cpu_all @ 1036800 kHz
+[collect]   [13] bench=cpu_all freq=1036800kHz gov=userspace
+collect_pmic: 17386 rows written, 0 skipped
+[collect] sweep 14/418: cpu_all @ 1113600 kHz
+[collect]   [14] bench=cpu_all freq=1113600kHz gov=userspace
+collect_pmic: 18888 rows written, 0 skipped
+[collect] sweep 15/418: cpu_all @ 1190400 kHz
+[collect]   [15] bench=cpu_all freq=1190400kHz gov=userspace
+collect_pmic: 20387 rows written, 0 skipped
+[collect] sweep 16/418: cpu_all @ 1267200 kHz
+[collect]   [16] bench=cpu_all freq=1267200kHz gov=userspace
+collect_pmic: 21902 rows written, 0 skipped
+[collect] sweep 17/418: cpu_all @ 1344000 kHz
+[collect]   [17] bench=cpu_all freq=1344000kHz gov=userspace
+collect_pmic: 23424 rows written, 0 skipped
+[collect] sweep 18/418: cpu_all @ 1420800 kHz
+[collect]   [18] bench=cpu_all freq=1420800kHz gov=userspace
+[collect] sweep 19/418: cpu_all @ 1497600 kHz
+collect_pmic: 24952 rows written, 0 skipped
+[collect]   [19] bench=cpu_all freq=1497600kHz gov=userspace
+[collect] sweep 20/418: cpu_all @ 1574400 kHz
+[collect]   [20] bench=cpu_all freq=1574400kHz gov=userspace
+collect_pmic: 26483 rows written, 0 skipped
+[collect] sweep 21/418: cpu_all @ 1651200 kHz
+[collect]   [21] bench=cpu_all freq=1651200kHz gov=userspace
+collect_pmic: 28019 rows written, 0 skipped
+[collect] sweep 22/418: cpu_all @ 1728000 kHz
+[collect]   [22] bench=cpu_all freq=1728000kHz gov=userspace
+collect_pmic: 29556 rows written, 0 skipped
+[collect] sweep 23/418: cpu_one @ 115200 kHz
+[collect]   [23] bench=cpu_one freq=115200kHz gov=userspace
+collect_pmic: 31074 rows written, 0 skipped
+[collect] sweep 24/418: cpu_one @ 192000 kHz
+[collect]   [24] bench=cpu_one freq=192000kHz gov=userspace
+collect_pmic: 32534 rows written, 0 skipped
+[collect] sweep 25/418: cpu_one @ 268800 kHz
+[collect]   [25] bench=cpu_one freq=268800kHz gov=userspace
+collect_pmic: 33994 rows written, 0 skipped
+[collect] sweep 26/418: cpu_one @ 345600 kHz
+[collect]   [26] bench=cpu_one freq=345600kHz gov=userspace
+collect_pmic: 35454 rows written, 0 skipped
+[collect] sweep 27/418: cpu_one @ 422400 kHz
+[collect]   [27] bench=cpu_one freq=422400kHz gov=userspace
+collect_pmic: 36912 rows written, 0 skipped
+[collect] sweep 28/418: cpu_one @ 499200 kHz
+[collect]   [28] bench=cpu_one freq=499200kHz gov=userspace
+collect_pmic: 38366 rows written, 0 skipped
+[collect] sweep 29/418: cpu_one @ 576000 kHz
+[collect]   [29] bench=cpu_one freq=576000kHz gov=userspace
+collect_pmic: 39824 rows written, 0 skipped
+[collect] sweep 30/418: cpu_one @ 652800 kHz
+[collect]   [30] bench=cpu_one freq=652800kHz gov=userspace
+collect_pmic: 41285 rows written, 0 skipped
+[collect] sweep 31/418: cpu_one @ 729600 kHz
+[collect]   [31] bench=cpu_one freq=729600kHz gov=userspace
+collect_pmic: 42745 rows written, 0 skipped
+[collect] sweep 32/418: cpu_one @ 806400 kHz
+[collect]   [32] bench=cpu_one freq=806400kHz gov=userspace
+collect_pmic: 44220 rows written, 0 skipped
+[collect] sweep 33/418: cpu_one @ 883200 kHz
+[collect]   [33] bench=cpu_one freq=883200kHz gov=userspace
+[collect] sweep 34/418: cpu_one @ 960000 kHz
+collect_pmic: 45705 rows written, 0 skipped
+[collect]   [34] bench=cpu_one freq=960000kHz gov=userspace
+[collect] sweep 35/418: cpu_one @ 1036800 kHz
+[collect]   [35] bench=cpu_one freq=1036800kHz gov=userspace
+collect_pmic: 47200 rows written, 0 skipped
+[collect] sweep 36/418: cpu_one @ 1113600 kHz
+[collect]   [36] bench=cpu_one freq=1113600kHz gov=userspace
+collect_pmic: 48698 rows written, 0 skipped
+[collect] sweep 37/418: cpu_one @ 1190400 kHz
+[collect]   [37] bench=cpu_one freq=1190400kHz gov=userspace
+collect_pmic: 50210 rows written, 0 skipped
+[collect] sweep 38/418: cpu_one @ 1267200 kHz
+[collect]   [38] bench=cpu_one freq=1267200kHz gov=userspace
+collect_pmic: 51727 rows written, 0 skipped
+[collect] sweep 39/418: cpu_one @ 1344000 kHz
+[collect]   [39] bench=cpu_one freq=1344000kHz gov=userspace
+collect_pmic: 53251 rows written, 0 skipped
+[collect] sweep 40/418: cpu_one @ 1420800 kHz
+[collect]   [40] bench=cpu_one freq=1420800kHz gov=userspace
+collect_pmic: 54775 rows written, 0 skipped
+[collect] sweep 41/418: cpu_one @ 1497600 kHz
+[collect]   [41] bench=cpu_one freq=1497600kHz gov=userspace
+collect_pmic: 56309 rows written, 0 skipped
+[collect] sweep 42/418: cpu_one @ 1574400 kHz
+[collect]   [42] bench=cpu_one freq=1574400kHz gov=userspace
+collect_pmic: 57847 rows written, 0 skipped
+[collect] sweep 43/418: cpu_one @ 1651200 kHz
+[collect]   [43] bench=cpu_one freq=1651200kHz gov=userspace
+collect_pmic: 59390 rows written, 0 skipped
+[collect] sweep 44/418: cpu_one @ 1728000 kHz
+[collect]   [44] bench=cpu_one freq=1728000kHz gov=userspace
+collect_pmic: 60933 rows written, 0 skipped
+[collect] sweep 45/418: cpu_load_25 @ 115200 kHz
+[collect]   [45] bench=cpu_load_25 freq=115200kHz gov=userspace
+collect_pmic: 62418 rows written, 0 skipped
+[collect] sweep 46/418: cpu_load_25 @ 192000 kHz
+[collect]   [46] bench=cpu_load_25 freq=192000kHz gov=userspace
+collect_pmic: 63877 rows written, 0 skipped
+[collect] sweep 47/418: cpu_load_25 @ 268800 kHz
+[collect]   [47] bench=cpu_load_25 freq=268800kHz gov=userspace
+collect_pmic: 65337 rows written, 0 skipped
+[collect] sweep 48/418: cpu_load_25 @ 345600 kHz
+[collect]   [48] bench=cpu_load_25 freq=345600kHz gov=userspace
+collect_pmic: 66797 rows written, 0 skipped
+[collect] sweep 49/418: cpu_load_25 @ 422400 kHz
+[collect]   [49] bench=cpu_load_25 freq=422400kHz gov=userspace
+[collect] sweep 50/418: cpu_load_25 @ 499200 kHz
+collect_pmic: 68257 rows written, 0 skipped
+[collect]   [50] bench=cpu_load_25 freq=499200kHz gov=userspace
+[collect] sweep 51/418: cpu_load_25 @ 576000 kHz
+[collect]   [51] bench=cpu_load_25 freq=576000kHz gov=userspace
+collect_pmic: 69718 rows written, 0 skipped
+[collect] sweep 52/418: cpu_load_25 @ 652800 kHz
+[collect]   [52] bench=cpu_load_25 freq=652800kHz gov=userspace
+collect_pmic: 71177 rows written, 0 skipped
+[collect] sweep 53/418: cpu_load_25 @ 729600 kHz
+[collect]   [53] bench=cpu_load_25 freq=729600kHz gov=userspace
+collect_pmic: 72636 rows written, 0 skipped
+[collect] sweep 54/418: cpu_load_25 @ 806400 kHz
+[collect]   [54] bench=cpu_load_25 freq=806400kHz gov=userspace
+collect_pmic: 74100 rows written, 0 skipped
+[collect] sweep 55/418: cpu_load_25 @ 883200 kHz
+[collect]   [55] bench=cpu_load_25 freq=883200kHz gov=userspace
+collect_pmic: 75579 rows written, 0 skipped
+[collect] sweep 56/418: cpu_load_25 @ 960000 kHz
+[collect]   [56] bench=cpu_load_25 freq=960000kHz gov=userspace
+collect_pmic: 77068 rows written, 0 skipped
+[collect] sweep 57/418: cpu_load_25 @ 1036800 kHz
+[collect]   [57] bench=cpu_load_25 freq=1036800kHz gov=userspace
+collect_pmic: 78565 rows written, 0 skipped
+[collect] sweep 58/418: cpu_load_25 @ 1113600 kHz
+[collect]   [58] bench=cpu_load_25 freq=1113600kHz gov=userspace
+collect_pmic: 80071 rows written, 0 skipped
+[collect] sweep 59/418: cpu_load_25 @ 1190400 kHz
+[collect]   [59] bench=cpu_load_25 freq=1190400kHz gov=userspace
+collect_pmic: 81583 rows written, 0 skipped
+[collect] sweep 60/418: cpu_load_25 @ 1267200 kHz
+[collect]   [60] bench=cpu_load_25 freq=1267200kHz gov=userspace
+collect_pmic: 83102 rows written, 0 skipped
+[collect] sweep 61/418: cpu_load_25 @ 1344000 kHz
+[collect]   [61] bench=cpu_load_25 freq=1344000kHz gov=userspace
+collect_pmic: 84627 rows written, 0 skipped
+[collect] sweep 62/418: cpu_load_25 @ 1420800 kHz
+[collect]   [62] bench=cpu_load_25 freq=1420800kHz gov=userspace
+collect_pmic: 86156 rows written, 0 skipped
+[collect] sweep 63/418: cpu_load_25 @ 1497600 kHz
+[collect]   [63] bench=cpu_load_25 freq=1497600kHz gov=userspace
+collect_pmic: 87690 rows written, 0 skipped
+[collect] sweep 64/418: cpu_load_25 @ 1574400 kHz
+[collect]   [64] bench=cpu_load_25 freq=1574400kHz gov=userspace
+collect_pmic: 89230 rows written, 0 skipped
+[collect] sweep 65/418: cpu_load_25 @ 1651200 kHz
+[collect]   [65] bench=cpu_load_25 freq=1651200kHz gov=userspace
+collect_pmic: 90775 rows written, 0 skipped
+[collect] sweep 66/418: cpu_load_25 @ 1728000 kHz
+[collect]   [66] bench=cpu_load_25 freq=1728000kHz gov=userspace
+[collect] sweep 67/418: cpu_load_50 @ 115200 kHz
+collect_pmic: 92319 rows written, 0 skipped
+[collect]   [67] bench=cpu_load_50 freq=115200kHz gov=userspace
+[collect] sweep 68/418: cpu_load_50 @ 192000 kHz
+[collect]   [68] bench=cpu_load_50 freq=192000kHz gov=userspace
+collect_pmic: 93777 rows written, 0 skipped
+[collect] sweep 69/418: cpu_load_50 @ 268800 kHz
+[collect]   [69] bench=cpu_load_50 freq=268800kHz gov=userspace
+collect_pmic: 95221 rows written, 0 skipped
+[collect] sweep 70/418: cpu_load_50 @ 345600 kHz
+[collect]   [70] bench=cpu_load_50 freq=345600kHz gov=userspace
+collect_pmic: 96677 rows written, 0 skipped
+[collect] sweep 71/418: cpu_load_50 @ 422400 kHz
+[collect]   [71] bench=cpu_load_50 freq=422400kHz gov=userspace
+collect_pmic: 98132 rows written, 0 skipped
+[collect] sweep 72/418: cpu_load_50 @ 499200 kHz
+[collect]   [72] bench=cpu_load_50 freq=499200kHz gov=userspace
+collect_pmic: 99591 rows written, 0 skipped
+[collect] sweep 73/418: cpu_load_50 @ 576000 kHz
+[collect]   [73] bench=cpu_load_50 freq=576000kHz gov=userspace
+collect_pmic: 101044 rows written, 0 skipped
+[collect] sweep 74/418: cpu_load_50 @ 652800 kHz
+[collect]   [74] bench=cpu_load_50 freq=652800kHz gov=userspace
+collect_pmic: 102501 rows written, 0 skipped
+[collect] sweep 75/418: cpu_load_50 @ 729600 kHz
+[collect]   [75] bench=cpu_load_50 freq=729600kHz gov=userspace
+collect_pmic: 103956 rows written, 0 skipped
+[collect] sweep 76/418: cpu_load_50 @ 806400 kHz
+[collect]   [76] bench=cpu_load_50 freq=806400kHz gov=userspace
+collect_pmic: 105420 rows written, 0 skipped
+[collect] sweep 77/418: cpu_load_50 @ 883200 kHz
+[collect]   [77] bench=cpu_load_50 freq=883200kHz gov=userspace
+collect_pmic: 106897 rows written, 0 skipped
+[collect] sweep 78/418: cpu_load_50 @ 960000 kHz
+[collect]   [78] bench=cpu_load_50 freq=960000kHz gov=userspace
+collect_pmic: 108385 rows written, 0 skipped
+[collect] sweep 79/418: cpu_load_50 @ 1036800 kHz
+[collect]   [79] bench=cpu_load_50 freq=1036800kHz gov=userspace
+collect_pmic: 109882 rows written, 0 skipped
+[collect] sweep 80/418: cpu_load_50 @ 1113600 kHz
+[collect]   [80] bench=cpu_load_50 freq=1113600kHz gov=userspace
+collect_pmic: 111385 rows written, 0 skipped
+[collect] sweep 81/418: cpu_load_50 @ 1190400 kHz
+[collect]   [81] bench=cpu_load_50 freq=1190400kHz gov=userspace
+collect_pmic: 112896 rows written, 0 skipped
+[collect] sweep 82/418: cpu_load_50 @ 1267200 kHz
+[collect]   [82] bench=cpu_load_50 freq=1267200kHz gov=userspace
+collect_pmic: 114416 rows written, 0 skipped
+[collect] sweep 83/418: cpu_load_50 @ 1344000 kHz
+[collect]   [83] bench=cpu_load_50 freq=1344000kHz gov=userspace
+collect_pmic: 115938 rows written, 0 skipped
+[collect] sweep 84/418: cpu_load_50 @ 1420800 kHz
+[collect]   [84] bench=cpu_load_50 freq=1420800kHz gov=userspace
+collect_pmic: 117469 rows written, 0 skipped
+[collect] sweep 85/418: cpu_load_50 @ 1497600 kHz
+[collect]   [85] bench=cpu_load_50 freq=1497600kHz gov=userspace
+[collect] sweep 86/418: cpu_load_50 @ 1574400 kHz
+collect_pmic: 119004 rows written, 0 skipped
+[collect]   [86] bench=cpu_load_50 freq=1574400kHz gov=userspace
+[collect] sweep 87/418: cpu_load_50 @ 1651200 kHz
+[collect]   [87] bench=cpu_load_50 freq=1651200kHz gov=userspace
+collect_pmic: 120544 rows written, 0 skipped
+[collect] sweep 88/418: cpu_load_50 @ 1728000 kHz
+[collect]   [88] bench=cpu_load_50 freq=1728000kHz gov=userspace
+collect_pmic: 122087 rows written, 0 skipped
+[collect] sweep 89/418: cpu_load_75 @ 115200 kHz
+[collect]   [89] bench=cpu_load_75 freq=115200kHz gov=userspace
+collect_pmic: 123616 rows written, 0 skipped
+[collect] sweep 90/418: cpu_load_75 @ 192000 kHz
+[collect]   [90] bench=cpu_load_75 freq=192000kHz gov=userspace
+collect_pmic: 125073 rows written, 0 skipped
+[collect] sweep 91/418: cpu_load_75 @ 268800 kHz
+[collect]   [91] bench=cpu_load_75 freq=268800kHz gov=userspace
+collect_pmic: 126529 rows written, 0 skipped
+[collect] sweep 92/418: cpu_load_75 @ 345600 kHz
+[collect]   [92] bench=cpu_load_75 freq=345600kHz gov=userspace
+collect_pmic: 127987 rows written, 0 skipped
+[collect] sweep 93/418: cpu_load_75 @ 422400 kHz
+[collect]   [93] bench=cpu_load_75 freq=422400kHz gov=userspace
+collect_pmic: 129441 rows written, 0 skipped
+[collect] sweep 94/418: cpu_load_75 @ 499200 kHz
+[collect]   [94] bench=cpu_load_75 freq=499200kHz gov=userspace
+collect_pmic: 130896 rows written, 0 skipped
+[collect] sweep 95/418: cpu_load_75 @ 576000 kHz
+[collect]   [95] bench=cpu_load_75 freq=576000kHz gov=userspace
+collect_pmic: 132354 rows written, 0 skipped
+[collect] sweep 96/418: cpu_load_75 @ 652800 kHz
+[collect]   [96] bench=cpu_load_75 freq=652800kHz gov=userspace
+collect_pmic: 133812 rows written, 0 skipped
+[collect] sweep 97/418: cpu_load_75 @ 729600 kHz
+[collect]   [97] bench=cpu_load_75 freq=729600kHz gov=userspace
+collect_pmic: 135269 rows written, 0 skipped
+[collect] sweep 98/418: cpu_load_75 @ 806400 kHz
+[collect]   [98] bench=cpu_load_75 freq=806400kHz gov=userspace
+collect_pmic: 136735 rows written, 0 skipped
+[collect] sweep 99/418: cpu_load_75 @ 883200 kHz
+[collect]   [99] bench=cpu_load_75 freq=883200kHz gov=userspace
+collect_pmic: 138212 rows written, 0 skipped
+[collect] sweep 100/418: cpu_load_75 @ 960000 kHz
+[collect]   [100] bench=cpu_load_75 freq=960000kHz gov=userspace
+collect_pmic: 139703 rows written, 0 skipped
+[collect] sweep 101/418: cpu_load_75 @ 1036800 kHz
+[collect]   [101] bench=cpu_load_75 freq=1036800kHz gov=userspace
+collect_pmic: 141201 rows written, 0 skipped
+[collect] sweep 102/418: cpu_load_75 @ 1113600 kHz
+[collect]   [102] bench=cpu_load_75 freq=1113600kHz gov=userspace
+collect_pmic: 142708 rows written, 0 skipped
+[collect] sweep 103/418: cpu_load_75 @ 1190400 kHz
+[collect]   [103] bench=cpu_load_75 freq=1190400kHz gov=userspace
+[collect] sweep 104/418: cpu_load_75 @ 1267200 kHz
+collect_pmic: 144217 rows written, 0 skipped
+[collect]   [104] bench=cpu_load_75 freq=1267200kHz gov=userspace
+[collect] sweep 105/418: cpu_load_75 @ 1344000 kHz
+[collect]   [105] bench=cpu_load_75 freq=1344000kHz gov=userspace
+collect_pmic: 145736 rows written, 0 skipped
+[collect] sweep 106/418: cpu_load_75 @ 1420800 kHz
+[collect]   [106] bench=cpu_load_75 freq=1420800kHz gov=userspace
+collect_pmic: 147257 rows written, 0 skipped
+[collect] sweep 107/418: cpu_load_75 @ 1497600 kHz
+[collect]   [107] bench=cpu_load_75 freq=1497600kHz gov=userspace
+collect_pmic: 148787 rows written, 0 skipped
+[collect] sweep 108/418: cpu_load_75 @ 1574400 kHz
+[collect]   [108] bench=cpu_load_75 freq=1574400kHz gov=userspace
+collect_pmic: 150323 rows written, 0 skipped
+[collect] sweep 109/418: cpu_load_75 @ 1651200 kHz
+[collect]   [109] bench=cpu_load_75 freq=1651200kHz gov=userspace
+collect_pmic: 151861 rows written, 0 skipped
+[collect] sweep 110/418: cpu_load_75 @ 1728000 kHz
+[collect]   [110] bench=cpu_load_75 freq=1728000kHz gov=userspace
+collect_pmic: 153402 rows written, 0 skipped
+[collect] sweep 111/418: stream @ 115200 kHz
+[collect]   [111] bench=stream freq=115200kHz gov=userspace
+collect_pmic: 154869 rows written, 0 skipped
+[collect] sweep 112/418: stream @ 192000 kHz
+[collect]   [112] bench=stream freq=192000kHz gov=userspace
+collect_pmic: 156252 rows written, 0 skipped
+[collect] sweep 113/418: stream @ 268800 kHz
+[collect]   [113] bench=stream freq=268800kHz gov=userspace
+collect_pmic: 157638 rows written, 0 skipped
+[collect] sweep 114/418: stream @ 345600 kHz
+[collect]   [114] bench=stream freq=345600kHz gov=userspace
+collect_pmic: 159018 rows written, 0 skipped
+[collect] sweep 115/418: stream @ 422400 kHz
+[collect]   [115] bench=stream freq=422400kHz gov=userspace
+collect_pmic: 160403 rows written, 0 skipped
+[collect] sweep 116/418: stream @ 499200 kHz
+[collect]   [116] bench=stream freq=499200kHz gov=userspace
+collect_pmic: 161787 rows written, 0 skipped
+[collect] sweep 117/418: stream @ 576000 kHz
+[collect]   [117] bench=stream freq=576000kHz gov=userspace
+collect_pmic: 163174 rows written, 0 skipped
+[collect] sweep 118/418: stream @ 652800 kHz
+[collect]   [118] bench=stream freq=652800kHz gov=userspace
+collect_pmic: 164558 rows written, 0 skipped
+[collect] sweep 119/418: stream @ 729600 kHz
+[collect]   [119] bench=stream freq=729600kHz gov=userspace
+[collect] sweep 120/418: stream @ 806400 kHz
+collect_pmic: 165939 rows written, 0 skipped
+[collect]   [120] bench=stream freq=806400kHz gov=userspace
+[collect] sweep 121/418: stream @ 883200 kHz
+[collect]   [121] bench=stream freq=883200kHz gov=userspace
+collect_pmic: 167335 rows written, 0 skipped
+[collect] sweep 122/418: stream @ 960000 kHz
+[collect]   [122] bench=stream freq=960000kHz gov=userspace
+collect_pmic: 168740 rows written, 0 skipped
+[collect] sweep 123/418: stream @ 1036800 kHz
+[collect]   [123] bench=stream freq=1036800kHz gov=userspace
+collect_pmic: 170135 rows written, 0 skipped
+[collect] sweep 124/418: stream @ 1113600 kHz
+[collect]   [124] bench=stream freq=1113600kHz gov=userspace
+collect_pmic: 171553 rows written, 0 skipped
+[collect] sweep 125/418: stream @ 1190400 kHz
+[collect]   [125] bench=stream freq=1190400kHz gov=userspace
+collect_pmic: 172979 rows written, 0 skipped
+[collect] sweep 126/418: stream @ 1267200 kHz
+[collect]   [126] bench=stream freq=1267200kHz gov=userspace
+collect_pmic: 174406 rows written, 0 skipped
+[collect] sweep 127/418: stream @ 1344000 kHz
+[collect]   [127] bench=stream freq=1344000kHz gov=userspace
+collect_pmic: 175841 rows written, 0 skipped
+[collect] sweep 128/418: stream @ 1420800 kHz
+[collect]   [128] bench=stream freq=1420800kHz gov=userspace
+collect_pmic: 177286 rows written, 0 skipped
+[collect] sweep 129/418: stream @ 1497600 kHz
+[collect]   [129] bench=stream freq=1497600kHz gov=userspace
+collect_pmic: 178743 rows written, 0 skipped
+[collect] sweep 130/418: stream @ 1574400 kHz
+[collect]   [130] bench=stream freq=1574400kHz gov=userspace
+collect_pmic: 180196 rows written, 0 skipped
+[collect] sweep 131/418: stream @ 1651200 kHz
+[collect]   [131] bench=stream freq=1651200kHz gov=userspace
+collect_pmic: 181669 rows written, 0 skipped
+[collect] sweep 132/418: stream @ 1728000 kHz
+[collect]   [132] bench=stream freq=1728000kHz gov=userspace
+collect_pmic: 183131 rows written, 0 skipped
+[collect] sweep 133/418: matmul @ 115200 kHz
+[collect]   [133] bench=matmul freq=115200kHz gov=userspace
+collect_pmic: 184529 rows written, 0 skipped
+[collect] sweep 134/418: matmul @ 192000 kHz
+[collect]   [134] bench=matmul freq=192000kHz gov=userspace
+collect_pmic: 185918 rows written, 0 skipped
+[collect] sweep 135/418: matmul @ 268800 kHz
+[collect]   [135] bench=matmul freq=268800kHz gov=userspace
+collect_pmic: 187314 rows written, 0 skipped
+[collect] sweep 136/418: matmul @ 345600 kHz
+[collect]   [136] bench=matmul freq=345600kHz gov=userspace
+collect_pmic: 188707 rows written, 0 skipped
+[collect] sweep 137/418: matmul @ 422400 kHz
+[collect]   [137] bench=matmul freq=422400kHz gov=userspace
+collect_pmic: 190098 rows written, 0 skipped
+[collect] sweep 138/418: matmul @ 499200 kHz
+[collect]   [138] bench=matmul freq=499200kHz gov=userspace
+collect_pmic: 191491 rows written, 0 skipped
+[collect] sweep 139/418: matmul @ 576000 kHz
+[collect]   [139] bench=matmul freq=576000kHz gov=userspace
+collect_pmic: 192885 rows written, 0 skipped
+[collect] sweep 140/418: matmul @ 652800 kHz
+[collect]   [140] bench=matmul freq=652800kHz gov=userspace
+collect_pmic: 194277 rows written, 0 skipped
+[collect] sweep 141/418: matmul @ 729600 kHz
+[collect]   [141] bench=matmul freq=729600kHz gov=userspace
+collect_pmic: 195673 rows written, 0 skipped
+[collect] sweep 142/418: matmul @ 806400 kHz
+[collect]   [142] bench=matmul freq=806400kHz gov=userspace
+collect_pmic: 197074 rows written, 0 skipped
+[collect] sweep 143/418: matmul @ 883200 kHz
+[collect]   [143] bench=matmul freq=883200kHz gov=userspace
+collect_pmic: 198486 rows written, 0 skipped
+[collect] sweep 144/418: matmul @ 960000 kHz
+[collect]   [144] bench=matmul freq=960000kHz gov=userspace
+collect_pmic: 199908 rows written, 0 skipped
+[collect] sweep 145/418: matmul @ 1036800 kHz
+[collect]   [145] bench=matmul freq=1036800kHz gov=userspace
+collect_pmic: 201337 rows written, 0 skipped
+[collect] sweep 146/418: matmul @ 1113600 kHz
+[collect]   [146] bench=matmul freq=1113600kHz gov=userspace
+collect_pmic: 202775 rows written, 0 skipped
+[collect] sweep 147/418: matmul @ 1190400 kHz
+[collect]   [147] bench=matmul freq=1190400kHz gov=userspace
+collect_pmic: 204216 rows written, 0 skipped
+[collect] sweep 148/418: matmul @ 1267200 kHz
+[collect]   [148] bench=matmul freq=1267200kHz gov=userspace
+collect_pmic: 205669 rows written, 0 skipped
+[collect] sweep 149/418: matmul @ 1344000 kHz
+[collect]   [149] bench=matmul freq=1344000kHz gov=userspace
+collect_pmic: 207124 rows written, 0 skipped
+[collect] sweep 150/418: matmul @ 1420800 kHz
+[collect]   [150] bench=matmul freq=1420800kHz gov=userspace
+collect_pmic: 208581 rows written, 0 skipped
+[collect] sweep 151/418: matmul @ 1497600 kHz
+[collect]   [151] bench=matmul freq=1497600kHz gov=userspace
+collect_pmic: 210047 rows written, 0 skipped
+[collect] sweep 152/418: matmul @ 1574400 kHz
+[collect]   [152] bench=matmul freq=1574400kHz gov=userspace
+collect_pmic: 211517 rows written, 0 skipped
+[collect] sweep 153/418: matmul @ 1651200 kHz
+[collect]   [153] bench=matmul freq=1651200kHz gov=userspace
+collect_pmic: 212991 rows written, 0 skipped
+[collect] sweep 154/418: matmul @ 1728000 kHz
+[collect]   [154] bench=matmul freq=1728000kHz gov=userspace
+collect_pmic: 214471 rows written, 0 skipped
+[collect] sweep 155/418: mem_latency @ 115200 kHz
+[collect]   [155] bench=mem_latency freq=115200kHz gov=userspace
+collect_pmic: 215943 rows written, 0 skipped
+[collect] sweep 156/418: mem_latency @ 192000 kHz
+[collect]   [156] bench=mem_latency freq=192000kHz gov=userspace
+collect_pmic: 217400 rows written, 0 skipped
+[collect] sweep 157/418: mem_latency @ 268800 kHz
+[collect]   [157] bench=mem_latency freq=268800kHz gov=userspace
+collect_pmic: 218850 rows written, 0 skipped
+[collect] sweep 158/418: mem_latency @ 345600 kHz
+[collect]   [158] bench=mem_latency freq=345600kHz gov=userspace
+collect_pmic: 220311 rows written, 0 skipped
+[collect] sweep 159/418: mem_latency @ 422400 kHz
+[collect]   [159] bench=mem_latency freq=422400kHz gov=userspace
+collect_pmic: 221769 rows written, 0 skipped
+[collect] sweep 160/418: mem_latency @ 499200 kHz
+[collect]   [160] bench=mem_latency freq=499200kHz gov=userspace
+collect_pmic: 223223 rows written, 0 skipped
+[collect] sweep 161/418: mem_latency @ 576000 kHz
+[collect]   [161] bench=mem_latency freq=576000kHz gov=userspace
+collect_pmic: 224676 rows written, 0 skipped
+[collect] sweep 162/418: mem_latency @ 652800 kHz
+[collect]   [162] bench=mem_latency freq=652800kHz gov=userspace
+collect_pmic: 226137 rows written, 0 skipped
+[collect] sweep 163/418: mem_latency @ 729600 kHz
+[collect]   [163] bench=mem_latency freq=729600kHz gov=userspace
+collect_pmic: 227595 rows written, 0 skipped
+[collect] sweep 164/418: mem_latency @ 806400 kHz
+[collect]   [164] bench=mem_latency freq=806400kHz gov=userspace
+collect_pmic: 229058 rows written, 0 skipped
+[collect] sweep 165/418: mem_latency @ 883200 kHz
+[collect]   [165] bench=mem_latency freq=883200kHz gov=userspace
+collect_pmic: 230530 rows written, 0 skipped
+[collect] sweep 166/418: mem_latency @ 960000 kHz
+[collect]   [166] bench=mem_latency freq=960000kHz gov=userspace
+collect_pmic: 232020 rows written, 0 skipped
+[collect] sweep 167/418: mem_latency @ 1036800 kHz
+[collect]   [167] bench=mem_latency freq=1036800kHz gov=userspace
+collect_pmic: 233512 rows written, 0 skipped
+[collect] sweep 168/418: mem_latency @ 1113600 kHz
+[collect]   [168] bench=mem_latency freq=1113600kHz gov=userspace
+collect_pmic: 235012 rows written, 0 skipped
+[collect] sweep 169/418: mem_latency @ 1190400 kHz
+[collect]   [169] bench=mem_latency freq=1190400kHz gov=userspace
+collect_pmic: 236518 rows written, 0 skipped
+[collect] sweep 170/418: mem_latency @ 1267200 kHz
+[collect]   [170] bench=mem_latency freq=1267200kHz gov=userspace
+collect_pmic: 238028 rows written, 0 skipped
+[collect] sweep 171/418: mem_latency @ 1344000 kHz
+[collect]   [171] bench=mem_latency freq=1344000kHz gov=userspace
+collect_pmic: 239536 rows written, 0 skipped
+[collect] sweep 172/418: mem_latency @ 1420800 kHz
+[collect]   [172] bench=mem_latency freq=1420800kHz gov=userspace
+collect_pmic: 241066 rows written, 0 skipped
+[collect] sweep 173/418: mem_latency @ 1497600 kHz
+[collect]   [173] bench=mem_latency freq=1497600kHz gov=userspace
+collect_pmic: 242602 rows written, 0 skipped
+[collect] sweep 174/418: mem_latency @ 1574400 kHz
+[collect]   [174] bench=mem_latency freq=1574400kHz gov=userspace
+collect_pmic: 244109 rows written, 0 skipped
+[collect] sweep 175/418: mem_latency @ 1651200 kHz
+[collect]   [175] bench=mem_latency freq=1651200kHz gov=userspace
+collect_pmic: 245647 rows written, 0 skipped
+[collect] sweep 176/418: mem_latency @ 1728000 kHz
+[collect]   [176] bench=mem_latency freq=1728000kHz gov=userspace
+collect_pmic: 247186 rows written, 0 skipped
+[collect] sweep 177/418: mem_latency_large @ 115200 kHz
+[collect]   [177] bench=mem_latency_large freq=115200kHz gov=userspace
+collect_pmic: 248665 rows written, 0 skipped
+[collect] sweep 178/418: mem_latency_large @ 192000 kHz
+[collect]   [178] bench=mem_latency_large freq=192000kHz gov=userspace
+collect_pmic: 250124 rows written, 0 skipped
+[collect] sweep 179/418: mem_latency_large @ 268800 kHz
+[collect]   [179] bench=mem_latency_large freq=268800kHz gov=userspace
+collect_pmic: 251557 rows written, 0 skipped
+[collect] sweep 180/418: mem_latency_large @ 345600 kHz
+[collect]   [180] bench=mem_latency_large freq=345600kHz gov=userspace
+collect_pmic: 252999 rows written, 0 skipped
+collect_pmic: 254429 rows written, 0 skipped
+[collect] sweep 181/418: mem_latency_large @ 422400 kHz
+[collect]   [181] bench=mem_latency_large freq=422400kHz gov=userspace
+collect_pmic: 255881 rows written, 0 skipped
+[collect] sweep 182/418: mem_latency_large @ 499200 kHz
+[collect]   [182] bench=mem_latency_large freq=499200kHz gov=userspace
+collect_pmic: 257339 rows written, 0 skipped
+[collect] sweep 183/418: mem_latency_large @ 576000 kHz
+[collect]   [183] bench=mem_latency_large freq=576000kHz gov=userspace
+collect_pmic: 258801 rows written, 0 skipped
+[collect] sweep 184/418: mem_latency_large @ 652800 kHz
+[collect]   [184] bench=mem_latency_large freq=652800kHz gov=userspace
+collect_pmic: 260259 rows written, 0 skipped
+[collect] sweep 185/418: mem_latency_large @ 729600 kHz
+[collect]   [185] bench=mem_latency_large freq=729600kHz gov=userspace
+collect_pmic: 261699 rows written, 0 skipped
+collect_pmic: 263155 rows written, 0 skipped
+[collect] sweep 186/418: mem_latency_large @ 806400 kHz
+[collect]   [186] bench=mem_latency_large freq=806400kHz gov=userspace
+collect_pmic: 264626 rows written, 0 skipped
+[collect] sweep 187/418: mem_latency_large @ 883200 kHz
+[collect]   [187] bench=mem_latency_large freq=883200kHz gov=userspace
+collect_pmic: 266093 rows written, 0 skipped
+[collect] sweep 188/418: mem_latency_large @ 960000 kHz
+[collect]   [188] bench=mem_latency_large freq=960000kHz gov=userspace
+collect_pmic: 267584 rows written, 0 skipped
+[collect] sweep 189/418: mem_latency_large @ 1036800 kHz
+[collect]   [189] bench=mem_latency_large freq=1036800kHz gov=userspace
+collect_pmic: 269083 rows written, 0 skipped
+[collect] sweep 190/418: mem_latency_large @ 1113600 kHz
+[collect]   [190] bench=mem_latency_large freq=1113600kHz gov=userspace
+collect_pmic: 270570 rows written, 0 skipped
+[collect] sweep 191/418: mem_latency_large @ 1190400 kHz
+[collect]   [191] bench=mem_latency_large freq=1190400kHz gov=userspace
+collect_pmic: 272080 rows written, 0 skipped
+[collect] sweep 192/418: mem_latency_large @ 1267200 kHz
+[collect]   [192] bench=mem_latency_large freq=1267200kHz gov=userspace
+collect_pmic: 273592 rows written, 0 skipped
+[collect] sweep 193/418: mem_latency_large @ 1344000 kHz
+collect_pmic: 275096 rows written, 0 skipped
+[collect]   [193] bench=mem_latency_large freq=1344000kHz gov=userspace
+collect_pmic: 276624 rows written, 0 skipped
+[collect] sweep 194/418: mem_latency_large @ 1420800 kHz
+[collect]   [194] bench=mem_latency_large freq=1420800kHz gov=userspace
+collect_pmic: 278140 rows written, 0 skipped
+[collect] sweep 195/418: mem_latency_large @ 1497600 kHz
+[collect]   [195] bench=mem_latency_large freq=1497600kHz gov=userspace
+collect_pmic: 279677 rows written, 0 skipped
+[collect] sweep 196/418: mem_latency_large @ 1574400 kHz
+[collect]   [196] bench=mem_latency_large freq=1574400kHz gov=userspace
+collect_pmic: 281212 rows written, 0 skipped
+[collect] sweep 197/418: mem_latency_large @ 1651200 kHz
+[collect]   [197] bench=mem_latency_large freq=1651200kHz gov=userspace
+collect_pmic: 282736 rows written, 0 skipped
+[collect] sweep 198/418: mem_latency_large @ 1728000 kHz
+[collect]   [198] bench=mem_latency_large freq=1728000kHz gov=userspace
+collect_pmic: 284269 rows written, 0 skipped
+[collect] sweep 199/418: branch @ 115200 kHz
+[collect]   [199] bench=branch freq=115200kHz gov=userspace
+collect_pmic: 285761 rows written, 0 skipped
+[collect] sweep 200/418: branch @ 192000 kHz
+[collect]   [200] bench=branch freq=192000kHz gov=userspace
+collect_pmic: 287218 rows written, 0 skipped
+[collect] sweep 201/418: branch @ 268800 kHz
+[collect]   [201] bench=branch freq=268800kHz gov=userspace
+collect_pmic: 288672 rows written, 0 skipped
+[collect] sweep 202/418: branch @ 345600 kHz
+[collect]   [202] bench=branch freq=345600kHz gov=userspace
+collect_pmic: 290126 rows written, 0 skipped
+[collect] sweep 203/418: branch @ 422400 kHz
+[collect]   [203] bench=branch freq=422400kHz gov=userspace
+collect_pmic: 291583 rows written, 0 skipped
+[collect] sweep 204/418: branch @ 499200 kHz
+[collect]   [204] bench=branch freq=499200kHz gov=userspace
+[collect] sweep 205/418: branch @ 576000 kHz
+collect_pmic: 293027 rows written, 0 skipped
+[collect]   [205] bench=branch freq=576000kHz gov=userspace
+[collect] sweep 206/418: branch @ 652800 kHz
+[collect]   [206] bench=branch freq=652800kHz gov=userspace
+collect_pmic: 294470 rows written, 0 skipped
+[collect] sweep 207/418: branch @ 729600 kHz
+[collect]   [207] bench=branch freq=729600kHz gov=userspace
+collect_pmic: 295920 rows written, 0 skipped
+[collect] sweep 208/418: branch @ 806400 kHz
+[collect]   [208] bench=branch freq=806400kHz gov=userspace
+collect_pmic: 297378 rows written, 0 skipped
+[collect] sweep 209/418: branch @ 883200 kHz
+[collect]   [209] bench=branch freq=883200kHz gov=userspace
+collect_pmic: 298848 rows written, 0 skipped
+[collect] sweep 210/418: branch @ 960000 kHz
+[collect]   [210] bench=branch freq=960000kHz gov=userspace
+collect_pmic: 300330 rows written, 0 skipped
+[collect] sweep 211/418: branch @ 1036800 kHz
+[collect]   [211] bench=branch freq=1036800kHz gov=userspace
+collect_pmic: 301823 rows written, 0 skipped
+[collect] sweep 212/418: branch @ 1113600 kHz
+[collect]   [212] bench=branch freq=1113600kHz gov=userspace
+collect_pmic: 303326 rows written, 0 skipped
+[collect] sweep 213/418: branch @ 1190400 kHz
+[collect]   [213] bench=branch freq=1190400kHz gov=userspace
+collect_pmic: 304835 rows written, 0 skipped
+[collect] sweep 214/418: branch @ 1267200 kHz
+[collect]   [214] bench=branch freq=1267200kHz gov=userspace
+collect_pmic: 306353 rows written, 0 skipped
+[collect] sweep 215/418: branch @ 1344000 kHz
+[collect]   [215] bench=branch freq=1344000kHz gov=userspace
+collect_pmic: 307872 rows written, 0 skipped
+[collect] sweep 216/418: branch @ 1420800 kHz
+[collect]   [216] bench=branch freq=1420800kHz gov=userspace
+collect_pmic: 309401 rows written, 0 skipped
+[collect] sweep 217/418: branch @ 1497600 kHz
+[collect]   [217] bench=branch freq=1497600kHz gov=userspace
+collect_pmic: 310931 rows written, 0 skipped
+[collect] sweep 218/418: branch @ 1574400 kHz
+[collect]   [218] bench=branch freq=1574400kHz gov=userspace
+collect_pmic: 312467 rows written, 0 skipped
+[collect] sweep 219/418: branch @ 1651200 kHz
+[collect]   [219] bench=branch freq=1651200kHz gov=userspace
+collect_pmic: 314007 rows written, 0 skipped
+[collect] sweep 220/418: branch @ 1728000 kHz
+[collect]   [220] bench=branch freq=1728000kHz gov=userspace
+[collect] sweep 221/418: icache @ 115200 kHz
+collect_pmic: 315548 rows written, 0 skipped
+[collect]   [221] bench=icache freq=115200kHz gov=userspace
+[collect] sweep 222/418: icache @ 192000 kHz
+[collect]   [222] bench=icache freq=192000kHz gov=userspace
+collect_pmic: 316966 rows written, 0 skipped
+[collect] sweep 223/418: icache @ 268800 kHz
+[collect]   [223] bench=icache freq=268800kHz gov=userspace
+collect_pmic: 318379 rows written, 0 skipped
+[collect] sweep 224/418: icache @ 345600 kHz
+[collect]   [224] bench=icache freq=345600kHz gov=userspace
+collect_pmic: 319785 rows written, 0 skipped
+[collect] sweep 225/418: icache @ 422400 kHz
+[collect]   [225] bench=icache freq=422400kHz gov=userspace
+collect_pmic: 321194 rows written, 0 skipped
+[collect] sweep 226/418: icache @ 499200 kHz
+[collect]   [226] bench=icache freq=499200kHz gov=userspace
+collect_pmic: 322610 rows written, 0 skipped
+[collect] sweep 227/418: icache @ 576000 kHz
+[collect]   [227] bench=icache freq=576000kHz gov=userspace
+collect_pmic: 324018 rows written, 0 skipped
+[collect] sweep 228/418: icache @ 652800 kHz
+[collect]   [228] bench=icache freq=652800kHz gov=userspace
+collect_pmic: 325425 rows written, 0 skipped
+[collect] sweep 229/418: icache @ 729600 kHz
+[collect]   [229] bench=icache freq=729600kHz gov=userspace
+collect_pmic: 326831 rows written, 0 skipped
+[collect] sweep 230/418: icache @ 806400 kHz
+[collect]   [230] bench=icache freq=806400kHz gov=userspace
+collect_pmic: 328257 rows written, 0 skipped
+[collect] sweep 231/418: icache @ 883200 kHz
+[collect]   [231] bench=icache freq=883200kHz gov=userspace
+collect_pmic: 329703 rows written, 0 skipped
+[collect] sweep 232/418: icache @ 960000 kHz
+[collect]   [232] bench=icache freq=960000kHz gov=userspace
+collect_pmic: 331167 rows written, 0 skipped
+[collect] sweep 233/418: icache @ 1036800 kHz
+[collect]   [233] bench=icache freq=1036800kHz gov=userspace
+collect_pmic: 332644 rows written, 0 skipped
+[collect] sweep 234/418: icache @ 1113600 kHz
+[collect]   [234] bench=icache freq=1113600kHz gov=userspace
+collect_pmic: 334123 rows written, 0 skipped
+[collect] sweep 235/418: icache @ 1190400 kHz
+[collect]   [235] bench=icache freq=1190400kHz gov=userspace
+[collect] sweep 236/418: icache @ 1267200 kHz
+collect_pmic: 335620 rows written, 0 skipped
+[collect]   [236] bench=icache freq=1267200kHz gov=userspace
+[collect] sweep 237/418: icache @ 1344000 kHz
+[collect]   [237] bench=icache freq=1344000kHz gov=userspace
+collect_pmic: 337115 rows written, 0 skipped
+[collect] sweep 238/418: icache @ 1420800 kHz
+[collect]   [238] bench=icache freq=1420800kHz gov=userspace
+collect_pmic: 338619 rows written, 0 skipped
+[collect] sweep 239/418: icache @ 1497600 kHz
+[collect]   [239] bench=icache freq=1497600kHz gov=userspace
+collect_pmic: 340132 rows written, 0 skipped
+[collect] sweep 240/418: icache @ 1574400 kHz
+[collect]   [240] bench=icache freq=1574400kHz gov=userspace
+collect_pmic: 341641 rows written, 0 skipped
+[collect] sweep 241/418: icache @ 1651200 kHz
+[collect]   [241] bench=icache freq=1651200kHz gov=userspace
+collect_pmic: 343165 rows written, 0 skipped
+[collect] sweep 242/418: icache @ 1728000 kHz
+[collect]   [242] bench=icache freq=1728000kHz gov=userspace
+collect_pmic: 344697 rows written, 0 skipped
+[collect] sweep 243/418: vm_pressure @ 115200 kHz
+[collect]   [243] bench=vm_pressure freq=115200kHz gov=userspace
+collect_pmic: 346187 rows written, 0 skipped
+[collect] sweep 244/418: vm_pressure @ 192000 kHz
+[collect]   [244] bench=vm_pressure freq=192000kHz gov=userspace
+collect_pmic: 347637 rows written, 0 skipped
+[collect] sweep 245/418: vm_pressure @ 268800 kHz
+[collect]   [245] bench=vm_pressure freq=268800kHz gov=userspace
+collect_pmic: 349086 rows written, 0 skipped
+[collect] sweep 246/418: vm_pressure @ 345600 kHz
+[collect]   [246] bench=vm_pressure freq=345600kHz gov=userspace
+collect_pmic: 350539 rows written, 0 skipped
+[collect] sweep 247/418: vm_pressure @ 422400 kHz
+[collect]   [247] bench=vm_pressure freq=422400kHz gov=userspace
+collect_pmic: 351993 rows written, 0 skipped
+[collect] sweep 248/418: vm_pressure @ 499200 kHz
+[collect]   [248] bench=vm_pressure freq=499200kHz gov=userspace
+collect_pmic: 353445 rows written, 0 skipped
+[collect] sweep 249/418: vm_pressure @ 576000 kHz
+[collect]   [249] bench=vm_pressure freq=576000kHz gov=userspace
+collect_pmic: 354898 rows written, 0 skipped
+[collect] sweep 250/418: vm_pressure @ 652800 kHz
+[collect]   [250] bench=vm_pressure freq=652800kHz gov=userspace
+collect_pmic: 356339 rows written, 0 skipped
+[collect] sweep 251/418: vm_pressure @ 729600 kHz
+[collect]   [251] bench=vm_pressure freq=729600kHz gov=userspace
+collect_pmic: 357784 rows written, 0 skipped
+[collect] sweep 252/418: vm_pressure @ 806400 kHz
+[collect]   [252] bench=vm_pressure freq=806400kHz gov=userspace
+collect_pmic: 359239 rows written, 0 skipped
+[collect] sweep 253/418: vm_pressure @ 883200 kHz
+[collect]   [253] bench=vm_pressure freq=883200kHz gov=userspace
+collect_pmic: 360707 rows written, 0 skipped
+[collect] sweep 254/418: vm_pressure @ 960000 kHz
+[collect]   [254] bench=vm_pressure freq=960000kHz gov=userspace
+collect_pmic: 362189 rows written, 0 skipped
+[collect] sweep 255/418: vm_pressure @ 1036800 kHz
+[collect]   [255] bench=vm_pressure freq=1036800kHz gov=userspace
+collect_pmic: 363677 rows written, 0 skipped
+[collect] sweep 256/418: vm_pressure @ 1113600 kHz
+[collect]   [256] bench=vm_pressure freq=1113600kHz gov=userspace
+[collect] sweep 257/418: vm_pressure @ 1190400 kHz
+collect_pmic: 365173 rows written, 0 skipped
+[collect]   [257] bench=vm_pressure freq=1190400kHz gov=userspace
+[collect] sweep 258/418: vm_pressure @ 1267200 kHz
+[collect]   [258] bench=vm_pressure freq=1267200kHz gov=userspace
+collect_pmic: 366675 rows written, 0 skipped
+[collect] sweep 259/418: vm_pressure @ 1344000 kHz
+[collect]   [259] bench=vm_pressure freq=1344000kHz gov=userspace
+collect_pmic: 368184 rows written, 0 skipped
+[collect] sweep 260/418: vm_pressure @ 1420800 kHz
+[collect]   [260] bench=vm_pressure freq=1420800kHz gov=userspace
+collect_pmic: 369689 rows written, 0 skipped
+[collect] sweep 261/418: vm_pressure @ 1497600 kHz
+[collect]   [261] bench=vm_pressure freq=1497600kHz gov=userspace
+collect_pmic: 371206 rows written, 0 skipped
+[collect] sweep 262/418: vm_pressure @ 1574400 kHz
+[collect]   [262] bench=vm_pressure freq=1574400kHz gov=userspace
+collect_pmic: 372728 rows written, 0 skipped
+[collect] sweep 263/418: vm_pressure @ 1651200 kHz
+[collect]   [263] bench=vm_pressure freq=1651200kHz gov=userspace
+collect_pmic: 374253 rows written, 0 skipped
+[collect] sweep 264/418: vm_pressure @ 1728000 kHz
+[collect]   [264] bench=vm_pressure freq=1728000kHz gov=userspace
+collect_pmic: 375776 rows written, 0 skipped
+[collect] sweep 265/418: malloc @ 115200 kHz
+[collect]   [265] bench=malloc freq=115200kHz gov=userspace
+collect_pmic: 377269 rows written, 0 skipped
+[collect] sweep 266/418: malloc @ 192000 kHz
+[collect]   [266] bench=malloc freq=192000kHz gov=userspace
+collect_pmic: 378722 rows written, 0 skipped
+[collect] sweep 267/418: malloc @ 268800 kHz
+[collect]   [267] bench=malloc freq=268800kHz gov=userspace
+collect_pmic: 380166 rows written, 0 skipped
+[collect] sweep 268/418: malloc @ 345600 kHz
+[collect]   [268] bench=malloc freq=345600kHz gov=userspace
+collect_pmic: 381619 rows written, 0 skipped
+[collect] sweep 269/418: malloc @ 422400 kHz
+[collect]   [269] bench=malloc freq=422400kHz gov=userspace
+collect_pmic: 383071 rows written, 0 skipped
+[collect] sweep 270/418: malloc @ 499200 kHz
+[collect]   [270] bench=malloc freq=499200kHz gov=userspace
+collect_pmic: 384522 rows written, 0 skipped
+[collect] sweep 271/418: malloc @ 576000 kHz
+[collect]   [271] bench=malloc freq=576000kHz gov=userspace
+collect_pmic: 385976 rows written, 0 skipped
+[collect] sweep 272/418: malloc @ 652800 kHz
+[collect]   [272] bench=malloc freq=652800kHz gov=userspace
+[collect] sweep 273/418: malloc @ 729600 kHz
+collect_pmic: 387425 rows written, 0 skipped
+[collect]   [273] bench=malloc freq=729600kHz gov=userspace
+[collect] sweep 274/418: malloc @ 806400 kHz
+[collect]   [274] bench=malloc freq=806400kHz gov=userspace
+collect_pmic: 388879 rows written, 0 skipped
+[collect] sweep 275/418: malloc @ 883200 kHz
+[collect]   [275] bench=malloc freq=883200kHz gov=userspace
+collect_pmic: 390345 rows written, 0 skipped
+[collect] sweep 276/418: malloc @ 960000 kHz
+[collect]   [276] bench=malloc freq=960000kHz gov=userspace
+collect_pmic: 391820 rows written, 0 skipped
+[collect] sweep 277/418: malloc @ 1036800 kHz
+[collect]   [277] bench=malloc freq=1036800kHz gov=userspace
+collect_pmic: 393307 rows written, 0 skipped
+[collect] sweep 278/418: malloc @ 1113600 kHz
+[collect]   [278] bench=malloc freq=1113600kHz gov=userspace
+collect_pmic: 394795 rows written, 0 skipped
+[collect] sweep 279/418: malloc @ 1190400 kHz
+[collect]   [279] bench=malloc freq=1190400kHz gov=userspace
+collect_pmic: 396295 rows written, 0 skipped
+[collect] sweep 280/418: malloc @ 1267200 kHz
+[collect]   [280] bench=malloc freq=1267200kHz gov=userspace
+collect_pmic: 397804 rows written, 0 skipped
+[collect] sweep 281/418: malloc @ 1344000 kHz
+[collect]   [281] bench=malloc freq=1344000kHz gov=userspace
+collect_pmic: 399318 rows written, 0 skipped
+[collect] sweep 282/418: malloc @ 1420800 kHz
+[collect]   [282] bench=malloc freq=1420800kHz gov=userspace
+collect_pmic: 400840 rows written, 0 skipped
+[collect] sweep 283/418: malloc @ 1497600 kHz
+[collect]   [283] bench=malloc freq=1497600kHz gov=userspace
+collect_pmic: 402367 rows written, 0 skipped
+[collect] sweep 284/418: malloc @ 1574400 kHz
+[collect]   [284] bench=malloc freq=1574400kHz gov=userspace
+collect_pmic: 403901 rows written, 0 skipped
+[collect] sweep 285/418: malloc @ 1651200 kHz
+[collect]   [285] bench=malloc freq=1651200kHz gov=userspace
+collect_pmic: 405431 rows written, 0 skipped
+[collect] sweep 286/418: malloc @ 1728000 kHz
+[collect]   [286] bench=malloc freq=1728000kHz gov=userspace
+collect_pmic: 406973 rows written, 0 skipped
+[collect] sweep 287/418: ml_inference @ 115200 kHz
+[collect]   [287] bench=ml_inference freq=115200kHz gov=userspace
+collect_pmic: 408385 rows written, 0 skipped
+[collect] sweep 288/418: ml_inference @ 192000 kHz
+[collect]   [288] bench=ml_inference freq=192000kHz gov=userspace
+[collect] sweep 289/418: ml_inference @ 268800 kHz
+collect_pmic: 409789 rows written, 0 skipped
+[collect]   [289] bench=ml_inference freq=268800kHz gov=userspace
+[collect] sweep 290/418: ml_inference @ 345600 kHz
+[collect]   [290] bench=ml_inference freq=345600kHz gov=userspace
+collect_pmic: 411191 rows written, 0 skipped
+[collect] sweep 291/418: ml_inference @ 422400 kHz
+[collect]   [291] bench=ml_inference freq=422400kHz gov=userspace
+collect_pmic: 412592 rows written, 0 skipped
+[collect] sweep 292/418: ml_inference @ 499200 kHz
+[collect]   [292] bench=ml_inference freq=499200kHz gov=userspace
+collect_pmic: 413987 rows written, 0 skipped
+[collect] sweep 293/418: ml_inference @ 576000 kHz
+[collect]   [293] bench=ml_inference freq=576000kHz gov=userspace
+collect_pmic: 415384 rows written, 0 skipped
+[collect] sweep 294/418: ml_inference @ 652800 kHz
+[collect]   [294] bench=ml_inference freq=652800kHz gov=userspace
+collect_pmic: 416778 rows written, 0 skipped
+[collect] sweep 295/418: ml_inference @ 729600 kHz
+[collect]   [295] bench=ml_inference freq=729600kHz gov=userspace
+collect_pmic: 418179 rows written, 0 skipped
+[collect] sweep 296/418: ml_inference @ 806400 kHz
+[collect]   [296] bench=ml_inference freq=806400kHz gov=userspace
+collect_pmic: 419585 rows written, 0 skipped
+[collect] sweep 297/418: ml_inference @ 883200 kHz
+[collect]   [297] bench=ml_inference freq=883200kHz gov=userspace
+collect_pmic: 421005 rows written, 0 skipped
+[collect] sweep 298/418: ml_inference @ 960000 kHz
+[collect]   [298] bench=ml_inference freq=960000kHz gov=userspace
+collect_pmic: 422439 rows written, 0 skipped
+[collect] sweep 299/418: ml_inference @ 1036800 kHz
+[collect]   [299] bench=ml_inference freq=1036800kHz gov=userspace
+collect_pmic: 423886 rows written, 0 skipped
+[collect] sweep 300/418: ml_inference @ 1113600 kHz
+[collect]   [300] bench=ml_inference freq=1113600kHz gov=userspace
+collect_pmic: 425339 rows written, 0 skipped
+[collect] sweep 301/418: ml_inference @ 1190400 kHz
+[collect]   [301] bench=ml_inference freq=1190400kHz gov=userspace
+collect_pmic: 426802 rows written, 0 skipped
+[collect] sweep 302/418: ml_inference @ 1267200 kHz
+[collect]   [302] bench=ml_inference freq=1267200kHz gov=userspace
+collect_pmic: 428272 rows written, 0 skipped
+[collect] sweep 303/418: ml_inference @ 1344000 kHz
+[collect]   [303] bench=ml_inference freq=1344000kHz gov=userspace
+collect_pmic: 429752 rows written, 0 skipped
+[collect] sweep 304/418: ml_inference @ 1420800 kHz
+[collect]   [304] bench=ml_inference freq=1420800kHz gov=userspace
+collect_pmic: 431238 rows written, 0 skipped
+[collect] sweep 305/418: ml_inference @ 1497600 kHz
+[collect]   [305] bench=ml_inference freq=1497600kHz gov=userspace
+collect_pmic: 432735 rows written, 0 skipped
+[collect] sweep 306/418: ml_inference @ 1574400 kHz
+[collect]   [306] bench=ml_inference freq=1574400kHz gov=userspace
+collect_pmic: 434233 rows written, 0 skipped
+[collect] sweep 307/418: ml_inference @ 1651200 kHz
+[collect]   [307] bench=ml_inference freq=1651200kHz gov=userspace
+[collect] sweep 308/418: ml_inference @ 1728000 kHz
+collect_pmic: 435736 rows written, 0 skipped
+[collect]   [308] bench=ml_inference freq=1728000kHz gov=userspace
+[collect] sweep 309/418: crypto @ 115200 kHz
+[collect]   [309] bench=crypto freq=115200kHz gov=userspace
+collect_pmic: 437234 rows written, 0 skipped
+[collect] sweep 310/418: crypto @ 192000 kHz
+[collect]   [310] bench=crypto freq=192000kHz gov=userspace
+collect_pmic: 438696 rows written, 0 skipped
+[collect] sweep 311/418: crypto @ 268800 kHz
+[collect]   [311] bench=crypto freq=268800kHz gov=userspace
+collect_pmic: 440158 rows written, 0 skipped
+[collect] sweep 312/418: crypto @ 345600 kHz
+[collect]   [312] bench=crypto freq=345600kHz gov=userspace
+collect_pmic: 441621 rows written, 0 skipped
+[collect] sweep 313/418: crypto @ 422400 kHz
+[collect]   [313] bench=crypto freq=422400kHz gov=userspace
+collect_pmic: 443081 rows written, 0 skipped
+[collect] sweep 314/418: crypto @ 499200 kHz
+[collect]   [314] bench=crypto freq=499200kHz gov=userspace
+collect_pmic: 444543 rows written, 0 skipped
+[collect] sweep 315/418: crypto @ 576000 kHz
+[collect]   [315] bench=crypto freq=576000kHz gov=userspace
+collect_pmic: 446003 rows written, 0 skipped
+[collect] sweep 316/418: crypto @ 652800 kHz
+[collect]   [316] bench=crypto freq=652800kHz gov=userspace
+collect_pmic: 447461 rows written, 0 skipped
+[collect] sweep 317/418: crypto @ 729600 kHz
+[collect]   [317] bench=crypto freq=729600kHz gov=userspace
+collect_pmic: 448920 rows written, 0 skipped
+[collect] sweep 318/418: crypto @ 806400 kHz
+[collect]   [318] bench=crypto freq=806400kHz gov=userspace
+collect_pmic: 450391 rows written, 0 skipped
+[collect] sweep 319/418: crypto @ 883200 kHz
+[collect]   [319] bench=crypto freq=883200kHz gov=userspace
+collect_pmic: 451876 rows written, 0 skipped
+[collect] sweep 320/418: crypto @ 960000 kHz
+[collect]   [320] bench=crypto freq=960000kHz gov=userspace
+collect_pmic: 453370 rows written, 0 skipped
+[collect] sweep 321/418: crypto @ 1036800 kHz
+[collect]   [321] bench=crypto freq=1036800kHz gov=userspace
+collect_pmic: 454872 rows written, 0 skipped
+[collect] sweep 322/418: crypto @ 1113600 kHz
+[collect]   [322] bench=crypto freq=1113600kHz gov=userspace
+[collect] sweep 323/418: crypto @ 1190400 kHz
+collect_pmic: 456382 rows written, 0 skipped
+[collect]   [323] bench=crypto freq=1190400kHz gov=userspace
+[collect] sweep 324/418: crypto @ 1267200 kHz
+[collect]   [324] bench=crypto freq=1267200kHz gov=userspace
+collect_pmic: 457898 rows written, 0 skipped
+[collect] sweep 325/418: crypto @ 1344000 kHz
+[collect]   [325] bench=crypto freq=1344000kHz gov=userspace
+collect_pmic: 459422 rows written, 0 skipped
+[collect] sweep 326/418: crypto @ 1420800 kHz
+[collect]   [326] bench=crypto freq=1420800kHz gov=userspace
+collect_pmic: 460946 rows written, 0 skipped
+[collect] sweep 327/418: crypto @ 1497600 kHz
+[collect]   [327] bench=crypto freq=1497600kHz gov=userspace
+collect_pmic: 462479 rows written, 0 skipped
+[collect] sweep 328/418: crypto @ 1574400 kHz
+[collect]   [328] bench=crypto freq=1574400kHz gov=userspace
+collect_pmic: 464018 rows written, 0 skipped
+[collect] sweep 329/418: crypto @ 1651200 kHz
+[collect]   [329] bench=crypto freq=1651200kHz gov=userspace
+collect_pmic: 465561 rows written, 0 skipped
+[collect] sweep 330/418: crypto @ 1728000 kHz
+[collect]   [330] bench=crypto freq=1728000kHz gov=userspace
+collect_pmic: 467106 rows written, 0 skipped
+[collect] sweep 331/418: idle @ 115200 kHz
+[collect]   [331] bench=idle freq=115200kHz gov=userspace
+collect_pmic: 468606 rows written, 0 skipped
+[collect] sweep 332/418: idle @ 192000 kHz
+[collect]   [332] bench=idle freq=192000kHz gov=userspace
+collect_pmic: 470069 rows written, 0 skipped
+[collect] sweep 333/418: idle @ 268800 kHz
+[collect]   [333] bench=idle freq=268800kHz gov=userspace
+collect_pmic: 471531 rows written, 0 skipped
+[collect] sweep 334/418: idle @ 345600 kHz
+[collect]   [334] bench=idle freq=345600kHz gov=userspace
+collect_pmic: 472993 rows written, 0 skipped
+[collect] sweep 335/418: idle @ 422400 kHz
+[collect]   [335] bench=idle freq=422400kHz gov=userspace
+collect_pmic: 474454 rows written, 0 skipped
+[collect] sweep 336/418: idle @ 499200 kHz
+[collect]   [336] bench=idle freq=499200kHz gov=userspace
+collect_pmic: 475914 rows written, 0 skipped
+[collect] sweep 337/418: idle @ 576000 kHz
+[collect]   [337] bench=idle freq=576000kHz gov=userspace
+[collect] sweep 338/418: idle @ 652800 kHz
+collect_pmic: 477374 rows written, 0 skipped
+[collect]   [338] bench=idle freq=652800kHz gov=userspace
+[collect] sweep 339/418: idle @ 729600 kHz
+[collect]   [339] bench=idle freq=729600kHz gov=userspace
+collect_pmic: 478836 rows written, 0 skipped
+[collect] sweep 340/418: idle @ 806400 kHz
+[collect]   [340] bench=idle freq=806400kHz gov=userspace
+collect_pmic: 480300 rows written, 0 skipped
+[collect] sweep 341/418: idle @ 883200 kHz
+[collect]   [341] bench=idle freq=883200kHz gov=userspace
+collect_pmic: 481778 rows written, 0 skipped
+[collect] sweep 342/418: idle @ 960000 kHz
+[collect]   [342] bench=idle freq=960000kHz gov=userspace
+collect_pmic: 483268 rows written, 0 skipped
+[collect] sweep 343/418: idle @ 1036800 kHz
+[collect]   [343] bench=idle freq=1036800kHz gov=userspace
+collect_pmic: 484767 rows written, 0 skipped
+[collect] sweep 344/418: idle @ 1113600 kHz
+[collect]   [344] bench=idle freq=1113600kHz gov=userspace
+collect_pmic: 486274 rows written, 0 skipped
+[collect] sweep 345/418: idle @ 1190400 kHz
+[collect]   [345] bench=idle freq=1190400kHz gov=userspace
+collect_pmic: 487787 rows written, 0 skipped
+[collect] sweep 346/418: idle @ 1267200 kHz
+[collect]   [346] bench=idle freq=1267200kHz gov=userspace
+collect_pmic: 489306 rows written, 0 skipped
+[collect] sweep 347/418: idle @ 1344000 kHz
+[collect]   [347] bench=idle freq=1344000kHz gov=userspace
+collect_pmic: 490832 rows written, 0 skipped
+[collect] sweep 348/418: idle @ 1420800 kHz
+[collect]   [348] bench=idle freq=1420800kHz gov=userspace
+collect_pmic: 492348 rows written, 0 skipped
+[collect] sweep 349/418: idle @ 1497600 kHz
+[collect]   [349] bench=idle freq=1497600kHz gov=userspace
+collect_pmic: 493860 rows written, 0 skipped
+[collect] sweep 350/418: idle @ 1574400 kHz
+[collect]   [350] bench=idle freq=1574400kHz gov=userspace
+collect_pmic: 495391 rows written, 0 skipped
+[collect] sweep 351/418: idle @ 1651200 kHz
+[collect]   [351] bench=idle freq=1651200kHz gov=userspace
+collect_pmic: 496932 rows written, 0 skipped
+[collect] sweep 352/418: idle @ 1728000 kHz
+[collect]   [352] bench=idle freq=1728000kHz gov=userspace
+[collect] sweep 353/418: bursty @ 115200 kHz
+collect_pmic: 498476 rows written, 0 skipped
+[collect]   [353] bench=bursty freq=115200kHz gov=userspace
+[collect] sweep 354/418: bursty @ 192000 kHz
+[collect]   [354] bench=bursty freq=192000kHz gov=userspace
+collect_pmic: 499934 rows written, 0 skipped
+[collect] sweep 355/418: bursty @ 268800 kHz
+[collect]   [355] bench=bursty freq=268800kHz gov=userspace
+collect_pmic: 501392 rows written, 0 skipped
+[collect] sweep 356/418: bursty @ 345600 kHz
+[collect]   [356] bench=bursty freq=345600kHz gov=userspace
+collect_pmic: 502851 rows written, 0 skipped
+[collect] sweep 357/418: bursty @ 422400 kHz
+[collect]   [357] bench=bursty freq=422400kHz gov=userspace
+collect_pmic: 504305 rows written, 0 skipped
+[collect] sweep 358/418: bursty @ 499200 kHz
+[collect]   [358] bench=bursty freq=499200kHz gov=userspace
+collect_pmic: 505763 rows written, 0 skipped
+[collect] sweep 359/418: bursty @ 576000 kHz
+[collect]   [359] bench=bursty freq=576000kHz gov=userspace
+collect_pmic: 507222 rows written, 0 skipped
+[collect] sweep 360/418: bursty @ 652800 kHz
+[collect]   [360] bench=bursty freq=652800kHz gov=userspace
+[collect] sweep 361/418: bursty @ 729600 kHz
+[collect]   [361] bench=bursty freq=729600kHz gov=userspace
+collect_pmic: 508674 rows written, 0 skipped
+[collect] sweep 362/418: bursty @ 806400 kHz
+[collect]   [362] bench=bursty freq=806400kHz gov=userspace
+collect_pmic: 510133 rows written, 0 skipped
+[collect] sweep 363/418: bursty @ 883200 kHz
+[collect]   [363] bench=bursty freq=883200kHz gov=userspace
+collect_pmic: 511607 rows written, 0 skipped
+[collect] sweep 364/418: bursty @ 960000 kHz
+[collect]   [364] bench=bursty freq=960000kHz gov=userspace
+collect_pmic: 513095 rows written, 0 skipped
+[collect] sweep 365/418: bursty @ 1036800 kHz
+[collect]   [365] bench=bursty freq=1036800kHz gov=userspace
+collect_pmic: 514589 rows written, 0 skipped
+[collect] sweep 366/418: bursty @ 1113600 kHz
+[collect]   [366] bench=bursty freq=1113600kHz gov=userspace
+collect_pmic: 516093 rows written, 0 skipped
+[collect] sweep 367/418: bursty @ 1190400 kHz
+[collect]   [367] bench=bursty freq=1190400kHz gov=userspace
+collect_pmic: 517602 rows written, 0 skipped
+[collect] sweep 368/418: bursty @ 1267200 kHz
+[collect]   [368] bench=bursty freq=1267200kHz gov=userspace
+[collect] sweep 369/418: bursty @ 1344000 kHz
+[collect]   [369] bench=bursty freq=1344000kHz gov=userspace
+collect_pmic: 519121 rows written, 0 skipped
+[collect] sweep 370/418: bursty @ 1420800 kHz
+[collect]   [370] bench=bursty freq=1420800kHz gov=userspace
+collect_pmic: 520644 rows written, 0 skipped
+[collect] sweep 371/418: bursty @ 1497600 kHz
+[collect]   [371] bench=bursty freq=1497600kHz gov=userspace
+collect_pmic: 522173 rows written, 0 skipped
+[collect] sweep 372/418: bursty @ 1574400 kHz
+[collect]   [372] bench=bursty freq=1574400kHz gov=userspace
+collect_pmic: 523709 rows written, 0 skipped
+[collect] sweep 373/418: bursty @ 1651200 kHz
+[collect]   [373] bench=bursty freq=1651200kHz gov=userspace
+collect_pmic: 525249 rows written, 0 skipped
+[collect] sweep 374/418: bursty @ 1728000 kHz
+[collect]   [374] bench=bursty freq=1728000kHz gov=userspace
+collect_pmic: 526795 rows written, 0 skipped
+[collect] sweep 375/418: multiphase @ 115200 kHz
+[collect]   [375] bench=multiphase freq=115200kHz gov=userspace
+collect_pmic: 528243 rows written, 0 skipped
+[collect] sweep 376/418: multiphase @ 192000 kHz
+[collect]   [376] bench=multiphase freq=192000kHz gov=userspace
+[collect] sweep 377/418: multiphase @ 268800 kHz
+[collect]   [377] bench=multiphase freq=268800kHz gov=userspace
+collect_pmic: 529682 rows written, 0 skipped
+[collect] sweep 378/418: multiphase @ 345600 kHz
+[collect]   [378] bench=multiphase freq=345600kHz gov=userspace
+collect_pmic: 531119 rows written, 0 skipped
+[collect] sweep 379/418: multiphase @ 422400 kHz
+[collect]   [379] bench=multiphase freq=422400kHz gov=userspace
+collect_pmic: 532532 rows written, 0 skipped
+[collect] sweep 380/418: multiphase @ 499200 kHz
+[collect]   [380] bench=multiphase freq=499200kHz gov=userspace
+collect_pmic: 533955 rows written, 0 skipped
+[collect] sweep 381/418: multiphase @ 576000 kHz
+[collect]   [381] bench=multiphase freq=576000kHz gov=userspace
+collect_pmic: 535386 rows written, 0 skipped
+[collect] sweep 382/418: multiphase @ 652800 kHz
+[collect]   [382] bench=multiphase freq=652800kHz gov=userspace
+collect_pmic: 536799 rows written, 0 skipped
+[collect] sweep 383/418: multiphase @ 729600 kHz
+[collect]   [383] bench=multiphase freq=729600kHz gov=userspace
+[collect] sweep 384/418: multiphase @ 806400 kHz
+collect_pmic: 538214 rows written, 0 skipped
+[collect]   [384] bench=multiphase freq=806400kHz gov=userspace
+[collect] sweep 385/418: multiphase @ 883200 kHz
+[collect]   [385] bench=multiphase freq=883200kHz gov=userspace
+collect_pmic: 539667 rows written, 0 skipped
+[collect] sweep 386/418: multiphase @ 960000 kHz
+[collect]   [386] bench=multiphase freq=960000kHz gov=userspace
+collect_pmic: 541127 rows written, 0 skipped
+[collect] sweep 387/418: multiphase @ 1036800 kHz
+[collect]   [387] bench=multiphase freq=1036800kHz gov=userspace
+collect_pmic: 542584 rows written, 0 skipped
+[collect] sweep 388/418: multiphase @ 1113600 kHz
+[collect]   [388] bench=multiphase freq=1113600kHz gov=userspace
+collect_pmic: 544054 rows written, 0 skipped
+[collect] sweep 389/418: multiphase @ 1190400 kHz
+[collect]   [389] bench=multiphase freq=1190400kHz gov=userspace
+collect_pmic: 545543 rows written, 0 skipped
+[collect] sweep 390/418: multiphase @ 1267200 kHz
+[collect]   [390] bench=multiphase freq=1267200kHz gov=userspace
+collect_pmic: 547041 rows written, 0 skipped
+[collect] sweep 391/418: multiphase @ 1344000 kHz
+[collect]   [391] bench=multiphase freq=1344000kHz gov=userspace
+[collect] sweep 392/418: multiphase @ 1420800 kHz
+collect_pmic: 548544 rows written, 0 skipped
+[collect]   [392] bench=multiphase freq=1420800kHz gov=userspace
+[collect] sweep 393/418: multiphase @ 1497600 kHz
+[collect]   [393] bench=multiphase freq=1497600kHz gov=userspace
+collect_pmic: 550048 rows written, 0 skipped
+[collect] sweep 394/418: multiphase @ 1574400 kHz
+[collect]   [394] bench=multiphase freq=1574400kHz gov=userspace
+collect_pmic: 551556 rows written, 0 skipped
+[collect] sweep 395/418: multiphase @ 1651200 kHz
+[collect]   [395] bench=multiphase freq=1651200kHz gov=userspace
+collect_pmic: 553057 rows written, 0 skipped
+[collect] sweep 396/418: multiphase @ 1728000 kHz
+[collect]   [396] bench=multiphase freq=1728000kHz gov=userspace
+collect_pmic: 554575 rows written, 0 skipped
+[collect] sweep 397/418: ramp @ 115200 kHz
+[collect]   [397] bench=ramp freq=115200kHz gov=userspace
+collect_pmic: 556059 rows written, 0 skipped
+[collect] sweep 398/418: ramp @ 192000 kHz
+[collect]   [398] bench=ramp freq=192000kHz gov=userspace
+[collect] sweep 399/418: ramp @ 268800 kHz
+[collect]   [399] bench=ramp freq=268800kHz gov=userspace
+collect_pmic: 557518 rows written, 0 skipped
+[collect] sweep 400/418: ramp @ 345600 kHz
+[collect]   [400] bench=ramp freq=345600kHz gov=userspace
+collect_pmic: 558975 rows written, 0 skipped
+[collect] sweep 401/418: ramp @ 422400 kHz
+[collect]   [401] bench=ramp freq=422400kHz gov=userspace
+collect_pmic: 560431 rows written, 0 skipped
+[collect] sweep 402/418: ramp @ 499200 kHz
+[collect]   [402] bench=ramp freq=499200kHz gov=userspace
+[collect] sweep 403/418: ramp @ 576000 kHz
+[collect]   [403] bench=ramp freq=576000kHz gov=userspace
+collect_pmic: 561887 rows written, 0 skipped
+[collect] sweep 404/418: ramp @ 652800 kHz
+[collect]   [404] bench=ramp freq=652800kHz gov=userspace
+collect_pmic: 563344 rows written, 0 skipped
+[collect] sweep 405/418: ramp @ 729600 kHz
+[collect]   [405] bench=ramp freq=729600kHz gov=userspace
+collect_pmic: 564798 rows written, 0 skipped
+[collect] sweep 406/418: ramp @ 806400 kHz
+[collect]   [406] bench=ramp freq=806400kHz gov=userspace
+[collect] sweep 407/418: ramp @ 883200 kHz
+[collect]   [407] bench=ramp freq=883200kHz gov=userspace
+collect_pmic: 566266 rows written, 0 skipped
+[collect] sweep 408/418: ramp @ 960000 kHz
+[collect]   [408] bench=ramp freq=960000kHz gov=userspace
+collect_pmic: 567751 rows written, 0 skipped
+[collect] sweep 409/418: ramp @ 1036800 kHz
+[collect]   [409] bench=ramp freq=1036800kHz gov=userspace
+collect_pmic: 569242 rows written, 0 skipped
+[collect] sweep 410/418: ramp @ 1113600 kHz
+[collect]   [410] bench=ramp freq=1113600kHz gov=userspace
+[collect] sweep 411/418: ramp @ 1190400 kHz
+collect_pmic: 570748 rows written, 0 skipped
+[collect]   [411] bench=ramp freq=1190400kHz gov=userspace
+[collect] sweep 412/418: ramp @ 1267200 kHz
+[collect]   [412] bench=ramp freq=1267200kHz gov=userspace
+collect_pmic: 572260 rows written, 0 skipped
+[collect] sweep 413/418: ramp @ 1344000 kHz
+[collect]   [413] bench=ramp freq=1344000kHz gov=userspace
+collect_pmic: 573779 rows written, 0 skipped
+[collect] sweep 414/418: ramp @ 1420800 kHz
+[collect]   [414] bench=ramp freq=1420800kHz gov=userspace
+collect_pmic: 575304 rows written, 0 skipped
+[collect] sweep 415/418: ramp @ 1497600 kHz
+[collect]   [415] bench=ramp freq=1497600kHz gov=userspace
+[collect] sweep 416/418: ramp @ 1574400 kHz
+[collect]   [416] bench=ramp freq=1574400kHz gov=userspace
+collect_pmic: 576839 rows written, 0 skipped
+[collect] sweep 417/418: ramp @ 1651200 kHz
+[collect]   [417] bench=ramp freq=1651200kHz gov=userspace
+collect_pmic: 578376 rows written, 0 skipped
+[collect] sweep 418/418: ramp @ 1728000 kHz
+[collect]   [418] bench=ramp freq=1728000kHz gov=userspace
+collect_pmic: 579920 rows written, 0 skipped
+[collect] === PHASE 2: governor dynamics — 5 governors × 12 benchmarks = 60 segments ===
+[collect] --- governor: schedutil ---
+[collect] gov 1/60: schedutil / cpu_all
+[collect]   [419] bench=cpu_all freq=0kHz gov=schedutil
+collect_pmic: 581453 rows written, 0 skipped
+[collect] gov 2/60: schedutil / cpu_load_50
+[collect]   [420] bench=cpu_load_50 freq=0kHz gov=schedutil
+collect_pmic: 582975 rows written, 0 skipped
+collect_pmic: 584477 rows written, 0 skipped
+[collect] gov 3/60: schedutil / stream
+[collect]   [421] bench=stream freq=0kHz gov=schedutil
+collect_pmic: 585945 rows written, 0 skipped
+collect_pmic: 587379 rows written, 0 skipped
+[collect] gov 4/60: schedutil / matmul
+[collect]   [422] bench=matmul freq=0kHz gov=schedutil
+collect_pmic: 588828 rows written, 0 skipped
+collect_pmic: 590280 rows written, 0 skipped
+[collect] gov 5/60: schedutil / mem_latency
+[collect]   [423] bench=mem_latency freq=0kHz gov=schedutil
+collect_pmic: 591766 rows written, 0 skipped
+[collect] gov 6/60: schedutil / branch
+[collect]   [424] bench=branch freq=0kHz gov=schedutil
+collect_pmic: 593246 rows written, 0 skipped
+collect_pmic: 594777 rows written, 0 skipped
+[collect] gov 7/60: schedutil / vm_pressure
+[collect]   [425] bench=vm_pressure freq=0kHz gov=schedutil
+collect_pmic: 596287 rows written, 0 skipped
+collect_pmic: 597801 rows written, 0 skipped
+[collect] gov 8/60: schedutil / ml_inference
+[collect]   [426] bench=ml_inference freq=0kHz gov=schedutil
+collect_pmic: 599278 rows written, 0 skipped
+[collect] gov 9/60: schedutil / compile
+[collect]   [427] bench=compile freq=0kHz gov=schedutil
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection clean
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CLEAN   /home/mlpower/MLPower/src/data_collection/Module.symvers
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection modules
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.o
+  MODPOST /home/mlpower/MLPower/src/data_collection/Module.symvers
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.mod.o
+collect_pmic: 600754 rows written, 0 skipped
+  LD [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.ko
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+[collect] gov 10/60: schedutil / bursty
+[collect]   [428] bench=bursty freq=0kHz gov=schedutil
+collect_pmic: 602248 rows written, 0 skipped
+[collect] gov 11/60: schedutil / multiphase
+[collect]   [429] bench=multiphase freq=0kHz gov=schedutil
+collect_pmic: 603743 rows written, 0 skipped
+collect_pmic: 605222 rows written, 0 skipped
+[collect] gov 12/60: schedutil / ramp
+[collect]   [430] bench=ramp freq=0kHz gov=schedutil
+collect_pmic: 606684 rows written, 0 skipped
+collect_pmic: 608204 rows written, 0 skipped
+[collect] --- governor: ondemand ---
+[collect] gov 13/60: ondemand / cpu_all
+[collect]   [431] bench=cpu_all freq=0kHz gov=ondemand
+collect_pmic: 609726 rows written, 0 skipped
+[collect] gov 14/60: ondemand / cpu_load_50
+[collect]   [432] bench=cpu_load_50 freq=0kHz gov=ondemand
+collect_pmic: 611249 rows written, 0 skipped
+collect_pmic: 612743 rows written, 0 skipped
+[collect] gov 15/60: ondemand / stream
+[collect]   [433] bench=stream freq=0kHz gov=ondemand
+collect_pmic: 614215 rows written, 0 skipped
+collect_pmic: 615662 rows written, 0 skipped
+[collect] gov 16/60: ondemand / matmul
+[collect]   [434] bench=matmul freq=0kHz gov=ondemand
+collect_pmic: 617115 rows written, 0 skipped
+collect_pmic: 618568 rows written, 0 skipped
+[collect] gov 17/60: ondemand / mem_latency
+[collect]   [435] bench=mem_latency freq=0kHz gov=ondemand
+collect_pmic: 620050 rows written, 0 skipped
+[collect] gov 18/60: ondemand / branch
+[collect]   [436] bench=branch freq=0kHz gov=ondemand
+collect_pmic: 621534 rows written, 0 skipped
+collect_pmic: 623077 rows written, 0 skipped
+[collect] gov 19/60: ondemand / vm_pressure
+[collect]   [437] bench=vm_pressure freq=0kHz gov=ondemand
+collect_pmic: 624590 rows written, 0 skipped
+collect_pmic: 626119 rows written, 0 skipped
+[collect] gov 20/60: ondemand / ml_inference
+[collect]   [438] bench=ml_inference freq=0kHz gov=ondemand
+collect_pmic: 627603 rows written, 0 skipped
+[collect] gov 21/60: ondemand / compile
+[collect]   [439] bench=compile freq=0kHz gov=ondemand
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection clean
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CLEAN   /home/mlpower/MLPower/src/data_collection/Module.symvers
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection modules
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.o
+  MODPOST /home/mlpower/MLPower/src/data_collection/Module.symvers
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.mod.o
+  LD [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.ko
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+collect_pmic: 629081 rows written, 0 skipped
+[collect] gov 22/60: ondemand / bursty
+[collect]   [440] bench=bursty freq=0kHz gov=ondemand
+collect_pmic: 630571 rows written, 0 skipped
+[collect] gov 23/60: ondemand / multiphase
+[collect]   [441] bench=multiphase freq=0kHz gov=ondemand
+collect_pmic: 632071 rows written, 0 skipped
+collect_pmic: 633548 rows written, 0 skipped
+[collect] gov 24/60: ondemand / ramp
+[collect]   [442] bench=ramp freq=0kHz gov=ondemand
+collect_pmic: 635014 rows written, 0 skipped
+collect_pmic: 636527 rows written, 0 skipped
+[collect] --- governor: conservative ---
+[collect] gov 25/60: conservative / cpu_all
+[collect]   [443] bench=cpu_all freq=0kHz gov=conservative
+collect_pmic: 638045 rows written, 0 skipped
+[collect] gov 26/60: conservative / cpu_load_50
+[collect]   [444] bench=cpu_load_50 freq=0kHz gov=conservative
+collect_pmic: 639564 rows written, 0 skipped
+collect_pmic: 641045 rows written, 0 skipped
+[collect] gov 27/60: conservative / stream
+[collect]   [445] bench=stream freq=0kHz gov=conservative
+collect_pmic: 642494 rows written, 0 skipped
+collect_pmic: 643922 rows written, 0 skipped
+[collect] gov 28/60: conservative / matmul
+[collect]   [446] bench=matmul freq=0kHz gov=conservative
+collect_pmic: 645374 rows written, 0 skipped
+collect_pmic: 646824 rows written, 0 skipped
+[collect] gov 29/60: conservative / mem_latency
+[collect]   [447] bench=mem_latency freq=0kHz gov=conservative
+collect_pmic: 648299 rows written, 0 skipped
+[collect] gov 30/60: conservative / branch
+[collect]   [448] bench=branch freq=0kHz gov=conservative
+collect_pmic: 649786 rows written, 0 skipped
+collect_pmic: 651328 rows written, 0 skipped
+[collect] gov 31/60: conservative / vm_pressure
+[collect]   [449] bench=vm_pressure freq=0kHz gov=conservative
+collect_pmic: 652841 rows written, 0 skipped
+collect_pmic: 654380 rows written, 0 skipped
+[collect] gov 32/60: conservative / ml_inference
+[collect]   [450] bench=ml_inference freq=0kHz gov=conservative
+collect_pmic: 655863 rows written, 0 skipped
+[collect] gov 33/60: conservative / compile
+[collect]   [451] bench=compile freq=0kHz gov=conservative
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection clean
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CLEAN   /home/mlpower/MLPower/src/data_collection/Module.symvers
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection modules
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.o
+  MODPOST /home/mlpower/MLPower/src/data_collection/Module.symvers
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.mod.o
+  LD [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.ko
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+collect_pmic: 657347 rows written, 0 skipped
+[collect] gov 34/60: conservative / bursty
+[collect]   [452] bench=bursty freq=0kHz gov=conservative
+collect_pmic: 658838 rows written, 0 skipped
+[collect] gov 35/60: conservative / multiphase
+[collect]   [453] bench=multiphase freq=0kHz gov=conservative
+collect_pmic: 660338 rows written, 0 skipped
+collect_pmic: 661813 rows written, 0 skipped
+[collect] gov 36/60: conservative / ramp
+[collect]   [454] bench=ramp freq=0kHz gov=conservative
+collect_pmic: 663277 rows written, 0 skipped
+collect_pmic: 664781 rows written, 0 skipped
+[collect] --- governor: performance ---
+[collect] gov 37/60: performance / cpu_all
+[collect]   [455] bench=cpu_all freq=0kHz gov=performance
+collect_pmic: 666309 rows written, 0 skipped
+[collect] gov 38/60: performance / cpu_load_50
+[collect]   [456] bench=cpu_load_50 freq=0kHz gov=performance
+collect_pmic: 667854 rows written, 0 skipped
+collect_pmic: 669398 rows written, 0 skipped
+[collect] gov 39/60: performance / stream
+[collect]   [457] bench=stream freq=0kHz gov=performance
+collect_pmic: 670904 rows written, 0 skipped
+collect_pmic: 672322 rows written, 0 skipped
+[collect] gov 40/60: performance / matmul
+[collect]   [458] bench=matmul freq=0kHz gov=performance
+collect_pmic: 673791 rows written, 0 skipped
+collect_pmic: 675259 rows written, 0 skipped
+[collect] gov 41/60: performance / mem_latency
+[collect]   [459] bench=mem_latency freq=0kHz gov=performance
+collect_pmic: 676806 rows written, 0 skipped
+[collect] gov 42/60: performance / branch
+[collect]   [460] bench=branch freq=0kHz gov=performance
+collect_pmic: 678330 rows written, 0 skipped
+collect_pmic: 679865 rows written, 0 skipped
+[collect] gov 43/60: performance / vm_pressure
+[collect]   [461] bench=vm_pressure freq=0kHz gov=performance
+collect_pmic: 681398 rows written, 0 skipped
+collect_pmic: 682934 rows written, 0 skipped
+[collect] gov 44/60: performance / ml_inference
+[collect]   [462] bench=ml_inference freq=0kHz gov=performance
+collect_pmic: 684438 rows written, 0 skipped
+[collect] gov 45/60: performance / compile
+[collect]   [463] bench=compile freq=0kHz gov=performance
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection clean
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CLEAN   /home/mlpower/MLPower/src/data_collection/Module.symvers
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection modules
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.o
+  MODPOST /home/mlpower/MLPower/src/data_collection/Module.symvers
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.mod.o
+  LD [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.ko
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+collect_pmic: 685946 rows written, 0 skipped
+[collect] gov 46/60: performance / bursty
+[collect]   [464] bench=bursty freq=0kHz gov=performance
+collect_pmic: 687491 rows written, 0 skipped
+[collect] gov 47/60: performance / multiphase
+[collect]   [465] bench=multiphase freq=0kHz gov=performance
+collect_pmic: 689035 rows written, 0 skipped
+collect_pmic: 690534 rows written, 0 skipped
+[collect] gov 48/60: performance / ramp
+[collect]   [466] bench=ramp freq=0kHz gov=performance
+collect_pmic: 692080 rows written, 0 skipped
+collect_pmic: 693624 rows written, 0 skipped
+[collect] --- governor: powersave ---
+[collect] gov 49/60: powersave / cpu_all
+[collect]   [467] bench=cpu_all freq=0kHz gov=powersave
+collect_pmic: 695090 rows written, 0 skipped
+[collect] gov 50/60: powersave / cpu_load_50
+[collect]   [468] bench=cpu_load_50 freq=0kHz gov=powersave
+collect_pmic: 696549 rows written, 0 skipped
+collect_pmic: 698008 rows written, 0 skipped
+[collect] gov 51/60: powersave / stream
+[collect]   [469] bench=stream freq=0kHz gov=powersave
+collect_pmic: 699424 rows written, 0 skipped
+collect_pmic: 700774 rows written, 0 skipped
+[collect] gov 52/60: powersave / matmul
+[collect]   [470] bench=matmul freq=0kHz gov=powersave
+collect_pmic: 702159 rows written, 0 skipped
+collect_pmic: 703525 rows written, 0 skipped
+[collect] gov 53/60: powersave / mem_latency
+[collect]   [471] bench=mem_latency freq=0kHz gov=powersave
+collect_pmic: 704972 rows written, 0 skipped
+[collect] gov 54/60: powersave / branch
+[collect]   [472] bench=branch freq=0kHz gov=powersave
+collect_pmic: 706395 rows written, 0 skipped
+collect_pmic: 707848 rows written, 0 skipped
+[collect] gov 55/60: powersave / vm_pressure
+[collect]   [473] bench=vm_pressure freq=0kHz gov=powersave
+collect_pmic: 709298 rows written, 0 skipped
+collect_pmic: 710745 rows written, 0 skipped
+[collect] gov 56/60: powersave / ml_inference
+[collect]   [474] bench=ml_inference freq=0kHz gov=powersave
+collect_pmic: 712150 rows written, 0 skipped
+collect_pmic: 713522 rows written, 0 skipped
+[collect] gov 57/60: powersave / compile
+[collect]   [475] bench=compile freq=0kHz gov=powersave
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection clean
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CLEAN   /home/mlpower/MLPower/src/data_collection/Module.symvers
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+make: Entering directory '/home/mlpower/MLPower/src/data_collection'
+make -C /lib/modules/5.15.185-tegra/build/ M=/home/mlpower/MLPower/src/data_collection modules
+make[1]: Entering directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.o
+  MODPOST /home/mlpower/MLPower/src/data_collection/Module.symvers
+  CC [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.mod.o
+  LD [M]  /home/mlpower/MLPower/src/data_collection/pmu_profiler.ko
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.185-tegra-ubuntu22.04_aarch64/3rdparty/canonical/linux-jammy/kernel-source'
+make: Leaving directory '/home/mlpower/MLPower/src/data_collection'
+[collect] gov 58/60: powersave / bursty
+[collect]   [476] bench=bursty freq=0kHz gov=powersave
+collect_pmic: 714983 rows written, 0 skipped
+collect_pmic: 716443 rows written, 0 skipped
+[collect] gov 59/60: powersave / multiphase
+[collect]   [477] bench=multiphase freq=0kHz gov=powersave
+collect_pmic: 717857 rows written, 0 skipped
+[collect] gov 60/60: powersave / ramp
+[collect]   [478] bench=ramp freq=0kHz gov=powersave
+collect_pmic: 719313 rows written, 0 skipped
+collect_pmic: 720772 rows written, 0 skipped
+[collect] stopping PMIC poller (pid 348751)
+collect_pmic: stopped — 721462 rows written, 0 skipped
+[collect] === collection complete ===
+[collect]   segments : 478
+[collect]   pmu rows : 853616
+[collect]   pmic rows: 721462
+[collect]   files    : pmu_data.csv  pmic_data.csv  segments.csv
+[collect] 
+[collect] Next: python3 preprocess.py
+[collect] cleaning up...
