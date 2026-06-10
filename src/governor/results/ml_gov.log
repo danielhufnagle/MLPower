@@ -1,0 +1,700 @@
+governor pinned to cores 4-5
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+scaler: scaler.pkl
+governor started  model=model_fp32.pt  update_every=500  lr=1e-05  inference_only=True
+[     0] util=  8.3% emc= 2.0% ll=0.002 stall=0.022 gate=model →  1420800 kHz
+[    10] util= 94.3% emc= 2.0% ll=0.017 stall=0.150 gate=model →  1420800 kHz
+[    20] util=100.0% emc= 2.0% ll=0.016 stall=0.219 gate=model →  1651200 kHz
+[    30] util=100.0% emc= 2.0% ll=0.016 stall=0.242 gate=model →  1420800 kHz
+[    40] util= 80.5% emc= 2.0% ll=0.016 stall=0.242 gate=model →  1651200 kHz
+[    50] util= 94.3% emc= 2.0% ll=0.015 stall=0.236 gate=model →  1651200 kHz
+[    60] util= 94.3% emc= 2.0% ll=0.016 stall=0.259 gate=model →  1651200 kHz
+[    70] util= 91.7% emc= 2.0% ll=0.016 stall=0.262 gate=model →  1651200 kHz
+[    80] util= 94.3% emc= 2.0% ll=0.016 stall=0.256 gate=model →  1651200 kHz
+[    90] util= 93.8% emc= 2.0% ll=0.015 stall=0.247 gate=model →  1651200 kHz
+[   100] util= 94.3% emc= 1.0% ll=0.014 stall=0.249 gate=model →  1651200 kHz
+[   110] util= 88.8% emc= 2.0% ll=0.016 stall=0.264 gate=model →  1651200 kHz
+[   120] util= 86.0% emc= 1.0% ll=0.016 stall=0.251 gate=model →  1651200 kHz
+[   130] util= 94.3% emc= 1.0% ll=0.015 stall=0.249 gate=model →  1651200 kHz
+[   140] util= 94.3% emc= 1.0% ll=0.016 stall=0.264 gate=model →  1651200 kHz
+[   150] util= 97.2% emc= 1.0% ll=0.016 stall=0.257 gate=model →  1651200 kHz
+[   160] util= 90.2% emc= 1.0% ll=0.016 stall=0.253 gate=model →  1651200 kHz
+[   170] util= 86.0% emc= 1.0% ll=0.016 stall=0.240 gate=model →  1651200 kHz
+[   180] util= 94.3% emc= 1.0% ll=0.016 stall=0.261 gate=model →  1651200 kHz
+[   190] util= 86.0% emc= 1.0% ll=0.015 stall=0.264 gate=model →  1651200 kHz
+[   200] util= 83.3% emc= 1.0% ll=0.017 stall=0.269 gate=model →  1651200 kHz
+[   210] util= 88.7% emc= 1.0% ll=0.015 stall=0.267 gate=model →  1651200 kHz
+[   220] util= 86.0% emc= 1.0% ll=0.015 stall=0.256 gate=model →  1651200 kHz
+[   230] util= 95.8% emc= 1.0% ll=0.016 stall=0.256 gate=model →  1651200 kHz
+[   240] util= 88.3% emc= 1.0% ll=0.016 stall=0.233 gate=model →  1420800 kHz
+[   250] util= 94.3% emc= 1.0% ll=0.016 stall=0.256 gate=model →  1651200 kHz
+[   260] util= 94.3% emc= 1.0% ll=0.015 stall=0.258 gate=model →  1420800 kHz
+[   270] util= 79.2% emc= 1.0% ll=0.016 stall=0.241 gate=model →  1651200 kHz
+[   280] util=100.0% emc= 1.0% ll=0.016 stall=0.257 gate=model →  1651200 kHz
+[   290] util= 87.5% emc= 1.0% ll=0.017 stall=0.269 gate=model →  1651200 kHz
+[   300] util= 94.3% emc= 1.0% ll=0.017 stall=0.255 gate=model →  1651200 kHz
+[   310] util= 88.7% emc= 1.0% ll=0.016 stall=0.236 gate=model →  1651200 kHz
+[   320] util= 86.0% emc= 1.0% ll=0.016 stall=0.267 gate=model →  1651200 kHz
+[   330] util= 83.3% emc= 1.0% ll=0.016 stall=0.250 gate=model →  1651200 kHz
+[   340] util= 94.3% emc= 1.0% ll=0.017 stall=0.267 gate=model →  1651200 kHz
+[   350] util= 86.0% emc= 1.0% ll=0.016 stall=0.268 gate=model →  1651200 kHz
+[   360] util= 94.3% emc= 1.0% ll=0.016 stall=0.252 gate=model →  1651200 kHz
+[   370] util= 94.3% emc= 1.0% ll=0.016 stall=0.269 gate=model →  1651200 kHz
+[   380] util= 75.0% emc= 1.0% ll=0.017 stall=0.261 gate=model →  1651200 kHz
+[   390] util= 90.0% emc= 1.0% ll=0.015 stall=0.264 gate=model →  1651200 kHz
+[   400] util= 86.0% emc= 1.0% ll=0.016 stall=0.258 gate=model →  1651200 kHz
+[   410] util= 86.0% emc= 1.0% ll=0.015 stall=0.255 gate=model →  1651200 kHz
+[   420] util= 87.5% emc= 1.0% ll=0.015 stall=0.242 gate=model →  1651200 kHz
+[   430] util= 95.8% emc= 1.0% ll=0.016 stall=0.255 gate=model →  1651200 kHz
+[   440] util=100.0% emc= 1.0% ll=0.017 stall=0.245 gate=model →  1651200 kHz
+[   450] util= 94.3% emc= 1.0% ll=0.016 stall=0.243 gate=model →  1651200 kHz
+[   460] util= 75.0% emc= 1.0% ll=0.016 stall=0.246 gate=model →  1651200 kHz
+[   470] util= 91.7% emc= 1.0% ll=0.017 stall=0.248 gate=model →  1651200 kHz
+[   480] util=100.0% emc= 1.0% ll=0.015 stall=0.269 gate=model →  1651200 kHz
+[   490] util=100.0% emc= 1.0% ll=0.010 stall=0.245 gate=model →  1651200 kHz
+[   500] util=100.0% emc= 1.0% ll=0.008 stall=0.254 gate=model →  1651200 kHz
+[   510] util=100.0% emc= 1.0% ll=0.009 stall=0.230 gate=model →  1651200 kHz
+[   520] util=100.0% emc= 1.0% ll=0.008 stall=0.198 gate=model →  1651200 kHz
+[   530] util=100.0% emc= 1.0% ll=0.009 stall=0.208 gate=model →  1651200 kHz
+[   540] util=100.0% emc= 1.0% ll=0.009 stall=0.207 gate=model →  1651200 kHz
+[   550] util=100.0% emc= 1.0% ll=0.008 stall=0.216 gate=model →  1651200 kHz
+[   560] util=100.0% emc= 1.0% ll=0.008 stall=0.228 gate=model →  1651200 kHz
+[   570] util= 86.0% emc= 1.0% ll=0.014 stall=0.255 gate=model →  1651200 kHz
+[   580] util= 97.2% emc= 1.0% ll=0.015 stall=0.248 gate=model →  1651200 kHz
+[   590] util= 94.3% emc= 1.0% ll=0.016 stall=0.246 gate=model →  1651200 kHz
+[   600] util= 88.7% emc= 1.0% ll=0.016 stall=0.254 gate=model →  1651200 kHz
+[   610] util=100.0% emc= 1.0% ll=0.017 stall=0.268 gate=model →  1651200 kHz
+[   620] util= 95.8% emc= 1.0% ll=0.017 stall=0.272 gate=model →  1651200 kHz
+[   630] util= 84.7% emc= 1.0% ll=0.016 stall=0.265 gate=model →  1651200 kHz
+[   640] util=100.0% emc= 1.0% ll=0.016 stall=0.261 gate=model →  1651200 kHz
+[   650] util=100.0% emc= 1.0% ll=0.017 stall=0.268 gate=model →  1651200 kHz
+[   660] util= 88.7% emc= 1.0% ll=0.016 stall=0.284 gate=model →  1651200 kHz
+[   670] util= 88.3% emc= 1.0% ll=0.016 stall=0.260 gate=model →  1420800 kHz
+[   680] util= 94.3% emc= 1.0% ll=0.016 stall=0.256 gate=model →  1651200 kHz
+[   690] util= 80.5% emc= 1.0% ll=0.016 stall=0.232 gate=model →  1420800 kHz
+[   700] util= 91.7% emc= 1.0% ll=0.016 stall=0.259 gate=model →  1651200 kHz
+[   710] util=100.0% emc= 1.0% ll=0.016 stall=0.242 gate=model →  1420800 kHz
+[   720] util= 94.3% emc= 1.0% ll=0.016 stall=0.235 gate=model →  1651200 kHz
+[   730] util=100.0% emc= 1.0% ll=0.017 stall=0.269 gate=model →  1651200 kHz
+[   740] util= 90.2% emc= 1.0% ll=0.017 stall=0.267 gate=model →  1651200 kHz
+[   750] util= 86.0% emc= 1.0% ll=0.016 stall=0.270 gate=model →  1651200 kHz
+[   760] util= 86.0% emc= 1.0% ll=0.017 stall=0.269 gate=model →  1651200 kHz
+[   770] util= 86.0% emc= 1.0% ll=0.015 stall=0.275 gate=model →  1651200 kHz
+[   780] util= 83.3% emc= 1.0% ll=0.017 stall=0.261 gate=model →  1651200 kHz
+[   790] util= 94.3% emc= 1.0% ll=0.017 stall=0.273 gate=model →  1651200 kHz
+[   800] util= 86.0% emc= 1.0% ll=0.016 stall=0.269 gate=model →  1651200 kHz
+[   810] util= 94.3% emc= 1.0% ll=0.016 stall=0.271 gate=model →  1651200 kHz
+[   820] util= 92.5% emc= 1.0% ll=0.016 stall=0.259 gate=model →  1651200 kHz
+[   830] util= 86.0% emc= 1.0% ll=0.016 stall=0.260 gate=model →  1651200 kHz
+[   840] util=100.0% emc= 1.0% ll=0.018 stall=0.251 gate=model →  1651200 kHz
+[   850] util=100.0% emc= 1.0% ll=0.016 stall=0.260 gate=model →  1651200 kHz
+[   860] util= 75.0% emc= 1.0% ll=0.016 stall=0.266 gate=model →  1651200 kHz
+[   870] util= 91.7% emc= 1.0% ll=0.016 stall=0.248 gate=model →  1651200 kHz
+[   880] util= 83.3% emc= 1.0% ll=0.016 stall=0.241 gate=model →  1651200 kHz
+[   890] util= 77.7% emc= 1.0% ll=0.017 stall=0.256 gate=model →  1651200 kHz
+[   900] util= 86.0% emc= 1.0% ll=0.017 stall=0.256 gate=model →  1651200 kHz
+[   910] util= 95.8% emc= 1.0% ll=0.016 stall=0.258 gate=model →  1651200 kHz
+[   920] util= 94.3% emc= 1.0% ll=0.015 stall=0.254 gate=model →  1651200 kHz
+[   930] util= 94.3% emc= 1.0% ll=0.017 stall=0.273 gate=model →  1651200 kHz
+[   940] util= 88.7% emc= 1.0% ll=0.015 stall=0.269 gate=model →  1651200 kHz
+[   950] util= 86.0% emc= 1.0% ll=0.015 stall=0.264 gate=model →  1651200 kHz
+[   960] util= 86.0% emc= 1.0% ll=0.016 stall=0.248 gate=model →  1651200 kHz
+[   970] util= 94.3% emc= 1.0% ll=0.017 stall=0.262 gate=model →  1651200 kHz
+[   980] util=100.0% emc= 1.0% ll=0.016 stall=0.259 gate=model →  1651200 kHz
+[   990] util= 95.8% emc= 1.0% ll=0.016 stall=0.263 gate=model →  1651200 kHz
+[  1000] util= 80.5% emc= 1.0% ll=0.017 stall=0.244 gate=model →  1651200 kHz
+[step 1000] saved model_fp32_rl_1000.pt
+[  1010] util=100.0% emc= 1.0% ll=0.016 stall=0.261 gate=model →  1651200 kHz
+[  1020] util= 88.7% emc= 1.0% ll=0.017 stall=0.252 gate=model →  1651200 kHz
+[  1030] util= 86.0% emc= 1.0% ll=0.016 stall=0.267 gate=model →  1651200 kHz
+[  1040] util= 94.3% emc= 1.0% ll=0.016 stall=0.251 gate=model →  1651200 kHz
+[  1050] util= 92.5% emc= 1.0% ll=0.016 stall=0.256 gate=model →  1651200 kHz
+[  1060] util= 94.3% emc= 1.0% ll=0.017 stall=0.260 gate=model →  1651200 kHz
+[  1070] util= 86.0% emc= 1.0% ll=0.016 stall=0.263 gate=model →  1651200 kHz
+[  1080] util= 83.2% emc= 1.0% ll=0.015 stall=0.247 gate=model →  1651200 kHz
+[  1090] util=100.0% emc= 1.0% ll=0.012 stall=0.235 gate=model →  1651200 kHz
+[  1100] util=100.0% emc= 1.0% ll=0.008 stall=0.212 gate=model →  1651200 kHz
+[  1110] util=100.0% emc= 1.0% ll=0.007 stall=0.206 gate=model →  1651200 kHz
+[  1120] util=100.0% emc= 1.0% ll=0.006 stall=0.243 gate=model →  1651200 kHz
+[  1130] util=100.0% emc= 2.0% ll=0.008 stall=0.291 gate=model →  1651200 kHz
+[  1140] util=100.0% emc= 2.0% ll=0.010 stall=0.241 gate=model →  1651200 kHz
+[  1150] util= 94.3% emc= 2.0% ll=0.013 stall=0.267 gate=model →  1651200 kHz
+[  1160] util= 87.7% emc= 2.0% ll=0.016 stall=0.259 gate=model →  1651200 kHz
+[  1170] util=100.0% emc= 2.0% ll=0.015 stall=0.258 gate=model →  1651200 kHz
+[  1180] util= 88.7% emc= 2.0% ll=0.017 stall=0.251 gate=model →  1651200 kHz
+[  1190] util= 88.7% emc= 2.0% ll=0.016 stall=0.256 gate=model →  1651200 kHz
+[  1200] util= 77.7% emc= 2.0% ll=0.015 stall=0.229 gate=model →  1420800 kHz
+[  1210] util= 88.7% emc= 1.0% ll=0.016 stall=0.223 gate=model →  1651200 kHz
+[  1220] util=100.0% emc= 1.0% ll=0.016 stall=0.260 gate=model →  1651200 kHz
+[  1230] util=100.0% emc= 1.0% ll=0.017 stall=0.258 gate=model →  1651200 kHz
+[  1240] util= 91.7% emc= 1.0% ll=0.016 stall=0.262 gate=model →  1651200 kHz
+[  1250] util= 86.0% emc= 1.0% ll=0.016 stall=0.235 gate=model →  1651200 kHz
+[  1260] util= 94.3% emc= 1.0% ll=0.016 stall=0.259 gate=model →  1651200 kHz
+[  1270] util=100.0% emc= 1.0% ll=0.015 stall=0.266 gate=model →  1651200 kHz
+[  1280] util=100.0% emc= 1.0% ll=0.015 stall=0.267 gate=model →  1651200 kHz
+[  1290] util= 86.0% emc= 1.0% ll=0.015 stall=0.234 gate=model →  1651200 kHz
+[  1300] util= 88.7% emc= 1.0% ll=0.016 stall=0.248 gate=model →  1651200 kHz
+[  1310] util= 96.7% emc= 1.0% ll=0.017 stall=0.260 gate=model →  1651200 kHz
+[  1320] util= 88.7% emc= 1.0% ll=0.016 stall=0.275 gate=model →  1651200 kHz
+[  1330] util= 77.7% emc= 1.0% ll=0.015 stall=0.259 gate=model →  1651200 kHz
+[  1340] util= 88.7% emc= 1.0% ll=0.016 stall=0.234 gate=model →  1651200 kHz
+[  1350] util= 63.7% emc= 1.0% ll=0.018 stall=0.229 gate=model →  1420800 kHz
+[  1360] util= 16.7% emc= 2.0% ll=0.021 stall=0.251 gate=model →  1420800 kHz
+[  1370] util=  5.5% emc= 2.0% ll=0.023 stall=0.215 gate=model →  1420800 kHz
+[  1380] util= 24.8% emc= 2.0% ll=0.019 stall=0.213 gate=model →  1420800 kHz
+[  1390] util= 16.5% emc= 1.0% ll=0.023 stall=0.173 gate=model →  1420800 kHz
+[  1400] util= 16.5% emc= 1.0% ll=0.025 stall=0.172 gate=model →  1420800 kHz
+[  1410] util= 16.5% emc= 1.0% ll=0.029 stall=0.201 gate=model →  1420800 kHz
+[  1420] util= 20.8% emc= 1.0% ll=0.025 stall=0.226 gate=model →  1420800 kHz
+[  1430] util= 13.8% emc= 1.0% ll=0.026 stall=0.209 gate=model →  1420800 kHz
+[  1440] util=  8.3% emc= 1.0% ll=0.026 stall=0.165 gate=model →  1420800 kHz
+[  1450] util=  0.0% emc= 1.0% ll=0.025 stall=0.174 gate=model →   115200 kHz
+[  1460] util= 16.7% emc= 1.0% ll=0.022 stall=0.197 gate=model →  1420800 kHz
+[  1470] util=  0.0% emc= 1.0% ll=0.023 stall=0.224 gate=model →  1420800 kHz
+[  1480] util=  8.3% emc= 1.0% ll=0.022 stall=0.208 gate=model →  1420800 kHz
+[  1490] util= 16.7% emc= 1.0% ll=0.020 stall=0.185 gate=model →  1420800 kHz
+[  1500] util=  8.3% emc= 1.0% ll=0.022 stall=0.159 gate=model →  1420800 kHz
+[  1510] util=  0.0% emc= 1.0% ll=0.021 stall=0.155 gate=model →  1420800 kHz
+[  1520] util= 33.2% emc= 1.0% ll=0.030 stall=0.167 gate=model →  1420800 kHz
+[  1530] util= 19.3% emc= 1.0% ll=0.028 stall=0.185 gate=model →  1420800 kHz
+[  1540] util= 11.0% emc= 1.0% ll=0.024 stall=0.181 gate=model →  1420800 kHz
+[  1550] util= 25.0% emc= 1.0% ll=0.024 stall=0.177 gate=model →  1420800 kHz
+[  1560] util= 41.5% emc= 1.0% ll=0.022 stall=0.174 gate=model →  1420800 kHz
+[  1570] util= 26.7% emc= 1.0% ll=0.022 stall=0.180 gate=model →  1420800 kHz
+[  1580] util= 24.8% emc= 1.0% ll=0.025 stall=0.222 gate=model →  1420800 kHz
+[  1590] util= 13.8% emc= 1.0% ll=0.026 stall=0.208 gate=model →  1420800 kHz
+[  1600] util= 35.8% emc= 1.0% ll=0.025 stall=0.192 gate=model →  1420800 kHz
+[  1610] util= 16.7% emc= 1.0% ll=0.025 stall=0.162 gate=model →  1420800 kHz
+[  1620] util= 19.3% emc= 1.0% ll=0.027 stall=0.184 gate=model →  1420800 kHz
+[  1630] util= 38.8% emc= 1.0% ll=0.025 stall=0.228 gate=model →  1420800 kHz
+[  1640] util= 80.5% emc= 3.0% ll=0.029 stall=0.234 gate=model →  1420800 kHz
+[  1650] util= 83.3% emc= 6.0% ll=0.034 stall=0.223 gate=model →  1420800 kHz
+[  1660] util=100.0% emc= 9.0% ll=0.030 stall=0.227 gate=model →  1420800 kHz
+[  1670] util=100.0% emc=11.0% ll=0.027 stall=0.225 gate=model →  1420800 kHz
+[  1680] util=100.0% emc=14.0% ll=0.028 stall=0.200 gate=model →  1420800 kHz
+[  1690] util=100.0% emc=15.0% ll=0.029 stall=0.210 gate=model →  1420800 kHz
+[  1700] util=100.0% emc=17.0% ll=0.023 stall=0.214 gate=model →  1651200 kHz
+[  1710] util=100.0% emc=19.0% ll=0.017 stall=0.255 gate=model →  1651200 kHz
+[  1720] util= 84.7% emc=20.0% ll=0.023 stall=0.242 gate=model →  1420800 kHz
+[  1730] util= 75.0% emc=20.0% ll=0.031 stall=0.233 gate=model →  1420800 kHz
+[  1740] util= 72.2% emc=21.0% ll=0.034 stall=0.224 gate=model →  1420800 kHz
+[  1750] util= 88.7% emc=22.0% ll=0.036 stall=0.224 gate=model →  1420800 kHz
+[  1760] util= 86.0% emc=23.0% ll=0.037 stall=0.221 gate=model →  1420800 kHz
+[  1770] util= 91.0% emc=23.0% ll=0.036 stall=0.238 gate=model →  1420800 kHz
+[  1780] util= 95.8% emc=23.0% ll=0.035 stall=0.235 gate=model →  1420800 kHz
+[  1790] util=100.0% emc=24.0% ll=0.036 stall=0.228 gate=model →  1420800 kHz
+[  1800] util= 86.0% emc=24.0% ll=0.037 stall=0.238 gate=model →  1420800 kHz
+[  1810] util= 90.2% emc=24.0% ll=0.037 stall=0.227 gate=model →  1420800 kHz
+[  1820] util= 90.2% emc=25.0% ll=0.036 stall=0.226 gate=model →  1420800 kHz
+[  1830] util=100.0% emc=25.0% ll=0.037 stall=0.230 gate=model →  1420800 kHz
+[  1840] util=100.0% emc=25.0% ll=0.036 stall=0.237 gate=model →  1420800 kHz
+[  1850] util= 91.7% emc=25.0% ll=0.035 stall=0.214 gate=model →  1420800 kHz
+[  1860] util= 83.3% emc=25.0% ll=0.036 stall=0.232 gate=model →  1420800 kHz
+[  1870] util=100.0% emc=25.0% ll=0.037 stall=0.239 gate=model →  1420800 kHz
+[  1880] util= 95.8% emc=25.0% ll=0.036 stall=0.235 gate=model →  1420800 kHz
+[  1890] util= 88.7% emc=25.0% ll=0.036 stall=0.234 gate=model →  1420800 kHz
+[  1900] util= 91.7% emc=25.0% ll=0.036 stall=0.243 gate=model →  1420800 kHz
+[  1910] util= 77.7% emc=25.0% ll=0.036 stall=0.231 gate=model →  1420800 kHz
+[  1920] util= 88.7% emc=25.0% ll=0.036 stall=0.236 gate=model →  1420800 kHz
+[  1930] util= 83.3% emc=26.0% ll=0.036 stall=0.234 gate=model →  1420800 kHz
+[  1940] util= 88.7% emc=26.0% ll=0.036 stall=0.243 gate=model →  1420800 kHz
+[  1950] util= 86.0% emc=26.0% ll=0.037 stall=0.242 gate=model →  1420800 kHz
+[  1960] util= 94.3% emc=26.0% ll=0.037 stall=0.255 gate=model →  1420800 kHz
+[  1970] util= 96.7% emc=26.0% ll=0.036 stall=0.256 gate=model →  1420800 kHz
+[  1980] util= 88.7% emc=26.0% ll=0.037 stall=0.219 gate=model →  1420800 kHz
+[  1990] util= 95.8% emc=26.0% ll=0.036 stall=0.241 gate=model →  1420800 kHz
+[  2000] util= 88.7% emc=26.0% ll=0.038 stall=0.239 gate=model →  1420800 kHz
+[step 2000] saved model_fp32_rl_2000.pt
+[  2010] util=100.0% emc=26.0% ll=0.036 stall=0.247 gate=model →  1420800 kHz
+[  2020] util= 86.0% emc=26.0% ll=0.036 stall=0.242 gate=model →  1420800 kHz
+[  2030] util= 90.2% emc=26.0% ll=0.037 stall=0.229 gate=model →  1420800 kHz
+[  2040] util= 83.3% emc=26.0% ll=0.036 stall=0.237 gate=model →  1420800 kHz
+[  2050] util= 86.0% emc=26.0% ll=0.036 stall=0.248 gate=model →  1420800 kHz
+[  2060] util= 94.3% emc=26.0% ll=0.037 stall=0.230 gate=model →  1420800 kHz
+[  2070] util= 83.3% emc=26.0% ll=0.036 stall=0.235 gate=model →  1420800 kHz
+[  2080] util= 95.8% emc=26.0% ll=0.036 stall=0.224 gate=model →  1420800 kHz
+[  2090] util= 75.0% emc=26.0% ll=0.037 stall=0.235 gate=model →  1420800 kHz
+[  2100] util= 79.2% emc=26.0% ll=0.036 stall=0.245 gate=model →  1420800 kHz
+[  2110] util= 88.7% emc=26.0% ll=0.037 stall=0.234 gate=model →  1420800 kHz
+[  2120] util= 91.7% emc=26.0% ll=0.037 stall=0.235 gate=model →  1420800 kHz
+[  2130] util= 94.3% emc=26.0% ll=0.037 stall=0.241 gate=model →  1420800 kHz
+[  2140] util= 95.8% emc=26.0% ll=0.036 stall=0.258 gate=model →  1420800 kHz
+[  2150] util= 95.8% emc=26.0% ll=0.035 stall=0.248 gate=model →  1420800 kHz
+[  2160] util= 88.7% emc=26.0% ll=0.035 stall=0.219 gate=model →  1420800 kHz
+[  2170] util=100.0% emc=26.0% ll=0.037 stall=0.239 gate=model →  1420800 kHz
+[  2180] util= 95.8% emc=26.0% ll=0.037 stall=0.242 gate=model →  1420800 kHz
+[  2190] util= 83.3% emc=26.0% ll=0.037 stall=0.226 gate=model →  1420800 kHz
+[  2200] util= 80.5% emc=26.0% ll=0.036 stall=0.226 gate=model →  1420800 kHz
+[  2210] util=100.0% emc=26.0% ll=0.035 stall=0.229 gate=model →  1420800 kHz
+[  2220] util= 80.5% emc=26.0% ll=0.036 stall=0.241 gate=model →  1420800 kHz
+[  2230] util= 90.2% emc=26.0% ll=0.036 stall=0.230 gate=model →  1420800 kHz
+[  2240] util=100.0% emc=26.0% ll=0.038 stall=0.227 gate=model →  1420800 kHz
+[  2250] util=100.0% emc=25.0% ll=0.028 stall=0.246 gate=model →  1651200 kHz
+[  2260] util=100.0% emc=25.0% ll=0.018 stall=0.273 gate=model →  1651200 kHz
+[  2270] util=100.0% emc=24.0% ll=0.020 stall=0.207 gate=model →  1420800 kHz
+[  2280] util=100.0% emc=24.0% ll=0.020 stall=0.176 gate=model →  1420800 kHz
+[  2290] util=100.0% emc=23.0% ll=0.023 stall=0.187 gate=model →  1420800 kHz
+[  2300] util=100.0% emc=23.0% ll=0.023 stall=0.185 gate=model →  1420800 kHz
+[  2310] util=100.0% emc=23.0% ll=0.022 stall=0.225 gate=model →  1420800 kHz
+[  2320] util=100.0% emc=22.0% ll=0.019 stall=0.214 gate=model →  1651200 kHz
+[  2330] util=100.0% emc=23.0% ll=0.028 stall=0.225 gate=model →  1420800 kHz
+[  2340] util=100.0% emc=23.0% ll=0.034 stall=0.242 gate=model →  1420800 kHz
+[  2350] util=100.0% emc=24.0% ll=0.034 stall=0.263 gate=model →  1420800 kHz
+[  2360] util=100.0% emc=24.0% ll=0.036 stall=0.246 gate=model →  1420800 kHz
+[  2370] util= 94.3% emc=24.0% ll=0.035 stall=0.249 gate=model →  1420800 kHz
+[  2380] util= 94.3% emc=25.0% ll=0.037 stall=0.261 gate=model →  1420800 kHz
+[  2390] util=100.0% emc=25.0% ll=0.036 stall=0.264 gate=model →  1420800 kHz
+[  2400] util= 86.0% emc=25.0% ll=0.035 stall=0.250 gate=model →  1420800 kHz
+[  2410] util=100.0% emc=25.0% ll=0.035 stall=0.252 gate=model →  1420800 kHz
+[  2420] util=100.0% emc=25.0% ll=0.037 stall=0.262 gate=model →  1420800 kHz
+[  2430] util= 86.0% emc=25.0% ll=0.037 stall=0.250 gate=model →  1420800 kHz
+[  2440] util= 96.7% emc=25.0% ll=0.036 stall=0.253 gate=model →  1420800 kHz
+[  2450] util= 88.7% emc=25.0% ll=0.036 stall=0.240 gate=model →  1420800 kHz
+[  2460] util= 95.8% emc=25.0% ll=0.037 stall=0.230 gate=model →  1420800 kHz
+[  2470] util= 75.0% emc=26.0% ll=0.039 stall=0.227 gate=model →  1420800 kHz
+[  2480] util=100.0% emc=26.0% ll=0.037 stall=0.237 gate=model →  1420800 kHz
+[  2490] util= 91.0% emc=25.0% ll=0.037 stall=0.226 gate=model →  1420800 kHz
+[  2500] util= 91.7% emc=26.0% ll=0.037 stall=0.237 gate=model →  1420800 kHz
+[  2510] util= 96.7% emc=26.0% ll=0.037 stall=0.253 gate=model →  1420800 kHz
+[  2520] util= 86.0% emc=26.0% ll=0.036 stall=0.238 gate=model →  1420800 kHz
+[  2530] util= 87.5% emc=26.0% ll=0.036 stall=0.234 gate=model →  1420800 kHz
+[  2540] util= 90.2% emc=26.0% ll=0.036 stall=0.221 gate=model →  1420800 kHz
+[  2550] util= 94.3% emc=26.0% ll=0.038 stall=0.242 gate=model →  1420800 kHz
+[  2560] util=100.0% emc=26.0% ll=0.037 stall=0.240 gate=model →  1420800 kHz
+[  2570] util= 91.7% emc=26.0% ll=0.036 stall=0.221 gate=model →  1420800 kHz
+[  2580] util= 86.0% emc=26.0% ll=0.037 stall=0.228 gate=model →  1420800 kHz
+[  2590] util=100.0% emc=26.0% ll=0.037 stall=0.251 gate=model →  1420800 kHz
+[  2600] util=100.0% emc=26.0% ll=0.036 stall=0.247 gate=model →  1420800 kHz
+[  2610] util= 95.8% emc=26.0% ll=0.036 stall=0.247 gate=model →  1420800 kHz
+[  2620] util= 91.7% emc=26.0% ll=0.036 stall=0.242 gate=model →  1420800 kHz
+[  2630] util= 75.0% emc=26.0% ll=0.037 stall=0.240 gate=model →  1420800 kHz
+[  2640] util= 96.7% emc=26.0% ll=0.036 stall=0.247 gate=model →  1420800 kHz
+[  2650] util= 94.3% emc=26.0% ll=0.035 stall=0.248 gate=model →  1420800 kHz
+[  2660] util=100.0% emc=26.0% ll=0.036 stall=0.252 gate=model →  1420800 kHz
+[  2670] util=100.0% emc=26.0% ll=0.038 stall=0.239 gate=model →  1420800 kHz
+[  2680] util= 95.8% emc=26.0% ll=0.035 stall=0.254 gate=model →  1420800 kHz
+[  2690] util=100.0% emc=26.0% ll=0.035 stall=0.252 gate=model →  1420800 kHz
+[  2700] util= 96.7% emc=26.0% ll=0.038 stall=0.251 gate=model →  1420800 kHz
+[  2710] util= 94.3% emc=26.0% ll=0.034 stall=0.242 gate=model →  1420800 kHz
+[  2720] util= 96.7% emc=26.0% ll=0.036 stall=0.235 gate=model →  1420800 kHz
+[  2730] util=100.0% emc=26.0% ll=0.037 stall=0.223 gate=model →  1420800 kHz
+[  2740] util= 95.8% emc=26.0% ll=0.035 stall=0.232 gate=model →  1420800 kHz
+[  2750] util=100.0% emc=26.0% ll=0.036 stall=0.254 gate=model →  1420800 kHz
+[  2760] util= 94.3% emc=26.0% ll=0.035 stall=0.249 gate=model →  1420800 kHz
+[  2770] util=100.0% emc=26.0% ll=0.036 stall=0.250 gate=model →  1420800 kHz
+[  2780] util= 94.3% emc=26.0% ll=0.037 stall=0.234 gate=model →  1420800 kHz
+[  2790] util= 94.3% emc=26.0% ll=0.037 stall=0.255 gate=model →  1420800 kHz
+[  2800] util= 91.7% emc=26.0% ll=0.037 stall=0.254 gate=model →  1420800 kHz
+[  2810] util=100.0% emc=26.0% ll=0.037 stall=0.239 gate=model →  1420800 kHz
+[  2820] util= 95.8% emc=26.0% ll=0.037 stall=0.247 gate=model →  1420800 kHz
+[  2830] util= 88.3% emc=26.0% ll=0.037 stall=0.238 gate=model →  1420800 kHz
+[  2840] util= 88.7% emc=26.0% ll=0.036 stall=0.230 gate=model →  1420800 kHz
+[  2850] util= 94.3% emc=26.0% ll=0.035 stall=0.230 gate=model →  1420800 kHz
+[  2860] util=100.0% emc=25.0% ll=0.025 stall=0.217 gate=model →  1420800 kHz
+[  2870] util=100.0% emc=22.0% ll=0.013 stall=0.240 gate=model →  1420800 kHz
+[  2880] util= 36.0% emc=19.0% ll=0.009 stall=0.233 gate=model →  1420800 kHz
+[  2890] util= 69.2% emc=16.0% ll=0.007 stall=0.223 gate=model →  1651200 kHz
+[  2900] util= 58.3% emc=13.0% ll=0.005 stall=0.222 gate=model →  1651200 kHz
+[  2910] util=100.0% emc=12.0% ll=0.008 stall=0.240 gate=model →  1420800 kHz
+[  2920] util= 16.7% emc=10.0% ll=0.014 stall=0.219 gate=model →  1420800 kHz
+[  2930] util= 19.3% emc= 9.0% ll=0.024 stall=0.207 gate=model →  1420800 kHz
+[  2940] util= 13.8% emc= 8.0% ll=0.027 stall=0.167 gate=model →  1420800 kHz
+[  2950] util= 13.8% emc= 7.0% ll=0.024 stall=0.158 gate=model →  1420800 kHz
+[  2960] util= 16.5% emc= 6.0% ll=0.022 stall=0.211 gate=model →  1420800 kHz
+[  2970] util= 22.0% emc= 6.0% ll=0.023 stall=0.200 gate=model →  1420800 kHz
+[  2980] util= 27.7% emc= 5.0% ll=0.024 stall=0.178 gate=model →  1420800 kHz
+[  2990] util= 22.0% emc= 4.0% ll=0.023 stall=0.173 gate=model →  1420800 kHz
+[  3000] util= 22.0% emc= 4.0% ll=0.026 stall=0.210 gate=model →  1420800 kHz
+[step 3000] saved model_fp32_rl_3000.pt
+[  3010] util=  8.3% emc= 4.0% ll=0.024 stall=0.206 gate=model →  1420800 kHz
+[  3020] util= 34.7% emc= 3.0% ll=0.025 stall=0.221 gate=model →  1420800 kHz
+[  3030] util= 30.5% emc= 3.0% ll=0.022 stall=0.214 gate=model →  1420800 kHz
+[  3040] util= 20.8% emc= 3.0% ll=0.023 stall=0.196 gate=model →  1420800 kHz
+[  3050] util= 16.7% emc= 3.0% ll=0.032 stall=0.181 gate=model →  1420800 kHz
+[  3060] util= 27.7% emc= 2.0% ll=0.029 stall=0.188 gate=model →  1420800 kHz
+[  3070] util= 26.3% emc= 2.0% ll=0.027 stall=0.195 gate=model →  1420800 kHz
+[  3080] util= 24.8% emc= 2.0% ll=0.025 stall=0.217 gate=model →  1420800 kHz
+[  3090] util= 15.2% emc= 2.0% ll=0.026 stall=0.185 gate=model →  1420800 kHz
+[  3100] util= 13.8% emc= 2.0% ll=0.022 stall=0.210 gate=model →  1420800 kHz
+[  3110] util= 25.0% emc= 2.0% ll=0.024 stall=0.182 gate=model →  1420800 kHz
+[  3120] util=  5.5% emc= 2.0% ll=0.021 stall=0.160 gate=model →  1420800 kHz
+[  3130] util= 24.8% emc= 2.0% ll=0.029 stall=0.181 gate=model →  1420800 kHz
+[  3140] util= 13.8% emc= 2.0% ll=0.025 stall=0.215 gate=model →  1420800 kHz
+[  3150] util= 38.8% emc= 2.0% ll=0.020 stall=0.201 gate=model →  1420800 kHz
+[  3160] util= 36.0% emc= 2.0% ll=0.017 stall=0.173 gate=model →  1420800 kHz
+[  3170] util= 30.5% emc= 2.0% ll=0.016 stall=0.166 gate=model →  1574400 kHz
+[  3180] util= 47.7% emc= 2.0% ll=0.018 stall=0.260 gate=model →  1651200 kHz
+[  3190] util= 31.8% emc= 3.0% ll=0.027 stall=0.351 gate=model →  1651200 kHz
+[  3200] util= 25.0% emc= 3.0% ll=0.025 stall=0.361 gate=model →  1420800 kHz
+[  3210] util= 30.5% emc= 3.0% ll=0.025 stall=0.370 gate=model →  1497600 kHz
+[  3220] util= 38.8% emc= 3.0% ll=0.024 stall=0.363 gate=model →  1497600 kHz
+[  3230] util= 33.2% emc= 3.0% ll=0.024 stall=0.363 gate=model →  1420800 kHz
+[  3240] util= 22.2% emc= 4.0% ll=0.025 stall=0.371 gate=model →  1497600 kHz
+[  3250] util= 22.2% emc= 4.0% ll=0.026 stall=0.370 gate=model →  1497600 kHz
+[  3260] util= 52.5% emc= 4.0% ll=0.025 stall=0.369 gate=model →  1497600 kHz
+[  3270] util= 33.3% emc= 4.0% ll=0.025 stall=0.367 gate=model →  1420800 kHz
+[  3280] util= 37.7% emc= 4.0% ll=0.026 stall=0.362 gate=model →  1497600 kHz
+[  3290] util= 38.8% emc= 4.0% ll=0.027 stall=0.362 gate=model →  1497600 kHz
+[  3300] util= 37.3% emc= 4.0% ll=0.026 stall=0.366 gate=model →  1497600 kHz
+[  3310] util= 45.7% emc= 4.0% ll=0.028 stall=0.272 gate=model →  1420800 kHz
+[  3320] util= 38.8% emc= 4.0% ll=0.027 stall=0.232 gate=model →  1420800 kHz
+[  3330] util= 36.0% emc= 4.0% ll=0.031 stall=0.192 gate=model →  1420800 kHz
+[  3340] util= 65.2% emc= 4.0% ll=0.032 stall=0.207 gate=model →  1420800 kHz
+[  3350] util= 22.2% emc= 4.0% ll=0.031 stall=0.219 gate=model →  1420800 kHz
+[  3360] util= 30.5% emc= 4.0% ll=0.033 stall=0.223 gate=model →  1420800 kHz
+[  3370] util= 34.7% emc= 4.0% ll=0.028 stall=0.237 gate=model →  1420800 kHz
+[  3380] util= 27.7% emc= 4.0% ll=0.036 stall=0.216 gate=model →  1420800 kHz
+[  3390] util= 55.3% emc= 4.0% ll=0.028 stall=0.241 gate=model →  1420800 kHz
+[  3400] util= 51.2% emc= 4.0% ll=0.033 stall=0.259 gate=model →  1420800 kHz
+[  3410] util= 36.0% emc= 4.0% ll=0.041 stall=0.234 gate=model →  1420800 kHz
+[  3420] util= 36.0% emc= 4.0% ll=0.034 stall=0.198 gate=model →  1420800 kHz
+[  3430] util= 38.7% emc= 4.0% ll=0.026 stall=0.201 gate=model →  1420800 kHz
+[  3440] util=100.0% emc= 4.0% ll=0.015 stall=0.197 gate=model →  1420800 kHz
+[  3450] util=100.0% emc= 4.0% ll=0.008 stall=0.213 gate=model →  1651200 kHz
+[  3460] util= 83.0% emc= 4.0% ll=0.005 stall=0.206 gate=model →  1651200 kHz
+[  3470] util=100.0% emc= 4.0% ll=0.005 stall=0.237 gate=model →  1651200 kHz
+[  3480] util=100.0% emc= 4.0% ll=0.005 stall=0.217 gate=model →  1651200 kHz
+[  3490] util= 36.0% emc= 4.0% ll=0.012 stall=0.212 gate=model →  1420800 kHz
+[  3500] util= 25.0% emc= 4.0% ll=0.025 stall=0.212 gate=model →  1420800 kHz
+[  3510] util= 38.8% emc= 4.0% ll=0.028 stall=0.201 gate=model →  1420800 kHz
+[  3520] util= 25.0% emc= 4.0% ll=0.027 stall=0.219 gate=model →  1420800 kHz
+[  3530] util= 26.3% emc= 4.0% ll=0.032 stall=0.231 gate=model →  1420800 kHz
+[  3540] util= 41.7% emc= 4.0% ll=0.032 stall=0.209 gate=model →  1420800 kHz
+[  3550] util= 38.8% emc= 4.0% ll=0.034 stall=0.217 gate=model →  1420800 kHz
+[  3560] util= 36.0% emc= 4.0% ll=0.034 stall=0.220 gate=model →  1420800 kHz
+[  3570] util= 40.2% emc= 4.0% ll=0.037 stall=0.226 gate=model →  1420800 kHz
+[  3580] util= 33.3% emc= 4.0% ll=0.032 stall=0.222 gate=model →  1420800 kHz
+[  3590] util= 22.2% emc= 4.0% ll=0.030 stall=0.232 gate=model →  1420800 kHz
+[  3600] util= 33.2% emc= 4.0% ll=0.032 stall=0.244 gate=model →  1420800 kHz
+[  3610] util= 38.8% emc= 4.0% ll=0.032 stall=0.244 gate=model →  1420800 kHz
+[  3620] util= 36.0% emc= 4.0% ll=0.027 stall=0.240 gate=model →  1420800 kHz
+[  3630] util= 40.2% emc= 4.0% ll=0.028 stall=0.266 gate=model →  1420800 kHz
+[  3640] util= 33.3% emc= 4.0% ll=0.035 stall=0.202 gate=model →  1420800 kHz
+[  3650] util= 44.2% emc= 4.0% ll=0.030 stall=0.260 gate=model →  1420800 kHz
+[  3660] util= 36.0% emc= 4.0% ll=0.030 stall=0.241 gate=model →  1420800 kHz
+[  3670] util= 41.5% emc= 4.0% ll=0.027 stall=0.242 gate=model →  1420800 kHz
+[  3680] util= 27.7% emc= 4.0% ll=0.031 stall=0.233 gate=model →  1420800 kHz
+[  3690] util= 33.2% emc= 4.0% ll=0.027 stall=0.246 gate=model →  1420800 kHz
+[  3700] util= 55.3% emc= 4.0% ll=0.029 stall=0.255 gate=model →  1420800 kHz
+[  3710] util= 30.5% emc= 4.0% ll=0.026 stall=0.229 gate=model →  1420800 kHz
+[  3720] util= 55.2% emc= 4.0% ll=0.034 stall=0.206 gate=model →  1420800 kHz
+[  3730] util= 27.7% emc= 4.0% ll=0.034 stall=0.229 gate=model →  1420800 kHz
+[  3740] util= 20.8% emc= 4.0% ll=0.034 stall=0.214 gate=model →  1420800 kHz
+[  3750] util= 33.3% emc= 4.0% ll=0.042 stall=0.227 gate=model →  1420800 kHz
+[  3760] util= 38.8% emc= 5.0% ll=0.032 stall=0.253 gate=model →  1420800 kHz
+[  3770] util= 40.2% emc= 5.0% ll=0.028 stall=0.231 gate=model →  1420800 kHz
+[  3780] util= 41.5% emc= 4.0% ll=0.028 stall=0.201 gate=model →  1420800 kHz
+[  3790] util= 49.8% emc= 4.0% ll=0.028 stall=0.215 gate=model →  1420800 kHz
+[  3800] util= 38.8% emc= 4.0% ll=0.027 stall=0.202 gate=model →  1420800 kHz
+[  3810] util= 43.0% emc= 4.0% ll=0.029 stall=0.207 gate=model →  1420800 kHz
+[  3820] util= 41.5% emc= 4.0% ll=0.027 stall=0.235 gate=model →  1420800 kHz
+[  3830] util= 41.5% emc= 4.0% ll=0.026 stall=0.192 gate=model →  1420800 kHz
+[  3840] util= 33.2% emc= 4.0% ll=0.029 stall=0.196 gate=model →  1420800 kHz
+[  3850] util= 42.8% emc= 4.0% ll=0.029 stall=0.230 gate=model →  1420800 kHz
+[  3860] util= 41.5% emc= 4.0% ll=0.032 stall=0.234 gate=model →  1420800 kHz
+[  3870] util= 41.7% emc= 4.0% ll=0.029 stall=0.257 gate=model →  1420800 kHz
+[  3880] util= 44.3% emc= 4.0% ll=0.029 stall=0.245 gate=model →  1420800 kHz
+[  3890] util= 41.7% emc= 4.0% ll=0.036 stall=0.208 gate=model →  1420800 kHz
+[  3900] util= 29.2% emc= 4.0% ll=0.029 stall=0.209 gate=model →  1420800 kHz
+[  3910] util= 25.0% emc= 4.0% ll=0.025 stall=0.232 gate=model →  1420800 kHz
+[  3920] util= 42.8% emc= 4.0% ll=0.027 stall=0.232 gate=model →  1420800 kHz
+[  3930] util= 36.0% emc= 4.0% ll=0.032 stall=0.226 gate=model →  1420800 kHz
+[  3940] util= 47.2% emc= 4.0% ll=0.030 stall=0.229 gate=model →  1420800 kHz
+[  3950] util= 36.0% emc= 4.0% ll=0.030 stall=0.224 gate=model →  1420800 kHz
+[  3960] util= 47.2% emc= 4.0% ll=0.023 stall=0.202 gate=model →  1420800 kHz
+[  3970] util= 58.2% emc= 5.0% ll=0.027 stall=0.293 gate=model →  1420800 kHz
+[  3980] util= 49.7% emc= 5.0% ll=0.024 stall=0.289 gate=model →  1420800 kHz
+[  3990] util= 27.7% emc= 5.0% ll=0.027 stall=0.264 gate=model →  1420800 kHz
+[  4000] util=100.0% emc= 5.0% ll=0.018 stall=0.249 gate=model →  1420800 kHz
+[step 4000] saved model_fp32_rl_4000.pt
+[  4010] util=100.0% emc= 5.0% ll=0.010 stall=0.224 gate=model →  1420800 kHz
+[  4020] util=100.0% emc= 5.0% ll=0.009 stall=0.220 gate=model →  1420800 kHz
+[  4030] util=100.0% emc= 5.0% ll=0.010 stall=0.228 gate=model →  1651200 kHz
+[  4040] util=100.0% emc= 4.0% ll=0.009 stall=0.241 gate=model →  1651200 kHz
+[  4050] util=100.0% emc= 4.0% ll=0.008 stall=0.233 gate=model →  1651200 kHz
+[  4060] util= 44.3% emc= 4.0% ll=0.022 stall=0.244 gate=model →  1420800 kHz
+[  4070] util= 47.0% emc= 5.0% ll=0.029 stall=0.216 gate=model →  1420800 kHz
+[  4080] util= 41.5% emc= 5.0% ll=0.030 stall=0.221 gate=model →  1420800 kHz
+[  4090] util= 34.7% emc= 4.0% ll=0.034 stall=0.212 gate=model →  1420800 kHz
+[  4100] util= 36.0% emc= 4.0% ll=0.036 stall=0.223 gate=model →  1420800 kHz
+[  4110] util= 38.8% emc= 4.0% ll=0.028 stall=0.212 gate=model →  1420800 kHz
+[  4120] util= 55.5% emc= 5.0% ll=0.033 stall=0.221 gate=model →  1420800 kHz
+[  4130] util= 36.0% emc= 5.0% ll=0.030 stall=0.241 gate=model →  1420800 kHz
+[  4140] util= 33.3% emc= 4.0% ll=0.033 stall=0.215 gate=model →  1420800 kHz
+[  4150] util= 36.0% emc= 4.0% ll=0.031 stall=0.234 gate=model →  1420800 kHz
+[  4160] util= 33.2% emc= 4.0% ll=0.030 stall=0.240 gate=model →  1420800 kHz
+[  4170] util= 50.0% emc= 4.0% ll=0.029 stall=0.234 gate=model →  1420800 kHz
+[  4180] util= 30.5% emc= 4.0% ll=0.032 stall=0.219 gate=model →  1420800 kHz
+[  4190] util= 30.5% emc= 4.0% ll=0.027 stall=0.228 gate=model →  1420800 kHz
+[  4200] util= 36.0% emc= 4.0% ll=0.031 stall=0.216 gate=model →  1420800 kHz
+[  4210] util= 30.5% emc= 4.0% ll=0.024 stall=0.249 gate=model →  1420800 kHz
+[  4220] util= 43.0% emc= 4.0% ll=0.034 stall=0.230 gate=model →  1420800 kHz
+[  4230] util= 22.2% emc= 4.0% ll=0.037 stall=0.228 gate=model →  1420800 kHz
+[  4240] util= 36.0% emc= 4.0% ll=0.037 stall=0.223 gate=model →  1420800 kHz
+[  4250] util= 38.7% emc= 4.0% ll=0.046 stall=0.196 gate=model →  1420800 kHz
+[  4260] util= 37.7% emc= 4.0% ll=0.035 stall=0.216 gate=model →  1420800 kHz
+[  4270] util= 38.8% emc= 4.0% ll=0.039 stall=0.216 gate=model →  1420800 kHz
+[  4280] util= 61.0% emc= 4.0% ll=0.029 stall=0.234 gate=model →  1420800 kHz
+[  4290] util= 34.7% emc= 4.0% ll=0.030 stall=0.227 gate=model →  1420800 kHz
+[  4300] util= 41.5% emc= 4.0% ll=0.033 stall=0.231 gate=model →  1420800 kHz
+[  4310] util= 47.2% emc= 4.0% ll=0.029 stall=0.201 gate=model →  1420800 kHz
+[  4320] util= 49.8% emc= 4.0% ll=0.030 stall=0.219 gate=model →  1420800 kHz
+[  4330] util= 30.5% emc= 4.0% ll=0.026 stall=0.259 gate=model →  1420800 kHz
+[  4340] util= 34.7% emc= 5.0% ll=0.031 stall=0.242 gate=model →  1420800 kHz
+[  4350] util= 30.5% emc= 4.0% ll=0.032 stall=0.247 gate=model →  1420800 kHz
+[  4360] util= 48.3% emc= 4.0% ll=0.034 stall=0.215 gate=model →  1420800 kHz
+[  4370] util= 36.0% emc= 4.0% ll=0.030 stall=0.243 gate=model →  1420800 kHz
+[  4380] util= 38.7% emc= 4.0% ll=0.027 stall=0.246 gate=model →  1420800 kHz
+[  4390] util= 44.3% emc= 5.0% ll=0.025 stall=0.250 gate=model →  1420800 kHz
+[  4400] util= 54.2% emc= 5.0% ll=0.028 stall=0.248 gate=model →  1420800 kHz
+[  4410] util= 16.7% emc= 4.0% ll=0.031 stall=0.223 gate=model →  1420800 kHz
+[  4420] util= 38.8% emc= 4.0% ll=0.029 stall=0.214 gate=model →  1420800 kHz
+[  4430] util= 38.8% emc= 4.0% ll=0.025 stall=0.204 gate=model →  1420800 kHz
+[  4440] util= 27.7% emc= 4.0% ll=0.031 stall=0.208 gate=model →  1420800 kHz
+[  4450] util= 30.5% emc= 4.0% ll=0.028 stall=0.217 gate=model →  1420800 kHz
+[  4460] util= 25.0% emc= 4.0% ll=0.033 stall=0.218 gate=model →  1420800 kHz
+[  4470] util= 25.0% emc= 4.0% ll=0.030 stall=0.207 gate=model →  1420800 kHz
+[  4480] util= 52.5% emc= 4.0% ll=0.029 stall=0.236 gate=model →  1420800 kHz
+[  4490] util= 41.5% emc= 4.0% ll=0.030 stall=0.222 gate=model →  1420800 kHz
+[  4500] util= 36.3% emc= 4.0% ll=0.026 stall=0.254 gate=model →  1420800 kHz
+[  4510] util= 38.8% emc= 4.0% ll=0.031 stall=0.208 gate=model →  1420800 kHz
+[  4520] util= 44.3% emc= 4.0% ll=0.030 stall=0.198 gate=model →  1420800 kHz
+[  4530] util= 41.5% emc= 4.0% ll=0.027 stall=0.208 gate=model →  1420800 kHz
+[  4540] util= 27.7% emc= 4.0% ll=0.029 stall=0.232 gate=model →  1420800 kHz
+[  4550] util= 44.3% emc= 4.0% ll=0.026 stall=0.252 gate=model →  1420800 kHz
+[  4560] util= 44.3% emc= 5.0% ll=0.027 stall=0.269 gate=model →  1420800 kHz
+[  4570] util=100.0% emc= 5.0% ll=0.019 stall=0.255 gate=model →  1420800 kHz
+[  4580] util=100.0% emc= 5.0% ll=0.011 stall=0.249 gate=model →  1651200 kHz
+[  4590] util=100.0% emc= 4.0% ll=0.010 stall=0.220 gate=model →  1651200 kHz
+[  4600] util= 77.7% emc= 5.0% ll=0.010 stall=0.208 gate=model →  1190400 kHz
+[  4610] util=100.0% emc= 5.0% ll=0.009 stall=0.229 gate=model →  1651200 kHz
+[  4620] util= 95.8% emc= 5.0% ll=0.008 stall=0.228 gate=model →  1651200 kHz
+[  4630] util= 44.3% emc= 5.0% ll=0.009 stall=0.211 gate=model →  1190400 kHz
+[  4640] util= 49.8% emc= 5.0% ll=0.023 stall=0.238 gate=model →  1420800 kHz
+[  4650] util= 33.2% emc= 5.0% ll=0.030 stall=0.229 gate=model →  1420800 kHz
+[  4660] util= 38.8% emc= 5.0% ll=0.029 stall=0.243 gate=model →  1420800 kHz
+[  4670] util= 36.0% emc= 5.0% ll=0.030 stall=0.239 gate=model →  1420800 kHz
+[  4680] util= 44.3% emc= 5.0% ll=0.028 stall=0.219 gate=model →  1420800 kHz
+[  4690] util= 26.3% emc= 5.0% ll=0.029 stall=0.211 gate=model →  1420800 kHz
+[  4700] util= 30.5% emc= 5.0% ll=0.026 stall=0.226 gate=model →  1420800 kHz
+[  4710] util= 48.5% emc= 5.0% ll=0.033 stall=0.265 gate=model →  1420800 kHz
+[  4720] util= 55.5% emc= 5.0% ll=0.028 stall=0.279 gate=model →  1420800 kHz
+[  4730] util= 38.8% emc= 5.0% ll=0.030 stall=0.233 gate=model →  1420800 kHz
+[  4740] util= 36.0% emc= 5.0% ll=0.035 stall=0.234 gate=model →  1420800 kHz
+[  4750] util= 25.0% emc= 5.0% ll=0.040 stall=0.233 gate=model →  1420800 kHz
+[  4760] util= 22.2% emc= 4.0% ll=0.034 stall=0.237 gate=model →  1420800 kHz
+[  4770] util= 16.7% emc= 4.0% ll=0.030 stall=0.227 gate=model →  1420800 kHz
+[  4780] util= 27.5% emc= 4.0% ll=0.026 stall=0.197 gate=model →  1420800 kHz
+[  4790] util= 27.7% emc= 3.0% ll=0.024 stall=0.155 gate=model →  1420800 kHz
+[  4800] util= 11.0% emc= 3.0% ll=0.025 stall=0.168 gate=model →  1420800 kHz
+[  4810] util= 22.2% emc= 3.0% ll=0.026 stall=0.195 gate=model →  1420800 kHz
+[  4820] util=  8.3% emc= 3.0% ll=0.025 stall=0.210 gate=model →  1420800 kHz
+[  4830] util= 25.0% emc= 2.0% ll=0.025 stall=0.210 gate=model →  1420800 kHz
+[  4840] util= 16.7% emc= 2.0% ll=0.025 stall=0.176 gate=model →  1420800 kHz
+[  4850] util= 24.8% emc= 2.0% ll=0.023 stall=0.190 gate=model →  1420800 kHz
+[  4860] util=  5.5% emc= 2.0% ll=0.023 stall=0.211 gate=model →  1420800 kHz
+[  4870] util= 25.0% emc= 2.0% ll=0.031 stall=0.184 gate=model →  1420800 kHz
+[  4880] util= 31.8% emc= 2.0% ll=0.028 stall=0.188 gate=model →  1420800 kHz
+[  4890] util= 13.8% emc= 2.0% ll=0.023 stall=0.160 gate=model →  1420800 kHz
+[  4900] util= 15.2% emc= 1.0% ll=0.024 stall=0.167 gate=model →  1420800 kHz
+[  4910] util= 13.8% emc= 1.0% ll=0.023 stall=0.190 gate=model →  1420800 kHz
+[  4920] util= 16.7% emc= 1.0% ll=0.020 stall=0.150 gate=model →  1420800 kHz
+[  4930] util= 28.0% emc= 1.0% ll=0.025 stall=0.182 gate=model →  1420800 kHz
+[  4940] util= 26.3% emc= 1.0% ll=0.029 stall=0.164 gate=model →  1420800 kHz
+[  4950] util= 19.3% emc= 1.0% ll=0.024 stall=0.138 gate=model →  1420800 kHz
+[  4960] util= 13.8% emc= 1.0% ll=0.024 stall=0.165 gate=model →  1420800 kHz
+[  4970] util= 16.5% emc= 1.0% ll=0.022 stall=0.196 gate=model →  1420800 kHz
+[  4980] util= 30.3% emc= 1.0% ll=0.024 stall=0.187 gate=model →  1420800 kHz
+[  4990] util= 16.7% emc= 1.0% ll=0.027 stall=0.183 gate=model →  1420800 kHz
+[  5000] util=  8.3% emc= 1.0% ll=0.024 stall=0.166 gate=model →  1420800 kHz
+[step 5000] saved model_fp32_rl_5000.pt
+[  5010] util= 22.2% emc= 1.0% ll=0.025 stall=0.161 gate=model →  1420800 kHz
+[  5020] util= 23.5% emc= 1.0% ll=0.025 stall=0.164 gate=model →  1420800 kHz
+[  5030] util=  8.3% emc= 1.0% ll=0.033 stall=0.190 gate=model →  1420800 kHz
+[  5040] util= 88.7% emc= 1.0% ll=0.024 stall=0.220 gate=model →  1420800 kHz
+[  5050] util= 90.2% emc= 1.0% ll=0.019 stall=0.239 gate=model →  1651200 kHz
+[  5060] util= 87.5% emc= 1.0% ll=0.016 stall=0.243 gate=model →  1651200 kHz
+[  5070] util= 91.7% emc= 1.0% ll=0.016 stall=0.247 gate=model →  1651200 kHz
+[  5080] util= 75.0% emc= 1.0% ll=0.015 stall=0.247 gate=model →  1651200 kHz
+[  5090] util= 95.8% emc= 1.0% ll=0.016 stall=0.252 gate=model →  1651200 kHz
+[  5100] util= 86.0% emc= 1.0% ll=0.016 stall=0.273 gate=model →  1651200 kHz
+[  5110] util= 94.3% emc= 1.0% ll=0.015 stall=0.260 gate=model →  1651200 kHz
+[  5120] util= 80.5% emc= 1.0% ll=0.015 stall=0.233 gate=model →  1651200 kHz
+[  5130] util= 86.0% emc= 1.0% ll=0.015 stall=0.231 gate=model →  1651200 kHz
+[  5140] util= 95.8% emc= 1.0% ll=0.017 stall=0.248 gate=model →  1651200 kHz
+[  5150] util= 94.3% emc= 1.0% ll=0.015 stall=0.250 gate=model →  1651200 kHz
+[  5160] util=100.0% emc= 1.0% ll=0.009 stall=0.210 gate=model →  1651200 kHz
+[  5170] util=100.0% emc= 1.0% ll=0.006 stall=0.200 gate=model →  1651200 kHz
+[  5180] util=100.0% emc= 1.0% ll=0.007 stall=0.215 gate=model →  1651200 kHz
+[  5190] util=100.0% emc= 1.0% ll=0.010 stall=0.229 gate=model →  1651200 kHz
+[  5200] util= 95.8% emc= 1.0% ll=0.006 stall=0.208 gate=model →  1420800 kHz
+[  5210] util= 11.0% emc= 1.0% ll=0.010 stall=0.188 gate=model →  1420800 kHz
+[  5220] util= 18.3% emc= 1.0% ll=0.019 stall=0.174 gate=model →  1420800 kHz
+[  5230] util= 13.8% emc= 1.0% ll=0.024 stall=0.183 gate=model →  1420800 kHz
+[  5240] util= 16.5% emc= 1.0% ll=0.028 stall=0.183 gate=model →  1420800 kHz
+[  5250] util= 11.0% emc= 1.0% ll=0.026 stall=0.146 gate=model →  1420800 kHz
+[  5260] util=  8.3% emc= 1.0% ll=0.023 stall=0.170 gate=model →  1420800 kHz
+[  5270] util=  8.3% emc= 1.0% ll=0.023 stall=0.147 gate=model →  1420800 kHz
+[  5280] util= 30.5% emc= 1.0% ll=0.031 stall=0.162 gate=model →  1420800 kHz
+[  5290] util=  0.0% emc= 1.0% ll=0.025 stall=0.185 gate=model →  1420800 kHz
+[  5300] util= 25.0% emc= 1.0% ll=0.025 stall=0.181 gate=model →  1420800 kHz
+[  5310] util= 30.5% emc= 1.0% ll=0.027 stall=0.151 gate=model →  1420800 kHz
+[  5320] util=  8.3% emc= 1.0% ll=0.027 stall=0.176 gate=model →  1420800 kHz
+[  5330] util=  5.5% emc= 1.0% ll=0.026 stall=0.194 gate=model →  1420800 kHz
+[  5340] util= 34.5% emc= 1.0% ll=0.030 stall=0.213 gate=model →  1420800 kHz
+[  5350] util= 91.7% emc= 1.0% ll=0.025 stall=0.244 gate=model →  1651200 kHz
+[  5360] util= 77.7% emc= 1.0% ll=0.018 stall=0.228 gate=model →  1651200 kHz
+[  5370] util= 86.0% emc= 1.0% ll=0.017 stall=0.227 gate=model →  1420800 kHz
+[  5380] util= 92.5% emc= 1.0% ll=0.015 stall=0.246 gate=model →  1651200 kHz
+[  5390] util= 96.7% emc= 1.0% ll=0.016 stall=0.239 gate=model →  1651200 kHz
+[  5400] util= 94.3% emc= 1.0% ll=0.016 stall=0.249 gate=model →  1651200 kHz
+[  5410] util= 75.0% emc= 1.0% ll=0.014 stall=0.226 gate=model →  1651200 kHz
+[  5420] util= 93.3% emc= 1.0% ll=0.016 stall=0.228 gate=model →  1651200 kHz
+[  5430] util= 88.7% emc= 1.0% ll=0.015 stall=0.242 gate=model →  1651200 kHz
+[  5440] util=100.0% emc= 1.0% ll=0.016 stall=0.257 gate=model →  1651200 kHz
+[  5450] util=100.0% emc= 1.0% ll=0.015 stall=0.230 gate=model →  1420800 kHz
+[  5460] util= 75.0% emc= 1.0% ll=0.016 stall=0.231 gate=model →  1651200 kHz
+[  5470] util= 95.8% emc= 1.0% ll=0.016 stall=0.240 gate=model →  1651200 kHz
+[  5480] util= 94.3% emc= 1.0% ll=0.017 stall=0.242 gate=model →  1651200 kHz
+[  5490] util= 74.8% emc= 1.0% ll=0.016 stall=0.239 gate=model →  1420800 kHz
+[  5500] util= 24.8% emc= 1.0% ll=0.022 stall=0.200 gate=model →  1420800 kHz
+[  5510] util= 11.0% emc= 1.0% ll=0.025 stall=0.176 gate=model →  1420800 kHz
+[  5520] util= 11.0% emc= 1.0% ll=0.024 stall=0.191 gate=model →  1420800 kHz
+[  5530] util= 11.0% emc= 1.0% ll=0.025 stall=0.181 gate=model →  1420800 kHz
+[  5540] util= 33.2% emc= 1.0% ll=0.026 stall=0.178 gate=model →  1420800 kHz
+[  5550] util= 13.8% emc= 1.0% ll=0.037 stall=0.193 gate=model →  1420800 kHz
+[  5560] util= 19.3% emc= 1.0% ll=0.030 stall=0.191 gate=model →  1420800 kHz
+[  5570] util= 36.0% emc= 1.0% ll=0.026 stall=0.199 gate=model →  1420800 kHz
+[  5580] util=  9.7% emc= 1.0% ll=0.028 stall=0.194 gate=model →  1420800 kHz
+[  5590] util= 29.2% emc= 1.0% ll=0.026 stall=0.209 gate=model →  1420800 kHz
+[  5600] util= 11.0% emc= 1.0% ll=0.025 stall=0.212 gate=model →  1420800 kHz
+[  5610] util= 11.0% emc= 1.0% ll=0.026 stall=0.185 gate=model →  1420800 kHz
+[  5620] util= 24.8% emc= 1.0% ll=0.026 stall=0.184 gate=model →  1420800 kHz
+[  5630] util= 31.7% emc= 1.0% ll=0.024 stall=0.175 gate=model →  1420800 kHz
+[  5640] util= 12.5% emc= 1.0% ll=0.022 stall=0.188 gate=model →  1420800 kHz
+[  5650] util= 18.0% emc= 1.0% ll=0.029 stall=0.207 gate=model →  1420800 kHz
+[  5660] util= 30.3% emc= 1.0% ll=0.027 stall=0.205 gate=model →  1420800 kHz
+[  5670] util= 90.2% emc= 1.0% ll=0.020 stall=0.234 gate=model →  1651200 kHz
+[  5680] util= 83.2% emc= 1.0% ll=0.018 stall=0.232 gate=model →  1651200 kHz
+[  5690] util= 91.0% emc= 1.0% ll=0.016 stall=0.245 gate=model →  1651200 kHz
+[  5700] util= 77.7% emc= 1.0% ll=0.016 stall=0.235 gate=model →  1420800 kHz
+[  5710] util= 75.0% emc= 1.0% ll=0.015 stall=0.239 gate=model →  1651200 kHz
+[  5720] util= 88.7% emc= 1.0% ll=0.014 stall=0.229 gate=model →  1651200 kHz
+[  5730] util=100.0% emc= 1.0% ll=0.010 stall=0.246 gate=model →  1651200 kHz
+[  5740] util=100.0% emc= 1.0% ll=0.007 stall=0.230 gate=model →  1651200 kHz
+[  5750] util=100.0% emc= 1.0% ll=0.009 stall=0.268 gate=model →  1651200 kHz
+[  5760] util=100.0% emc= 1.0% ll=0.009 stall=0.267 gate=model →  1651200 kHz
+[  5770] util=100.0% emc= 1.0% ll=0.011 stall=0.248 gate=model →  1651200 kHz
+[  5780] util=100.0% emc= 1.0% ll=0.007 stall=0.212 gate=model →  1651200 kHz
+[  5790] util=100.0% emc= 1.0% ll=0.008 stall=0.218 gate=model →  1651200 kHz
+[  5800] util=100.0% emc= 1.0% ll=0.005 stall=0.184 gate=model →  1651200 kHz
+[  5810] util=100.0% emc= 1.0% ll=0.007 stall=0.174 gate=model →  1651200 kHz
+[  5820] util= 91.7% emc= 1.0% ll=0.011 stall=0.213 gate=model →  1420800 kHz
+[  5830] util=  8.3% emc= 1.0% ll=0.021 stall=0.177 gate=model →  1420800 kHz
+[  5840] util= 15.0% emc= 1.0% ll=0.023 stall=0.173 gate=model →  1420800 kHz
+[  5850] util= 26.2% emc= 1.0% ll=0.027 stall=0.169 gate=model →  1420800 kHz
+[  5860] util= 20.7% emc= 1.0% ll=0.031 stall=0.179 gate=model →  1420800 kHz
+[  5870] util= 26.2% emc= 1.0% ll=0.026 stall=0.178 gate=model →  1420800 kHz
+[  5880] util= 16.7% emc= 1.0% ll=0.024 stall=0.142 gate=model →  1420800 kHz
+[  5890] util= 11.0% emc= 1.0% ll=0.025 stall=0.173 gate=model →  1420800 kHz
+[  5900] util= 13.8% emc= 1.0% ll=0.027 stall=0.187 gate=model →  1420800 kHz
+[  5910] util= 25.0% emc= 1.0% ll=0.027 stall=0.195 gate=model →  1420800 kHz
+[  5920] util= 22.2% emc= 1.0% ll=0.025 stall=0.193 gate=model →  1420800 kHz
+[  5930] util= 22.2% emc= 1.0% ll=0.026 stall=0.187 gate=model →  1420800 kHz
+[  5940] util= 13.8% emc= 1.0% ll=0.031 stall=0.161 gate=model →  1420800 kHz
+[  5950] util= 33.0% emc= 1.0% ll=0.027 stall=0.186 gate=model →  1420800 kHz
+[  5960] util= 31.8% emc= 1.0% ll=0.024 stall=0.160 gate=model →  1420800 kHz
+[  5970] util=  8.3% emc= 1.0% ll=0.029 stall=0.175 gate=model →  1420800 kHz
+[  5980] util=  9.7% emc= 1.0% ll=0.028 stall=0.176 gate=model →  1420800 kHz
+[  5990] util= 72.2% emc= 1.0% ll=0.021 stall=0.186 gate=model →  1420800 kHz
+[  6000] util= 83.3% emc= 1.0% ll=0.018 stall=0.188 gate=model →  1651200 kHz
+[step 6000] saved model_fp32_rl_6000.pt
+[  6010] util= 86.0% emc= 1.0% ll=0.017 stall=0.226 gate=model →  1651200 kHz
+[  6020] util= 83.3% emc= 1.0% ll=0.016 stall=0.230 gate=model →  1651200 kHz
+[  6030] util= 75.0% emc= 1.0% ll=0.016 stall=0.232 gate=model →  1651200 kHz
+[  6040] util= 85.0% emc= 1.0% ll=0.016 stall=0.233 gate=model →  1651200 kHz
+[  6050] util= 89.2% emc= 1.0% ll=0.016 stall=0.239 gate=model →  1651200 kHz
+[  6060] util= 91.7% emc= 1.0% ll=0.016 stall=0.233 gate=model →  1651200 kHz
+[  6070] util= 86.0% emc= 1.0% ll=0.015 stall=0.265 gate=model →  1651200 kHz
+[  6080] util= 77.7% emc= 1.0% ll=0.016 stall=0.242 gate=model →  1651200 kHz
+[  6090] util= 96.7% emc= 1.0% ll=0.015 stall=0.248 gate=model →  1651200 kHz
+[  6100] util= 94.3% emc= 1.0% ll=0.017 stall=0.252 gate=model →  1651200 kHz
+[  6110] util=100.0% emc= 1.0% ll=0.017 stall=0.257 gate=model →  1651200 kHz
+[  6120] util= 91.7% emc= 1.0% ll=0.016 stall=0.251 gate=model →  1651200 kHz
+[  6130] util= 91.7% emc= 1.0% ll=0.018 stall=0.229 gate=model →  1420800 kHz
+[  6140] util= 33.2% emc= 1.0% ll=0.024 stall=0.228 gate=model →  1420800 kHz
+[  6150] util= 22.2% emc= 1.0% ll=0.024 stall=0.241 gate=model →  1420800 kHz
+[  6160] util= 22.2% emc= 1.0% ll=0.030 stall=0.185 gate=model →  1420800 kHz
+[  6170] util= 47.2% emc= 1.0% ll=0.025 stall=0.250 gate=model →  1420800 kHz
+[  6180] util= 16.7% emc= 1.0% ll=0.026 stall=0.209 gate=model →  1420800 kHz
+[  6190] util= 16.7% emc= 1.0% ll=0.027 stall=0.176 gate=model →  1420800 kHz
+[  6200] util= 11.0% emc= 1.0% ll=0.029 stall=0.141 gate=model →   115200 kHz
+[  6210] util=  9.7% emc= 1.0% ll=0.025 stall=0.152 gate=model →  1420800 kHz
+[  6220] util= 30.5% emc= 1.0% ll=0.028 stall=0.170 gate=model →  1420800 kHz
+[  6230] util= 19.3% emc= 1.0% ll=0.028 stall=0.191 gate=model →  1420800 kHz
+[  6240] util= 16.7% emc= 1.0% ll=0.027 stall=0.207 gate=model →  1420800 kHz
+[  6250] util= 13.8% emc= 1.0% ll=0.024 stall=0.207 gate=model →  1420800 kHz
+[  6260] util= 11.0% emc= 1.0% ll=0.030 stall=0.213 gate=model →  1420800 kHz
+[  6270] util= 18.0% emc= 1.0% ll=0.028 stall=0.188 gate=model →  1420800 kHz
+[  6280] util= 13.8% emc= 1.0% ll=0.030 stall=0.196 gate=model →  1420800 kHz
+[  6290] util= 19.3% emc= 1.0% ll=0.029 stall=0.161 gate=model →  1420800 kHz
+[  6300] util= 16.5% emc= 1.0% ll=0.026 stall=0.173 gate=model →  1420800 kHz
+[  6310] util= 86.0% emc= 1.0% ll=0.020 stall=0.206 gate=model →  1651200 kHz
+[  6320] util=100.0% emc= 1.0% ll=0.017 stall=0.236 gate=model →  1651200 kHz
+[  6330] util= 94.3% emc= 1.0% ll=0.017 stall=0.251 gate=model →  1420800 kHz
+[  6340] util=100.0% emc= 1.0% ll=0.016 stall=0.251 gate=model →  1651200 kHz
+[  6350] util=100.0% emc= 1.0% ll=0.009 stall=0.231 gate=model →  1651200 kHz
+[  6360] util=100.0% emc= 1.0% ll=0.007 stall=0.217 gate=model →  1651200 kHz
+[  6370] util=100.0% emc= 1.0% ll=0.007 stall=0.220 gate=model →  1651200 kHz
+[  6380] util=100.0% emc= 1.0% ll=0.010 stall=0.239 gate=model →  1651200 kHz
+[  6390] util=100.0% emc= 1.0% ll=0.009 stall=0.231 gate=model →  1651200 kHz
+[  6400] util=100.0% emc= 1.0% ll=0.009 stall=0.203 gate=model →  1651200 kHz
+[  6410] util=100.0% emc= 1.0% ll=0.010 stall=0.215 gate=model →  1651200 kHz
+[  6420] util=100.0% emc= 1.0% ll=0.011 stall=0.245 gate=model →  1651200 kHz
+[  6430] util=100.0% emc= 1.0% ll=0.010 stall=0.233 gate=model →  1651200 kHz
+[  6440] util= 78.7% emc= 1.0% ll=0.014 stall=0.222 gate=model →  1420800 kHz
+[  6450] util= 11.0% emc= 1.0% ll=0.020 stall=0.209 gate=model →  1420800 kHz
+[  6460] util= 12.5% emc= 1.0% ll=0.023 stall=0.201 gate=model →  1420800 kHz
+[  6470] util= 22.0% emc= 1.0% ll=0.025 stall=0.205 gate=model →  1420800 kHz
+[  6480] util= 24.8% emc= 1.0% ll=0.023 stall=0.181 gate=model →  1420800 kHz
+[  6490] util= 19.3% emc= 1.0% ll=0.023 stall=0.152 gate=model →  1420800 kHz
+[  6500] util= 20.8% emc= 1.0% ll=0.028 stall=0.179 gate=model →  1420800 kHz
+[  6510] util= 16.5% emc= 1.0% ll=0.023 stall=0.176 gate=model →  1420800 kHz
+[  6520] util= 22.2% emc= 1.0% ll=0.027 stall=0.173 gate=model →  1420800 kHz
+[  6530] util= 16.7% emc= 1.0% ll=0.026 stall=0.220 gate=model →  1420800 kHz
+[  6540] util= 24.8% emc= 1.0% ll=0.039 stall=0.174 gate=model →  1420800 kHz
+[  6550] util= 13.8% emc= 1.0% ll=0.032 stall=0.171 gate=model →  1420800 kHz
+[  6560] util=  8.3% emc= 1.0% ll=0.027 stall=0.157 gate=model →  1420800 kHz
+[  6570] util=  8.3% emc= 1.0% ll=0.024 stall=0.173 gate=model →  1420800 kHz
+[  6580] util=  8.3% emc= 1.0% ll=0.030 stall=0.182 gate=model →  1420800 kHz
+[  6590] util= 13.8% emc= 1.0% ll=0.028 stall=0.162 gate=model →  1420800 kHz
+[  6600] util= 13.8% emc= 1.0% ll=0.025 stall=0.137 gate=model →  1420800 kHz
+[  6610] util= 22.2% emc= 1.0% ll=0.025 stall=0.176 gate=model →  1420800 kHz
+[  6620] util= 22.2% emc= 1.0% ll=0.023 stall=0.206 gate=model →  1420800 kHz
+[  6630] util= 44.3% emc= 1.0% ll=0.027 stall=0.181 gate=model →  1420800 kHz
+[  6640] util= 22.2% emc= 1.0% ll=0.024 stall=0.172 gate=model →  1420800 kHz
+[  6650] util=  8.3% emc= 1.0% ll=0.022 stall=0.163 gate=model →   115200 kHz
+[  6660] util=  8.3% emc= 1.0% ll=0.024 stall=0.159 gate=model →  1420800 kHz
+[  6670] util= 27.7% emc= 1.0% ll=0.027 stall=0.187 gate=model →  1420800 kHz
+[  6680] util= 16.7% emc= 1.0% ll=0.025 stall=0.191 gate=model →   115200 kHz
+[  6690] util= 11.0% emc= 1.0% ll=0.026 stall=0.187 gate=model →  1420800 kHz
+[  6700] util= 13.8% emc= 1.0% ll=0.024 stall=0.205 gate=model →  1420800 kHz
+[  6710] util= 34.5% emc= 1.0% ll=0.024 stall=0.169 gate=model →  1420800 kHz
+[  6720] util= 24.8% emc= 1.0% ll=0.020 stall=0.156 gate=model →  1420800 kHz
+[  6730] util= 27.7% emc= 1.0% ll=0.023 stall=0.184 gate=model →  1420800 kHz
+[  6740] util= 25.0% emc= 1.0% ll=0.027 stall=0.187 gate=model →  1420800 kHz
+[  6750] util= 13.8% emc= 1.0% ll=0.023 stall=0.208 gate=model →  1420800 kHz
+[  6760] util= 19.3% emc= 1.0% ll=0.022 stall=0.192 gate=model →  1420800 kHz
+[  6770] util= 20.8% emc= 1.0% ll=0.026 stall=0.149 gate=model →  1420800 kHz
+[  6780] util= 33.0% emc= 1.0% ll=0.027 stall=0.145 gate=model →  1420800 kHz
+[  6790] util= 19.3% emc= 1.0% ll=0.026 stall=0.152 gate=model →  1420800 kHz
+[  6800] util= 16.7% emc= 1.0% ll=0.027 stall=0.170 gate=model →  1420800 kHz
+[  6810] util= 25.0% emc= 1.0% ll=0.024 stall=0.188 gate=model →  1420800 kHz
+[  6820] util= 13.8% emc= 1.0% ll=0.024 stall=0.150 gate=model →  1420800 kHz
+[  6830] util= 18.0% emc= 1.0% ll=0.025 stall=0.155 gate=model →  1420800 kHz
+[  6840] util= 16.7% emc= 1.0% ll=0.024 stall=0.196 gate=model →  1420800 kHz
+[  6850] util= 41.5% emc= 1.0% ll=0.024 stall=0.175 gate=model →  1420800 kHz
+[  6860] util=  8.3% emc= 1.0% ll=0.025 stall=0.178 gate=model →  1420800 kHz
+[  6870] util= 16.7% emc= 1.0% ll=0.024 stall=0.168 gate=model →  1420800 kHz
+[  6880] util= 15.2% emc= 1.0% ll=0.029 stall=0.147 gate=model →  1420800 kHz

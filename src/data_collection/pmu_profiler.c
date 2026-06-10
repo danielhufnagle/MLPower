@@ -25,6 +25,10 @@
 #include <linux/ktime.h>
 #include <linux/smp.h>
 #include <linux/cpufreq.h>
+#include <linux/uaccess.h>
+#include <linux/device.h>
+#include "pmu_profiler.h" 
+
 
 /* ============================================================================
  * ARM PMU Event Definitions (ARMv8 Cortex-A78)
@@ -86,6 +90,9 @@
 #define STALL_SLOT_BACKEND               (0x3D)
 #define STALL_SLOT_FRONTEND              (0x3E)
 #define TTBR_WRITE_RETIRED               (0x1C)
+
+static DEFINE_SPINLOCK(pmu_snap_lock); 
+static struct pmu_live_snapshot latest_sample;
 
 /* ============================================================================
  * Inline Utilities
@@ -217,6 +224,31 @@ static struct {
 } profiler;
 
 /* ============================================================================
+ * Live Snapshot (for userspace governor reads)
+ * ============================================================================ */
+
+static ssize_t dc_usr_read(struct file *fptr, char __user *buf, size_t len, loff_t *off)
+{
+    if (len != sizeof(struct pmu_live_snapshot))
+        return -EINVAL;
+    if (*off > 0)
+        return 0;
+    if (copy_to_user(buf, &latest_sample, sizeof(latest_sample)))
+        return -EFAULT;
+    *off += sizeof(latest_sample);
+    return sizeof(latest_sample);
+}
+
+static struct file_operations dc_file_ops = {
+    .owner = THIS_MODULE,
+    .read  = dc_usr_read,
+};
+
+static unsigned int    dc_major;
+static struct class   *dc_class;
+static struct device  *dc_dev;
+
+/* ============================================================================
  * Delayed Work Declaration
  * ============================================================================ */
 
@@ -325,6 +357,18 @@ static void pmu_profiler_sample_workfn(struct work_struct *work)
             (s64)(snapshots[cpu].cyc - cpu_last[cpu].cyc);
     }
 
+    /* Update live snapshot for userspace governor */
+    spin_lock(&pmu_snap_lock); 
+    latest_sample.timestamp_ns = (s64)ts;
+    latest_sample.freq_khz_p0  = freq_p0;
+    latest_sample.freq_khz_p4  = freq_p4;
+    for (cpu = 0; cpu < 6; cpu++) {
+        int e;
+        for (e = 0; e < 6; e++)
+            latest_sample.deltas[cpu][e] = (cpu < profiler.num_cpus) ? deltas[cpu][e] : 0;
+        latest_sample.deltas[cpu][6] = (cpu < profiler.num_cpus) ? deltas[cpu][profiler.num_slots] : 0;
+    }
+    spin_unlock(&pmu_snap_lock);
     /* Skip first invocation — deltas vs zero baseline are not meaningful */
     if (profiler.sample_count >= 1)
         write_csv_line(ts, freq_p0, freq_p4, deltas);
@@ -381,6 +425,28 @@ static int __init pmu_profiler_init(void)
         pr_info("  slot[%d] = 0x%02x\n", i, profiler_events[i]);
 
     schedule_delayed_work_on(0, &profiler_sample_work, msecs_to_jiffies(10));
+
+    dc_major = register_chrdev(0, "pmu_dc", &dc_file_ops);
+    if ((int)dc_major <= 0) {
+        pr_err("PMU Profiler: failed to register char device\n");
+        filp_close(profiler.csv_file, NULL);
+        return -EFAULT;
+    }
+    dc_class = class_create(THIS_MODULE, "pmu_dc");
+    if (IS_ERR(dc_class)) {
+        unregister_chrdev(dc_major, "pmu_dc");
+        filp_close(profiler.csv_file, NULL);
+        return PTR_ERR(dc_class);
+    }
+    dc_dev = device_create(dc_class, NULL, MKDEV(dc_major, 0), NULL, "pmu_dc");
+    if (IS_ERR(dc_dev)) {
+        class_destroy(dc_class);
+        unregister_chrdev(dc_major, "pmu_dc");
+        filp_close(profiler.csv_file, NULL);
+        return PTR_ERR(dc_dev);
+    }
+    pr_info("PMU Profiler: char device /dev/pmu_dc registered (major=%u)\n", dc_major);
+
     return 0;
 }
 
@@ -388,12 +454,29 @@ static void __exit pmu_profiler_exit(void)
 {
     cancel_delayed_work_sync(&profiler_sample_work);
 
+    if (dc_dev)   device_destroy(dc_class, MKDEV(dc_major, 0));
+    if (dc_class) class_destroy(dc_class);
+    if (dc_major) unregister_chrdev(dc_major, "pmu_dc");
+
     if (profiler.csv_file && !IS_ERR(profiler.csv_file))
         filp_close(profiler.csv_file, NULL);
 
     pr_info("PMU Profiler: unloaded — %d samples, %d CPUs x %d events\n",
             profiler.sample_count, profiler.num_cpus, profiler.num_slots);
 }
+
+void get_latest_pmu_snapshot(struct pmu_live_snapshot *out)
+{
+    if (out) {
+        spin_lock(&pmu_snap_lock);
+        *out = latest_sample;
+        spin_unlock(&pmu_snap_lock);
+    }
+}
+EXPORT_SYMBOL_GPL(get_latest_pmu_snapshot);
+
+
+
 
 module_init(pmu_profiler_init);
 module_exit(pmu_profiler_exit);

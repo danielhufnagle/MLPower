@@ -1,0 +1,67 @@
+[compare] ML model: model_fp32_eff.pt
+[compare] metric:   throughput/power  (work-per-joule, ratio vs schedutil)
+[compare] pmu_profiler loaded
+[compare] === ML governor ===
+[compare] [1/8] ml_governor / cpu_all
+[compare]   freq=1295715kHz  power=6978mW  throughput=590.30  eff=0.084594 bogo-ops/s/mW
+[compare] [2/8] ml_governor / stream
+[compare]   freq=769983kHz  power=9800mW  throughput=1864.45  eff=0.190250 bogo-ops/s/mW
+[compare] [3/8] ml_governor / mem_latency
+[compare]   freq=1436832kHz  power=6368mW  throughput=366.2333  eff=0.057512 iter/s/mW
+[compare] [4/8] ml_governor / bursty
+[compare]   freq=1286932kHz  power=6314mW  throughput=290.97  eff=0.046083 bogo-ops/s/mW
+[compare] === Linux: schedutil ===
+[compare] [5/8] schedutil / cpu_all
+[compare]   freq=1585749kHz  power=7500mW  throughput=680.84  eff=0.090779 bogo-ops/s/mW
+[compare] [6/8] schedutil / stream
+[compare]   freq=1039657kHz  power=10565mW  throughput=2138.48  eff=0.202412 bogo-ops/s/mW
+[compare] [7/8] schedutil / mem_latency
+[compare]   freq=1471607kHz  power=6316mW  throughput=397.3333  eff=0.062909 iter/s/mW
+[compare] [8/8] schedutil / bursty
+[compare]   freq=1429453kHz  power=6447mW  throughput=351.80  eff=0.054568 bogo-ops/s/mW
+[compare] === results ===
+
+benchmark          ml_governor     schedutil
+--------------------------------------------
+
+--- avg power (mW) ---
+cpu_all                   6978          7500
+stream                    9800         10565
+mem_latency               6368          6316
+bursty                    6314          6447
+
+benchmark          ml_governor     schedutil
+--------------------------------------------
+
+--- avg freq (kHz) ---
+cpu_all                1295715       1585749
+stream                  769983       1039657
+mem_latency            1436832       1471607
+bursty                 1286932       1429453
+
+benchmark          ml_governor     schedutil
+--------------------------------------------
+
+--- throughput (benchmark-native units) ---
+cpu_all                  590.3         680.8
+stream                  1864.5        2138.5
+mem_latency              366.2         397.3
+bursty                   291.0         351.8
+
+benchmark          ml_governor     schedutil
+--------------------------------------------
+
+--- efficiency ratio vs schedutil  (>1.0 = ML wins) ---
+cpu_all                0.932           1.000
+stream                 0.940           1.000
+mem_latency            0.914           1.000
+bursty                 0.845           1.000
+
+--- WINNER per benchmark ---
+  cpu_all          → schedutil    (ml ratio=0.932)
+  stream           → schedutil    (ml ratio=0.940)
+  mem_latency      → schedutil    (ml ratio=0.914)
+  bursty           → schedutil    (ml ratio=0.845)
+
+ML governor wins 0/4 benchmarks vs schedutil
+[compare] results saved to /home/mlpower/MLPower/src/governor/results/compare.csv

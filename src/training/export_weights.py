@@ -8,9 +8,11 @@ with no separate normalization step.
 Usage:
     cd src/training
     python3 export_weights.py
+    python3 export_weights.py --model model_fp32_rl_5060000.pt
 
 Output: mlp_weights.h  (move next to your kernel module .c file before building)
 """
+import argparse
 import sys
 import numpy as np
 import torch
@@ -51,14 +53,53 @@ def emit_1d(name, arr, vals_per_line=8):
     return '\n'.join(lines)
 
 
+def pick_scaler(model_filename):
+    """Pick the scaler that matches the training run that produced this model.
+
+    RL checkpoints (model_fp32_rl_*.pt) were produced by run_rl_training.sh
+    which starts from model_fp32_eff.pt → uses scaler_eff.pkl.
+    All other models fall back to the generic stem-replace logic.
+    """
+    stem = Path(model_filename).stem                          # e.g. model_fp32_rl_5060000
+    # RL checkpoints now start from model_fp32.pt → use scaler.pkl (not scaler_eff).
+    # If a scaler_eff.pkl exists and no plain scaler matches, don't auto-select it —
+    # the caller can pass --scaler explicitly if they know the run used scaler_eff.
+    if stem.startswith('model_fp32_rl_') or stem == 'model_fp32_rl_final':
+        return TRAINING_DIR / 'scaler.pkl'
+    scaler_stem = stem.replace('model_fp32', 'scaler', 1)    # → scaler_eff, scaler_rl_..., etc.
+    candidate = TRAINING_DIR / f'{scaler_stem}.pkl'
+    if candidate.exists():
+        return candidate
+    return TRAINING_DIR / 'scaler.pkl'
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--model', default='model_fp32.pt',
+                    help='model filename in src/training/ (default: model_fp32.pt)')
+    ap.add_argument('--scaler', default=None,
+                    help='scaler .pkl path; auto-detected from model name if omitted')
+    args = ap.parse_args()
+
+    model_path = TRAINING_DIR / args.model
+    if not model_path.exists():
+        print(f'error: model not found: {model_path}', file=sys.stderr)
+        sys.exit(1)
+
     model = FreqMLP(input_dim=INPUT_DIM, num_classes=N_CLASSES)
     model.load_state_dict(
-        torch.load(TRAINING_DIR / 'model_fp32.pt', map_location='cpu', weights_only=True)
+        torch.load(model_path, map_location='cpu', weights_only=True)
     )
     model.eval()
 
-    scaler = joblib.load(TRAINING_DIR / 'scaler.pkl')
+    scaler_path = Path(args.scaler) if args.scaler else pick_scaler(args.model)
+    if not scaler_path.exists():
+        print(f'error: scaler not found: {scaler_path}', file=sys.stderr)
+        sys.exit(1)
+    print(f'model:  {model_path.name}')
+    print(f'scaler: {scaler_path.name}')
+
+    scaler = joblib.load(scaler_path)
 
     # Extract weights from each Linear layer
     W = []

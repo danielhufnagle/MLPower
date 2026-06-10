@@ -6,3 +6,4 @@
 *.o
 *.mod.c
 *.csv
+*.pt

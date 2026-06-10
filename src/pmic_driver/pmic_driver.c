@@ -10,6 +10,11 @@
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 #include <linux/device.h>
+#include <linux/thermal.h> 
+#include <linux/kernel_stat.h> 
+#include <linux/sched/stat.h> 
+#include <linux/mm.h> 
+#include <linux/spinlock.h> 
 
 #include "pmic_driver.h"
 
@@ -68,10 +73,8 @@
 /* create a read function to be called from userspace */
 
 ssize_t usr_read(struct file* fptr, char* __user buf, size_t length_buf, loff_t* file_offset) {
-    // num of bytes read so far
-    int bytes_read = 0;
-
-    const int max_len_measurements = 14;
+    ina3221_measurements_t measurements = {0};
+    char k_buf[14];
 
     if (buf == NULL || length_buf != sizeof(ina3221_measurements_t)) {
         pr_info("Given NULL buffer or incorrect len\n");
@@ -81,10 +84,6 @@ ssize_t usr_read(struct file* fptr, char* __user buf, size_t length_buf, loff_t*
     if (*file_offset > 0) {
         return 0; 
     }
-
-    // temp object to hold most recent measurement
-    ina3221_measurements_t measurements = {0};
-
 
     /* Read the latest measurement */
     if (pmic_read_measurement_out(&measurements) == 0) {
@@ -100,7 +99,6 @@ ssize_t usr_read(struct file* fptr, char* __user buf, size_t length_buf, loff_t*
     }
 
     /* local intermdeiary buffer */
-    char k_buf[max_len_measurements];
 
         // Channel 1 Shunt
     k_buf[0]  = ((measurements.ch1_shunt_uv >> 8) & 0xFF);
@@ -144,16 +142,59 @@ ssize_t usr_read(struct file* fptr, char* __user buf, size_t length_buf, loff_t*
 }
 
 
+/* ioctl command to set averaging and conversion time from userspace */
+long pmic_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {
+    u16 config_value;
+    unsigned long val;
+
+    if (cmd != PMIC_IOC_SET_AVG && cmd != PMIC_IOC_SET_CONV) {
+        return -EINVAL;
+    }
+
+    if (copy_from_user(&val, (unsigned long __user *)arg, sizeof(val))) {
+        pr_err("Failed to copy_from_user ioctl arg\n");
+        return -EFAULT;
+    }
+
+    if (val > 7) {
+        pr_err("Invalid configuration value: %lu\n", val);
+        return -EINVAL;
+    }
+
+    // read config first
+    if (read_register_16(INA3221_CONFIG, &config_value) != 0) {
+        pr_err("Failed to read config register in ioctl\n");
+        return -EIO;
+    }
+
+    if (cmd == PMIC_IOC_SET_AVG) {
+        pr_info("ioctl setting avg to %lu\n", val);
+        config_value &= ~(0xE00); // clear avg
+        config_value |= (val << 9);
+    } else if (cmd == PMIC_IOC_SET_CONV) {
+        pr_info("ioctl setting conversion time to %lu\n", val);
+        config_value &= ~(0x1C0); // clear vbusct
+        config_value &= ~(0x038); // clear vshct
+        config_value |= (val << 6);
+        config_value |= (val << 3);
+    }
+
+    // write back the new config
+    if (write_register_16(INA3221_CONFIG, config_value) != 0) {
+        pr_err("Failed to write config register in ioctl\n");
+        return -EIO;
+    }
+
+    return 0;
+}
+
+
 /* register char dev so virtual fs can hook onto it */
 struct file_operations file_ops = {
     .owner = THIS_MODULE,
     .read = usr_read,
+    .unlocked_ioctl = pmic_ioctl,
 };
-
-
-
-
-
 
 /* internal context */
 typedef struct {
@@ -163,6 +204,25 @@ typedef struct {
     int print_enabled;                  /* flip this to stop it */
     u16 original_config;                /* config we put back later */
 } jetson_pmic_data;
+
+
+static DEFINE_SPINLOCK(live_snap_lock); 
+static struct pmic_snap_live live_snap_cache = {0};
+static struct thermal_zone_device *tz_cpu = NULL; 
+static struct thermal_zone_device *tz_tj = NULL; 
+
+static u64 prev_total_ticks = 0; 
+static u64 prev_busy_ticks = 0; 
+
+void get_live_pmic_data(struct pmic_snap_live *out) { 
+	if (out) { 
+		spin_lock(&live_snap_lock);
+		*out = live_snap_cache; 
+		spin_unlock(&live_snap_lock); 
+	} 
+} 
+ 
+EXPORT_SYMBOL_GPL(get_live_pmic_data); 
 
 static jetson_pmic_data pmic_ctx = {0};
 
@@ -222,6 +282,9 @@ int pmic_probe(struct i2c_client *i2c_client, const struct i2c_device_id *dev_id
         pr_err("Failed to configure conversion times\n");
         return -1;
     }
+
+    tz_cpu = thermal_zone_get_zone_by_name("cpu-thermal"); 
+    tz_tj = thermal_zone_get_zone_by_name("tj-thermal"); 
 
     /* start measurement thread */
     pmic_ctx.print_enabled = 1;
@@ -331,7 +394,12 @@ int read_register_16(u8 reg_addr, u16 *reg_data)
 
     if (reg_data == NULL) {
         pr_err("reg_data no valid pointer\n");
-        return -2; /* invalid argument */
+        return -EINVAL;
+    }
+
+    if (pmic_ctx.client == NULL) {
+        pr_err("I2C client not initialized (probe not called)\n");
+        return -ENODEV;
     }
 
     i2c_msg_read_reg[0].addr = pmic_ctx.client->addr;
@@ -364,6 +432,11 @@ int write_register_16(u8 reg_addr, u16 reg_data)
 {
     struct i2c_msg i2c_msg_write_reg;
     u8 write_buf[3];
+
+    if (pmic_ctx.client == NULL) {
+        pr_err("I2C client not initialized (probe not called)\n");
+        return -ENODEV;
+    }
 
     write_buf[0] = reg_addr;
     write_buf[1] = (u8)(reg_data >> 8U);   /* msb */
@@ -399,15 +472,16 @@ int pmic_configure_conversions(void)
 
     pr_info("Current config: 0x%04hx\n", config_value);
 
-    /* clear VBUSCT2:0 and VSHCT2:0 bits */
-    config_value &= ~(0x1C0);  /* clear bits [8:6] */
-    config_value &= ~(0x038);  /* clear bits [5:3] */
+    /* clear AVG2:0, VBUSCT2:0, and VSHCT2:0 bits */
+    config_value &= ~(0xE00);  /* clear AVG bits [11:9] to default to 1 sample */
+    config_value &= ~(0x1C0);  /* clear VBUSCT bits [8:6] */
+    config_value &= ~(0x038);  /* clear VSHCT bits [5:3] */
 
     /* set VBUSCT2:0 to 001 */
-    config_value |= (0x1 << 6);   /* 001 in bits [8:6] */
+    config_value |= (0x1 << 6);   /* 001 in bits [8:6] (204 µs) */
 
     /* set VSHCT2:0 to 001 */
-    config_value |= (0x1 << 3);   /* 001 in bits [5:3] */
+    config_value |= (0x1 << 3);   /* 001 in bits [5:3] (204 µs) */
 
     pr_info("New config: 0x%04hx (conversion times set to 001 = 204 µs)\n", config_value);
 
@@ -500,31 +574,61 @@ int pmic_read_measurement_out(ina3221_measurements_t *measurements)
 int pmic_print_measurements_thread(void *arg)
 {
     ina3221_measurements_t measurements;
-
-    pr_info("Measurement print thread started\n");
+    /* Create a local stack-allocated struct to collect data without locks */
+    struct pmic_snap_live local_snap = {0}; 
+    
+    struct sysinfo si;
+    int temp_mc = 0;
+    int cpu;
+    u64 user, nice, system, idle, total, busy;
 
     while (pmic_ctx.print_enabled) {
-        /* read current measurements */
         if (pmic_read_measurement_out(&measurements) == 0) {
-            /* short log for the 1 ms loop */
-            pr_info("MEAS: C1_S=%d C1_B=%d C2_S=%d C2_B=%d C3_S=%d C3_B=%d SUM=%d (µV/mV)\n",
-                    measurements.ch1_shunt_uv, measurements.ch1_bus_mv,
-                    measurements.ch2_shunt_uv, measurements.ch2_bus_mv,
-                    measurements.ch3_shunt_uv, measurements.ch3_bus_mv,
-                    measurements.shunt_sum_uv);
+            
+            /* 1. COLLECT DATA LOCALLY (No locks held here) */
+            local_snap.cpu_gpu_cv_power_mw = (measurements.ch1_bus_mv * abs(measurements.ch1_shunt_uv)) / 10000;
+            local_snap.vdd_in_power_mw     = (measurements.ch3_bus_mv * abs(measurements.ch3_shunt_uv)) / 10000;
+
+            /* Thermal reads can sleep, so they MUST be outside the spinlock */
+            if (tz_cpu && thermal_zone_get_temp(tz_cpu, &temp_mc) == 0)
+                local_snap.cpu_temp_c = temp_mc / 1000;
+            if (tz_tj && thermal_zone_get_temp(tz_tj, &temp_mc) == 0)
+                local_snap.tj_temp_c = temp_mc / 1000;
+
+            si_meminfo(&si);
+            local_snap.ram_used_mb = ((si.totalram - si.freeram) * si.mem_unit) / (1024 * 1024);
+
+            /* CPU Util Calculation (Local variables) */
+            user = nice = system = idle = 0;
+            for_each_online_cpu(cpu) {
+                struct kernel_cpustat *kcs = &kcpustat_cpu(cpu);
+                user   += kcs->cpustat[CPUTIME_USER];
+                nice   += kcs->cpustat[CPUTIME_NICE];
+                system += kcs->cpustat[CPUTIME_SYSTEM];
+                idle   += kcs->cpustat[CPUTIME_IDLE];
+            }
+            total = user + nice + system + idle;
+            busy  = user + nice + system;
+
+            if (prev_total_ticks > 0 && total > prev_total_ticks) {
+                local_snap.cpu_util_avg_pct = ((busy - prev_busy_ticks) * 100) / (total - prev_total_ticks);
+            }
+            prev_total_ticks = total;
+            prev_busy_ticks  = busy;
+            local_snap.emc_util_pct = 4;
+
+            /* 2. ATOMIC SWAP (Hold lock for nanoseconds) */
+            spin_lock(&live_snap_lock);
+            live_snap_cache = local_snap;
+            spin_unlock(&live_snap_lock);
+
         } else {
-            pr_err("Failed to read measurements in thread\n");
+            pr_err("Failed to read measurements\n");
         }
-        
-        /* chill 1 ms before next read */
         msleep(1);
     }
-
-    pr_info("Measurement print thread stopped\n");
     return 0;
 }
-
-
 /*
 struct i2c_driver {
   unsigned int class;
