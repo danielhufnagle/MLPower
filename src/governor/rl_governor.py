@@ -203,7 +203,7 @@ def switch_governor_userspace():
 
 # Proximal policy optimization. Also uses Generalized Advantage Estimation, which balances accuracy with variance. 
 def ppo_update(actor, critic, actor_opt, critic_opt, buffer, ref_actor=None,
-               gamma=0.99, lam=0.95, epochs=4,
+               gamma=0.99, lam=0.95, epochs=2,
                clip_eps=0.2, vf_coef=0.1, ent_coef=0.01, kl_coef=0.05):
     actor.train()
     critic.train()
@@ -341,7 +341,7 @@ def main():
 
     critic     = ValueNet()
     actor_opt  = torch.optim.Adam(actor.parameters(),  lr=args.lr)
-    critic_opt = torch.optim.Adam(critic.parameters(), lr=args.lr * 10)
+    critic_opt = torch.optim.Adam(critic.parameters(), lr=args.lr)
 
     # Allows us to change freq
     switch_governor_userspace()
@@ -421,7 +421,7 @@ def main():
                 
                 pmic['vdd_in_power_mw'] = ema_power_mw 
                 TRANSITION_PENALTY = 0.05
-                raw_reward = (float((inst_per_sec ** 2) / ema_power_mw) / 1e14) - (TRANSITION_PENALTY * float(step_diff))
+                raw_reward = (float(inst_per_sec / ema_power_mw) / 1e5) - (TRANSITION_PENALTY * float(step_diff))
                 # Prevents reward scale from dominating gradient magnitude and
                 # stabilizes training across workloads with very different
                 # instruction rates (e.g. stream vs cpu_all).

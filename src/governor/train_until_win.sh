@@ -21,7 +21,7 @@ DC_DIR="../data_collection"
 MODULE="$DC_DIR/pmu_profiler.ko"
 
 BASE_MODEL="model_fp32.pt"
-KL_COEF="0.1"
+KL_COEF="0.05"
 MAX_ROUNDS=100
 # One full pass through all 14 workloads at 30s each = 420s.
 # This ensures every regime gets gradient signal every round.

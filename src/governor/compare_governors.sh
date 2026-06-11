@@ -43,13 +43,13 @@ CSV="$RESULTS_DIR/compare.csv"
 
 DURATION=30
 SETTLE=3
-COOLDOWN=5
+COOLDOWN=20
 
 LINUX_GOVERNORS=(schedutil ondemand performance powersave)
 
 # Full benchmark set; --quick uses the first 4; --fast uses 2
 ALL_BENCHMARKS=(cpu_all stream mem_latency membw bursty matmul branch icache compile)
-QUICK_BENCHMARKS=(cpu_all stream mem_latency bursty)
+QUICK_BENCHMARKS=(cpu_all stream mem_latency inference compile bursty)
 FAST_BENCHMARKS=(cpu_all stream)
 
 QUICK=0
@@ -325,6 +325,25 @@ print(iters / ${dur})
               done
               python3 -c "print($iters / $dur)" ) >"$bench_out" 2>/dev/null &
             BENCH_PID=$! ;;
+        inference)
+            $TS python3 -c "
+import sys, glob, time
+sys.path.insert(0, '$TRAINING_DIR')
+import torch
+from model import FreqMLP
+models = sorted(glob.glob('$TRAINING_DIR/model_fp32_rl_*.pt'),
+                key=lambda x: int(x.rsplit('_',1)[-1].replace('.pt','')))
+path = models[-1] if models else '$TRAINING_DIR/model_fp32.pt'
+net = FreqMLP(); net.load_state_dict(torch.load(path, map_location='cpu')); net.eval()
+batch = torch.randn(64, 174)
+end = time.monotonic() + ${dur}
+iters = 0
+with torch.no_grad():
+    while time.monotonic() < end:
+        net(batch); iters += 1
+print(iters * 64 / ${dur})
+" >"$bench_out" 2>/dev/null &
+            BENCH_PID=$! ;;
     esac
 }
 
@@ -339,11 +358,13 @@ parse_throughput() {
 import sys, re
 
 STRESSOR = {
-    'cpu_all': 'cpu', 'single_core': 'cpu',
-    'stream':  'stream',
-    'branch':  'branch',
-    'icache':  'icache',
-    'bursty':  'cpu',
+    'cpu_all':    ['cpu'],
+    'single_core':['cpu'],
+    'stream':     ['stream'],
+    'branch':     ['branch'],
+    'icache':     ['icache'],
+    'bursty':     ['cpu'],
+    # inference handled by float-sum branch below
 }
 
 name     = sys.argv[1]
@@ -356,7 +377,7 @@ except Exception:
     print(0); sys.exit()
 
 if name in STRESSOR:
-    stressor   = STRESSOR[name]
+    stressors  = STRESSOR[name]
     total_bogo = 0.0
     total_secs = 0.0
     for line in content.splitlines():
@@ -364,7 +385,7 @@ if name in STRESSOR:
             continue
         parts = line.split()
         for i, p in enumerate(parts):
-            if p == stressor and i + 2 < len(parts):
+            if p in stressors and i + 2 < len(parts):
                 try:
                     total_bogo += float(parts[i + 1])
                     total_secs += float(parts[i + 2])
@@ -372,9 +393,8 @@ if name in STRESSOR:
                     pass
                 break
     if total_secs > 0:
-        # For bursty: divide total bogo-ops by full duration (not just active time)
-        # so idle-phase power savings show up in the efficiency ratio.
-        if name == 'bursty':
+        # Divide by full duration for bursty so idle phases show up in the efficiency ratio.
+        if name in ('bursty',):
             print(f'{total_bogo / duration:.2f}')
         else:
             print(f'{total_bogo / total_secs:.2f}')
@@ -487,6 +507,7 @@ print(f'{t/p:.6f}' if p > 0 and t > 0 else '0')")
             membw)       unit="iter/s/mW"    ;;
             mem_latency) unit="iter/s/mW"    ;;
             compile)     unit="builds/s/mW"  ;;
+            inference)   unit="infer/s/mW"    ;;
             *)           unit="bogo-ops/s/mW" ;;
         esac
 
