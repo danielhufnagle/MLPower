@@ -1,0 +1,6 @@
+stress-ng: info:  [296789] setting to a 8 second run per stressor
+stress-ng: info:  [296789] dispatching hogs: 4 branch
+stress-ng: info:  [296789] successful run completed in 8.01s
+stress-ng: info:  [296789] stressor       bogo ops real time  usr time  sys time   bogo ops/s     bogo ops/s
+stress-ng: info:  [296789]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [296789] branch          2838588      8.00     31.52      0.05    354823.48       89914.10

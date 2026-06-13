@@ -1,28 +1,6 @@
 #!/bin/bash
 # compare_governors.sh — Benchmark ML governor vs Linux governors.
 #
-# METRIC: work-per-joule efficiency ratio vs schedutil.
-#
-#   efficiency       = throughput / avg_power_mW
-#   efficiency_ratio = ML_efficiency / schedutil_efficiency
-#
-#   > 1.0  → ML does more useful work per joule  (ML wins)
-#   = 1.0  → tied
-#   < 1.0  → ML is less efficient                (ML loses)
-#
-# WHY NOT inst/mJ:
-#   Raw instruction counts inflate with CPU frequency even on memory-bound
-#   workloads — the CPU just spins faster in stall loops doing no extra work.
-#   schedutil wins inst/mJ almost by definition because it always runs at
-#   max frequency.
-#
-# WHY throughput/power:
-#   Throughput is benchmark-native: bogo-ops/s (stress-ng), iterations/s
-#   (Python workloads). It measures actual completed work — memory bandwidth
-#   achieved, matrices computed, random accesses done. A governor that runs
-#   at lower frequency and achieves the same bandwidth at less power wins.
-#   One that sacrifices throughput to save power is penalized proportionally.
-#
 # Usage:
 #   sudo bash compare_governors.sh
 #   sudo bash compare_governors.sh --quick          # 4 benchmarks

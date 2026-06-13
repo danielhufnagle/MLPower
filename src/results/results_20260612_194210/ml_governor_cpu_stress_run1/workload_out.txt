@@ -1,0 +1,6 @@
+stress-ng: info:  [449450] setting to a 8 second run per stressor
+stress-ng: info:  [449450] dispatching hogs: 4 cpu
+stress-ng: info:  [449450] successful run completed in 8.14s
+stress-ng: info:  [449450] stressor       bogo ops real time  usr time  sys time   bogo ops/s     bogo ops/s
+stress-ng: info:  [449450]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [449450] cpu                5699      8.07     31.61      0.05       706.28         180.01

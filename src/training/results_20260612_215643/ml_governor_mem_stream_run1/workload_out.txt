@@ -1,0 +1,15 @@
+stress-ng: info:  [2613751] setting to a 8 second run per stressor
+stress-ng: info:  [2613751] dispatching hogs: 4 stream
+stress-ng: info:  [2613755] stress-ng-stream: stressor loosely based on a variant of the STREAM benchmark code
+stress-ng: info:  [2613755] stress-ng-stream: do NOT submit any of these results to the STREAM benchmark results
+stress-ng: info:  [2613755] stress-ng-stream: Using CPU cache size of 2048K
+stress-ng: info:  [2613756] stress-ng-stream: memory rate: 4586.30 MB/sec, 1834.52 Mflop/sec (instance 1)
+stress-ng: info:  [2613755] stress-ng-stream: memory rate: 4268.60 MB/sec, 1707.44 Mflop/sec (instance 0)
+stress-ng: info:  [2613758] stress-ng-stream: memory rate: 3956.47 MB/sec, 1582.59 Mflop/sec (instance 3)
+stress-ng: info:  [2613757] stress-ng-stream: memory rate: 4237.74 MB/sec, 1695.10 Mflop/sec (instance 2)
+stress-ng: info:  [2613751] successful run completed in 8.01s
+stress-ng: info:  [2613751] stressor       bogo ops real time  usr time  sys time   bogo ops/s     bogo ops/s
+stress-ng: info:  [2613751]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [2613751] stream             6808      8.00     31.05      0.06       850.58         218.84
+stress-ng: info:  [2613751] stream          4262.28 memory rate (MB per sec) (average per stressor)
+stress-ng: info:  [2613751] stream          1704.91 memory rate (Mflop per sec) (average per stressor)
